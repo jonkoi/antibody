@@ -1,0 +1,145 @@
+{
+ "pdb_file": "wildtype_complex.pdb",
+ "partner_a": [
+  "A",
+  "B"
+ ],
+ "partner_b": [
+  "C",
+  "D"
+ ],
+ "variants": [
+  {
+   "id": "W99A",
+   "mutations": [
+    {
+     "chain": "B",
+     "residue_number": 99,
+     "insertion_code": "",
+     "wild_type": "W",
+     "mutant": "A"
+    }
+   ]
+  },
+  {
+   "id": "G100A",
+   "mutations": [
+    {
+     "chain": "B",
+     "residue_number": 100,
+     "insertion_code": "",
+     "wild_type": "G",
+     "mutant": "A"
+    }
+   ]
+  },
+  {
+   "id": "G101A",
+   "mutations": [
+    {
+     "chain": "B",
+     "residue_number": 101,
+     "insertion_code": "",
+     "wild_type": "G",
+     "mutant": "A"
+    }
+   ]
+  },
+  {
+   "id": "D102A",
+   "mutations": [
+    {
+     "chain": "B",
+     "residue_number": 102,
+     "insertion_code": "",
+     "wild_type": "D",
+     "mutant": "A"
+    }
+   ]
+  },
+  {
+   "id": "G103A",
+   "mutations": [
+    {
+     "chain": "B",
+     "residue_number": 103,
+     "insertion_code": "",
+     "wild_type": "G",
+     "mutant": "A"
+    }
+   ]
+  },
+  {
+   "id": "F104A",
+   "mutations": [
+    {
+     "chain": "B",
+     "residue_number": 104,
+     "insertion_code": "",
+     "wild_type": "F",
+     "mutant": "A"
+    }
+   ]
+  },
+  {
+   "id": "Y105A",
+   "mutations": [
+    {
+     "chain": "B",
+     "residue_number": 105,
+     "insertion_code": "",
+     "wild_type": "Y",
+     "mutant": "A"
+    }
+   ]
+  },
+  {
+   "id": "M107A",
+   "mutations": [
+    {
+     "chain": "B",
+     "residue_number": 107,
+     "insertion_code": "",
+     "wild_type": "M",
+     "mutant": "A"
+    }
+   ]
+  },
+  {
+   "id": "D108A",
+   "mutations": [
+    {
+     "chain": "B",
+     "residue_number": 108,
+     "insertion_code": "",
+     "wild_type": "D",
+     "mutant": "A"
+    }
+   ]
+  },
+  {
+   "id": "W99S",
+   "mutations": [
+    {
+     "chain": "B",
+     "residue_number": 99,
+     "insertion_code": "",
+     "wild_type": "W",
+     "mutant": "S"
+    }
+   ]
+  },
+  {
+   "id": "W99Y",
+   "mutations": [
+    {
+     "chain": "B",
+     "residue_number": 99,
+     "insertion_code": "",
+     "wild_type": "W",
+     "mutant": "Y"
+    }
+   ]
+  }
+ ]
+}

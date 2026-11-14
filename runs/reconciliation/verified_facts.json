@@ -1,0 +1,32 @@
+{
+  "facs_rows": 524346,
+  "facs_distance3": {
+    "substitutions": 3,
+    "n": 1490,
+    "high": 1341,
+    "high_rate": 0.9
+  },
+  "spr_quantified_all_lengths": 190,
+  "spr_quantified_10mers": 187,
+  "wt_kd_values_nM": [
+    0.152,
+    0.123,
+    0.146,
+    0.165,
+    0.178,
+    0.0378713,
+    0.02851802,
+    0.07916459
+  ],
+  "wt_kd_median_nM": 0.1345,
+  "wt_kd_geometric_mean_nM": 0.09538844221301103,
+  "wt_kd_range_nM": [
+    0.02851802,
+    0.178
+  ],
+  "wt_replicate_log10_sd": 0.3070181648626931,
+  "rough_95pct_single_measurement_ratio": 7.095956347791724,
+  "team_priorities": 24,
+  "tier2_all4_contact_identities": 14,
+  "tier2_min_pairwise_hamming": 3
+}

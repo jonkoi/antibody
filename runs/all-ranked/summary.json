@@ -1,24 +1,25 @@
 {
-  "unique_candidates": 639,
+  "unique_candidates": 653,
   "controls": 2,
   "formats": {
-    "paired": 335,
+    "paired": 349,
     "vhh": 304
   },
-  "screen_pass": 532,
+  "screen_pass": 546,
   "screen_reject": 107,
   "valid_tracks": {
-    "optimisation": 355,
+    "optimisation": 369,
     "de_novo": 177
   },
   "source_counts": {
-    "ml-top100": 100,
-    "framework": 6,
     "final18": 18,
     "winner-prior55": 55,
+    "ml-top100": 100,
+    "team15-priority": 24,
+    "rfd4-seed1": 96,
+    "framework": 6,
     "rfd4-vhh": 12,
     "boltzgen-disulfide": 85,
-    "rfd4-seed1": 96,
     "pilot4": 4,
     "rfd4-seed7": 89,
     "boltzgen-original": 88,

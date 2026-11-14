@@ -1,0 +1,15 @@
+{
+  "remote_commit": "ab8ade5",
+  "original_priority_count": 24,
+  "matching_previous_candidates": 10,
+  "new_shortlisted_candidates": 14,
+  "union_count": 653,
+  "screen_pass": 546,
+  "screen_rejected": 107,
+  "optimisation": 369,
+  "de_novo": 177,
+  "first24_sequences_and_order_preserved": true,
+  "all_exported_genotypes_match_fresh_screen": true,
+  "ranking_policy": "Original 24 in unchanged sequence/order; remaining validated candidates appended in existing heuristic order; track-specific ranks retained.",
+  "no_design_has_new_experimental_measurements": true
+}

@@ -1,3 +1,5 @@
+> **Reconciled current state (14 Nov 2026):** the remote 24-row priority list is preserved in exact order as the first 24 entries. The combined unique input was 653; fresh live abguard accepted 546 and rejected 107 (369 optimisation, 177 de novo). `team15_01.csv` and `SUBMISSION.csv` contain the same 546 passing candidates. See [process overview](../../findings/team-process-overview.md), [priority crosswalk](../reconciliation/priority24_crosswalk.csv), and [full evidence CSV](../reconciliation/ranked_with_evidence.csv). The earlier 639/532 numbers below describe the pre-sync snapshot only.
+
 # Consolidated ranked antibody designs
 
 User requested all actual generated and shortlisted HER2 designs, including de novo long shots, with numbered ranks and selection/background notes. **The 51,417-sequence enumeration pool is excluded.** Calibration-panel antibodies, known measured binders used only as benchmarks, abguard test probes, and lysozyme design controls are excluded. Two WT-CDRH3 controls are saved separately.

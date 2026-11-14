@@ -34,19 +34,32 @@ def add(r,source,background):
  return q
 
 sources=[
+ ('runs/reconciliation/team15_01.remote.csv','team15-priority','Latest team priority list from remote ab8ade5; source descriptions contain historical terminology; presentation audit distinguishes predictions from measurements.'),
  ('runs/final-shortlist/submission_table_18.csv','final18','Final 18-model optimisation shortlist; includes later epitope failures retained for completeness.'),
  ('runs/framework-hail-mary/validation_panel.csv','framework','Published S85N/R87T stabilisation hypothesis combined with shortlisted CDRH3s; matched originals included.'),
  ('runs/denovo-hail-mary/candidates_12.csv','rfd4-vhh','One-shot antibody-specific RFD4 VHH campaign; all three CDRs redesigned with four explicit HER2 hotspot atoms.'),
  ('runs/denovo-vhh/w1_ss_abguard.csv','boltzgen-disulfide','Earlier BoltzGen VHH campaign with restored canonical disulfide; included as exploratory/long-shot pool.'),
  ('runs/team15-claude-n100-seed1/submission_all.csv','rfd4-seed1','Original 100-design HER2-finetuned RFD4 production batch.')]
 for path,source,bg in sources:
- for r in table(path):add(r,source,bg)
+ for r in table(path):
+  if source=='team15-priority':
+   r=dict(r);text=r['design_description']
+   text=text.replace('tier 1: measured','tier 1: computationally characterised').replace('measured binding ddG','predicted binding ddG').replace('measured ddG','predicted ddG').replace('Binding ddG','Predicted binding ddG')
+   text=text.replace('statistically indistinguishable from wild-type','model estimate close to zero; no experimental equivalence established')
+   text=text.replace('so a glycan cannot reach either interface','protein-only distance does not establish glycan safety')
+   text=text.replace('benefit is glycosylation-dependent and unconfirmed','glycosylation dependence and transfer are unresolved')
+   text=text.replace('HER2 contacts kept','crystal-contact residue identities retained')
+   r['design_description']=text
+  add(r,source,bg)
 for r in table('data/shortlist_optimisation.csv'):
  c=r['cdrh3'];add(dict(sequence_id='prior_'+c,kind='paired',heavy_sequence=graft(c),light_sequence=WT_LIGHT,design_description='Earlier winner-prior/expression shortlist '+c),'winner-prior55','Earlier shortlist based on measured SPR winner positions, FACS model and chemical-liability reasoning; later ML shortlist supersedes its top ranking.')
 for r in table('data/af2ig_scores.csv'):
  if r['source']=='ml_ranked':
   c=r['cdrh3'];add(dict(sequence_id=r['design_id'],kind='paired',heavy_sequence=graft(c),light_sequence=WT_LIGHT,design_description='Evaluated ML top-100 CDRH3 '+c),'ml-top100','One of the 100 ML-ranked CDRH3s actually rescored by AF2-IG; retained beyond the final 18.')
 for base,source,bg in [('runs/all-ranked/source/seed7/inference_samples','rfd4-seed7','Second 100-design HER2 RFD4 batch, seed 7; F104/Y105 sequence conserved in the input.'),('runs/her2-validation-seed1/designs','pilot4','Initial four-design pipeline validation batch.')]:
+ if source=='pilot4' and (OUT/'source/pilot_candidates.csv').exists():
+  for r in table('runs/all-ranked/source/pilot_candidates.csv'):add(r,source,bg)
+  continue
  if source=='rfd4-seed7' and (OUT/'source/seed7_candidates.csv').exists():
   for r in table('runs/all-ranked/source/seed7_candidates.csv'):add(r,source,bg)
   continue
@@ -57,7 +70,7 @@ for r in js('runs/denovo-vhh/rows_w1.json'):
 for j in js('runs/all-ranked/source/previous_jobs_summary.json'):
  for r in js(j['path']).get('designs',[]):
   add(dict(sequence_id=j['name']+'_r'+str(r['final_rank']),kind='vhh',heavy_sequence=r.get('designed_sequence',''),light_sequence='',design_description='Previously generated BoltzGen HER2 VHH '+j['name']),'boltzgen-jobs','Previously completed HER2 BoltzGen job '+j['name']+'; no new generation; independent contact evidence is absent unless stated.')
-assert len(pool)==639,(len(pool),'Source inventory changed; review count')
+assert len(pool)==653,(len(pool),'Source inventory changed; review count')
 assert len({d['sequence_id'] for d in pool.values()})==len(pool)
 
 # Exact full-sequence evidence, never transferred across framework/format variants.
@@ -105,6 +118,9 @@ if final:
  assert (OUT/'accepted.json').exists() and (OUT/'novelty.json').exists()
  assert accepted <= {d['sequence_id'] for d in pool.values()}
 
+team_rows=table('runs/reconciliation/team15_01.remote.csv')
+team_by_key={key(r['kind'],r['heavy_sequence'],r.get('light_sequence','')):(i,r) for i,r in enumerate(team_rows,1)}
+previous={key(r['format'],r['heavy_sequence'],r.get('light_sequence','')):r for r in table('runs/reconciliation/local_ranked_before_sync.csv')}
 ranked=[]
 for q,d in pool.items():
  h=d['heavy_sequence'];l=d['light_sequence'];sid=d['sequence_id'];c=h[98:108] if d['native'] or d['framework_variant'] else ''
@@ -133,14 +149,18 @@ for q,d in pool.items():
  elif e:
   group=60 if e.get('partial') else 80;why='Long shot retained at user request despite predicted epitope caution/off-site docking.'
  elif d['native'] and m:
-  group=40;why='Evaluated ML/AF2-IG candidate or original generator output supported by sequence affinity ranking; epitope unverified.'
+  group=40;why='Native-framework candidate supported by the existing sequence affinity model; independent epitope validation absent unless separately reported.'
  elif d['kind']=='paired':
   group=45;why='Generated or earlier-shortlisted optimisation backup; retained for sequence diversity and completeness.'
  else:
   group=55 if h.count('C')==0 else 50;why='Untested VHH long shot retained for diversity/completeness; NanoMelt support shown only when available.'
  if status=='rejected':group=95;why='Retained in audit only: rejected by live abguard; excluded from submission export.'
- row=dict(rank='',track_rank='',candidate_number='',sequence_id=sid,track=track,format=d['kind'],screen_status=status,reason_picked=why,background_notes=' | '.join(sorted(d['background'])),risk_notes=' | '.join(risks),cdrh3=nr.get('cdrh3') or c,heavy_sequence=h,light_sequence=l,heavy_length=len(h),light_length=len(l),framework_edits='S85N R87T (one-based VH sequence)' if d['framework_variant'] else '',epitope_evidence=e.get('evidence','untested'),epitope_good_samples=e.get('good',''),epitope_samples=e.get('n',''),nanomelt_tm_C=tm.get(h,''),model_p_beat_wt=m.get('p_beat_wt',''),model_pred_kd_nM=m.get('pred_kd_nM',''),parent_cdr_model_p_beat_wt=parent.get('p_beat_wt',''),facs_safety_logodds=round(safety,4) if len(c)==10 else '',af2ig_iptm=af.get(c,'') if d['native'] else '',sources=';'.join(sorted(d['sources'])),original_ids=';'.join(sorted(d['source_ids'])))
- row['_sort']=(group,0 if m else 1,-p,-safety if len(c)==10 else -float(tm.get(h) or 0),sid)
+ row=dict(rank='',track_rank='',candidate_number='',sequence_id=sid,track=track,format=d['kind'],screen_status=status,reason_picked=why,background_notes=' | '.join(sorted(d['background'])),risk_notes=' | '.join(risks),cdrh3=nr.get('cdrh3') or c,heavy_sequence=h,light_sequence=l,heavy_length=len(h),light_length=len(l),framework_edits='S85N R87T (one-based VH sequence)' if d['framework_variant'] else '',epitope_evidence=e.get('evidence','untested'),epitope_good_samples=e.get('good',''),epitope_samples=e.get('n',''),nanomelt_tm_C=tm.get(h,''),model_p_below_0_146_nM=m.get('p_beat_wt',''),model_pred_kd_nM=m.get('pred_kd_nM',''),parent_cdr_model_p_below_0_146_nM=parent.get('p_beat_wt',''),facs_safety_logodds=round(safety,4) if len(c)==10 else '',af2ig_iptm=af.get(c,'') if d['native'] else '',sources=';'.join(sorted(d['sources'])),original_ids=';'.join(sorted(d['source_ids'])))
+ priority,teamrow=team_by_key.get(q,('',{}))
+ old=previous.get(q,{})
+ row.update(model_probability_threshold_nM=0.146 if (m or parent) else '',actual_wt_median_nM=0.1345,team15_priority=priority,team15_sequence_id=teamrow.get('sequence_id',''),previous_rank=old.get('rank',''),previous_candidate_number=old.get('candidate_number',''),team15_original_description=teamrow.get('design_description',''))
+ if priority:row['reason_picked']='Team priority #'+str(priority)+'; '+row['reason_picked']
+ row['_sort']=((0 if priority and status!='rejected' else 1),int(priority or 999),group,0 if m else 1,-p,-safety if len(c)==10 else -float(tm.get(h) or 0),sid)
  ranked.append(row)
 ranked.sort(key=lambda r:r['_sort']);counts=collections.Counter()
 for i,r in enumerate(ranked,1):
@@ -164,7 +184,7 @@ if final:
  assert {r['sequence_id'] for r in submission}==accepted
  write('submission_all_valid_ranked.csv',submission,COLUMNS)
  write('valid_candidates_ranked_with_notes.csv',valid)
- write('antibody_designs_ranked.csv',valid,['candidate_number','rank','track_rank','sequence_id','track','format','cdrh3','framework_edits','reason_picked','background_notes','risk_notes','epitope_evidence','nanomelt_tm_C','model_p_beat_wt','model_pred_kd_nM','heavy_sequence','light_sequence','original_ids','sources'])
+ write('antibody_designs_ranked.csv',valid,['candidate_number','rank','track_rank','sequence_id','track','format','cdrh3','framework_edits','reason_picked','background_notes','risk_notes','epitope_evidence','nanomelt_tm_C','model_p_below_0_146_nM','model_pred_kd_nM','heavy_sequence','light_sequence','original_ids','sources','team15_priority','team15_sequence_id','previous_rank','previous_candidate_number','team15_original_description'])
  for track in ['optimisation','de_novo']:
   rr=[r for r in valid if r['track']==track]
   write(track+'_ranked_with_notes.csv',rr)
