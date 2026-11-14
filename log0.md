@@ -662,3 +662,91 @@ it directly** rather than share the link; this session could not get past the fi
 4. De novo VHH track: per `runs/denovo-vhh/README.md`, **do not submit from this route** —
    epitope targeting failed outright. If a slot must be spent there anyway, its own README
    names the two least-bad candidates and is explicit about why neither is an A-tier play.
+
+---
+
+## Session C — 14 Nov 2026, ~13:50–14:00 UTC
+
+### Asked
+The user supplied the organisers' VM onboarding email mid-session, re-establishing the
+authorisation context Session B's SSH attempt had been missing. Retried; this time the
+environment's permission classifier allowed it. Used the access to close out the one
+outstanding item from Session B: live `abguard` confirmation of the 18-candidate shortlist.
+
+### 🟢 `abguard team-validate --reference-db` confirms all 18 — gold-standard check done
+
+```
+ssh -i ~/.ssh/team-15 hackathon@89.169.96.144
+scp runs/final-shortlist/submission_table_18.csv hackathon@...:~/claude-session/
+abguard team-validate submission_table_18.csv \
+  --reference-db ~/team15-claude/her2_novelty.duckdb --drop -o validate_result.json
+```
+
+**18/19 rows pass; the only failure is the wild-type control, correctly** (`0 mutation(s)
+... needs at least 3`). This is the real novelty gate, with the real 525,063-reference
+database built in TASKS.md's session, not the local exact-enumeration proxy — the proxy is
+now empirically confirmed rather than just internally self-consistent. Results saved:
+[`runs/final-shortlist/abguard_validate_result.json`](runs/final-shortlist/abguard_validate_result.json).
+This closes the residual risk flagged at the end of Session B.
+
+### New finding from the liability report: the `A8W` substitution shared by most of the 18
+trades a high-severity liability for a new medium one
+
+Also ran (never done before on any of our candidates):
+```
+abguard team-validate submission_table_18.csv --reference-db ... --drop --all-liabilities \
+  -o liabilities_18.json
+```
+Saved: [`runs/final-shortlist/abguard_liabilities_18.json`](runs/final-shortlist/abguard_liabilities_18.json).
+
+Wild-type's own CDR3 already carries 3 liabilities: Trp oxidation (W99, medium), **Asp-Gly
+isomerisation (D102-G103, high)**, Met oxidation (M107, medium). Comparing each of the 18
+against that baseline:
+
+- **16 of 18 carry the `A106W` substitution** (the `A8W` core finding 0b's new ranking
+  converged on). It adds a **new medium-severity Trp oxidation site** at that position —
+  abguard's own liability model confirms this, independently of anything in our pipeline.
+- **Only 3 of 18 — `WGGKGPYWMD`, `WGGRGPYWMD`, `WGHDGPYHMD` — hold liability count flat
+  against wild-type**, and the first two do it by a genuine trade *up*: they mutate
+  `D102` (removing the high-severity DG isomerisation site) while also adding `A106W`'s
+  medium-severity oxidation site. Net: **one high-severity liability swapped for one
+  medium-severity one** — a real improvement in the LAP severity-weighted sense, not just
+  a wash in the raw count.
+- **Our #1-by-affinity pick, `WGHDGPYWMD`, does not get this benefit.** It doesn't touch
+  `D102` (no DG removal) and does add `A106W`'s new TrpOx, so its CDR3 liability profile is
+  strictly worse than wild-type's (4 vs 3, same high-severity Isom retained, plus the new
+  medium one). **This is a real tension between the affinity ranking and the liability
+  profile that nothing before this check had surfaced** — add it to the pitch's honesty
+  ledger alongside the charge/expression tension in finding 0c.
+
+**Revised pick for anyone who wants one design that is simultaneously top-tier on affinity
+*and* liability-neutral-or-better: `WGGKGPYWMD` or `WGGRGPYWMD`**, not `WGHDGPYWMD`. Both
+are already in the hand-picked diversity set from Session B's note, both rank top-5 by
+`P(beat trastuzumab)` (0.179 and 0.142), and both now also have the best liability story of
+the 18.
+
+### Also noticed, not yet investigated
+Another worker's session is live on the VM right now: a second RFD4-Proteina batch,
+`runs/team15-hotspot-n100-seed7` (100 designs, seed 7, same `her2_cdrh3` hotspot condition,
+started ~13:15 UTC, design stage only as of this check — no refold/scoring yet). Not pulled
+down this session; worth checking by whoever next has VM access, before the box shuts down.
+
+A concurrent session on *this* box (not the VM) finished two things while the above was
+happening: extended `score_af2ig.py` with a `--candidates` flag and scored ~1,400 more of
+the old winner-prior-ranked candidates (`data/af2ig_scores.csv` "ranked" source: 900 → 2,306
+rows), and finished a full binding-model retrain including XGBoost
+(`runs/binding-models/summary_sklearn.json`). **The XGBoost model (one-hot + physchem)
+reaches CV d3 AUC 0.953 [0.930, 0.971], clearly ahead of the `onehot_pair_lr` model
+`score_candidates_ml.py` currently uses (0.904)** — worth re-running the final ranking with
+it once someone applies the same leakage discount (Session B) to confirm it's a real gain
+and not another random-split artefact. Not done this session; flagging so the final
+shortlist doesn't go stale.
+
+### Next actions, revised again
+1. ~~Run abguard team-validate on the final 18~~ — **done, 18/18 pass.**
+2. **Prefer `WGGKGPYWMD`/`WGGRGPYWMD` over `WGHDGPYWMD` as the single top pick** if only one
+   slot matters most, on the new liability evidence above. Keep `WGHDGPYWMD` in the set
+   regardless — it's still the best predicted affinity, just not liability-neutral.
+3. Check on `runs/team15-hotspot-n100-seed7` before the VM shuts down — unclear if it's
+   another worker's redundant re-run or a deliberate second seed for more candidates.
+4. Resolve the `pipeline/` script duplication (unchanged from Session B).

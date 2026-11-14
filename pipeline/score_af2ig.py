@@ -267,14 +267,14 @@ def load_panel():
             for i, c, l, k in spec]
 
 
-def load_ranked(limit=None, offset=0, spread=0):
+def load_ranked(limit=None, offset=0, spread=0, path=None):
     """Candidates from the prior-ranked CSV (already sorted by `score`, best first).
 
     `spread` takes that many of the `limit` from evenly spaced positions across
     the whole file instead of the head, so the prior-vs-AF2IG rank correlation
     is not measured on a truncated range.
     """
-    all_rows = list(csv.DictReader(open(RANKED)))
+    all_rows = list(csv.DictReader(open(path or RANKED)))
     def mk(i, r):
         return dict(design_id="cand_%06d_%s" % (i, r["cdrh3"]), cdrh3=r["cdrh3"],
                     source="ranked", label="", kd_nM="", prior_score=r["score"])
@@ -423,6 +423,9 @@ def main():
     ap.add_argument("--in-flight", type=int, default=3, help="jobs submitted before waiting")
     ap.add_argument("--top", type=int, default=200, help="pae mode: how many top designs")
     ap.add_argument("--write-pae", action="store_true")
+    ap.add_argument("--candidates", default=None,
+                    help="rank mode: read candidates from this CSV instead of "
+                         "data/legal_3mutants_ranked.csv (needs a `cdrh3` column)")
     ap.add_argument("--force", action="store_true", help="re-score designs already in the CSV")
     a = ap.parse_args()
 
@@ -447,7 +450,7 @@ def main():
         # wild type first (the baseline every design is compared against), then the
         # candidates; the production batch has its own mode so parallel rank workers
         # do not all re-submit it.
-        items = load_panel()[:1] + load_ranked(a.limit, a.offset, a.spread)
+        items = load_panel()[:1] + load_ranked(a.limit, a.offset, a.spread, a.candidates)
     elif a.mode == "pae":
         done = already_scored()
         scored = [r for r in done.values() if r.get("interface_pae")]
