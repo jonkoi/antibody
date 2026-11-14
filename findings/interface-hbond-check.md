@@ -121,3 +121,50 @@ isomerisation motif, which is the cost of its position here.
   enumerated design a second CDR3 tryptophan, a documented oxidation and
   aggregation liability (PMID 30608647, 31678251). Three of our four carry both.
   `her2_cdrh3_61` carries neither, which is a further reason it leads.
+
+---
+
+## Addendum — fold confidence, requested by the reviewer, and it fails again
+
+The reviewer asked for per-design ipTM/iPAE against the wild-type control. Here
+it is, from the same seed-42 folds:
+
+| design | ipTM | pTM | pLDDT | gPDE | Δ ipTM vs control | **H-bond** |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| *WT control* | *0.923* | *0.946* | *97.06* | *0.30* | — | *2.63 Å* |
+| cw_5 | **0.933** | 0.953 | 95.57 | 0.30 | **+0.010** | 3.20 Å |
+| cw_1 | 0.914 | 0.939 | 96.37 | 0.31 | −0.009 | 4.07 Å |
+| cw_3 | 0.911 | 0.937 | 95.98 | 0.32 | −0.012 | **7.38 Å** |
+| cw_2 | 0.905 | 0.934 | 96.42 | 0.32 | −0.018 | **6.74 Å** |
+| cw_4 | **0.860** | 0.902 | 94.27 | 0.37 | **−0.063** | 3.48 Å |
+
+**ipTM does not separate these designs, and where it does it points the wrong
+way.** Every design sits within 0.063 of the wild-type control. The design with
+the *best retained interface geometry* among the enumerated set, cw_4 at 3.48 Å,
+has the **lowest ipTM of all five**. cw_5 scores **above the wild-type control**.
+And cw_2/cw_3, which do not reproduce the crystal hydrogen bond at all, score
+0.905 and 0.911 — comfortably in the middle.
+
+So on our own submission candidates, with a matched control, **ipTM inverts the
+structural ranking.** This is the same conclusion as the shuffled-pair
+calibration (Boltz-2 ROC AUC 0.645), now demonstrated on the four sequences we
+are actually submitting.
+
+A coworker's independent run found the matching failure mode from the other
+direction: `WGGMGFYWWD` scores **0.94 ipTM while missing hotspots**, by anchoring
+confidently on one HER2 fragment while sliding off the other, so the global score
+stays high. **Only atom-level contact checks caught either case.**
+
+### Where this leaves the evidence
+
+Three criteria, three different orderings, none of them authoritative alone:
+
+| criterion | best | worst |
+| --- | --- | --- |
+| epitope recall (4.5 Å, all 4 hotspots) | **all 4/4 — no discrimination** | — |
+| specific Lys593 H-bond | her2_cdrh3_61 (2.51 Å) | cw_3 (7.38 Å) |
+| StaB-ddG binding penalty | cw_3 (0.17) | cw_5 (0.74) |
+| fold confidence (ipTM) | cw_5 (0.933) | cw_4 (0.860) |
+
+**The H-bond and ΔΔG orderings are near-opposite, and ipTM agrees with neither.**
+We submit one design that leads on each rather than pretending one criterion wins.

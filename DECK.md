@@ -105,6 +105,14 @@ aggregation of ipTM lands at **AUC 0.510–0.543**.
 > **A confidence threshold quoted without naming the folding model is
 > meaningless.**
 
+**And it failed again on our own four candidates.** Folded with a wild-type
+control, every design lands within **0.063 ipTM** of it — while the design with
+the *best* retained interface geometry has the **lowest ipTM of the set**, and one
+design scores *above* the wild-type control. A coworker's independent run found
+the mirror case: a design at **0.94 ipTM that misses the hotspots entirely**,
+anchoring confidently on one HER2 fragment while sliding off the other so the
+global score stays high. **Only atom-level contact checks caught either one.**
+
 *Do NOT present the 94.3% vs 0.2% as a model ranking — it inverts the real one.
 Lead with AUC, then use the thresholds to make the point about transferability.*
 
