@@ -1,0 +1,5 @@
+{
+  "schema_version": "foundry.cli.v1",
+  "top_fraction": 0.2,
+  "top_n": 100
+}
