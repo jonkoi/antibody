@@ -42,15 +42,75 @@ randomness (`TSRK`) and folding model are all environment knobs.
 ### Analysis
 
 ```bash
+# sequence diff + refold metrics
 python3 pipeline/analyze_designs.py \
   --designs runs/her2-validation-seed1/designs \
   --reference inputs/12-her2/her2_fv_1n8z.cif \
   --scored runs/her2-validation-seed1/scored/refold_metrics.csv
+
+# liabilities, biophysics and loop rigidity vs wild-type
+python3 pipeline/score_developability.py \
+  --designs runs/her2-validation-seed1/designs \
+  --reference inputs/12-her2/her2_fv_1n8z.cif
 ```
 
-Parses mmCIF directly (no external dependencies), diffs each design's designed
-window against wild-type extracted from the input structure, and joins the
-substitution counts to the refold metrics.
+Both parse mmCIF directly with no external dependencies. The first diffs each
+design's window against wild-type and joins to refold metrics; the second scores
+chemical liabilities and biophysical character.
+
+---
+
+## The two findings that drive selection
+
+### 1. Binding collapses with mutation count, and the novelty floor sits on the knee
+
+From the 524,346-variant FACS table, high-binder rate against CDRH3 edit distance
+from trastuzumab:
+
+| mutations | 1 | 2 | **3** | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| high binders | 96.0% | 97.5% | **90.0%** | 74.6% | 59.4% | 43.9% | 33.6% | 26.8% | 18.9% | 15.8% |
+
+One and two mutations bind best but **fail the novelty gate**. Three is the tightest
+design that passes, and it retains 90% high-binder rate. Every further mutation costs
+roughly 15 percentage points.
+
+The validation run produced designs at 3, 7, 7 and 9 mutations — three of four in the
+19–34% regime when they could have been at 90%. **Nothing in the generation step
+constrains mutation count, and it should.**
+
+The constraint is harder than "mutate exactly 3 positions": abguard requires ≥3
+substitutions from trastuzumab *and* from every one of the 525,063 provided CDRH3s,
+so a candidate that is a one-residue extension of a known 2-mutant is rejected.
+Selecting 3-mutants is a constrained search over the provided set, not sampling.
+
+### 2. Wild-type trastuzumab CDRH3 is itself a developability liability
+
+`WGGDGFYAMD` carries an **Asp-Gly isomerization hotspot** (the worst chemical
+liability class), a Met oxidation site, and **three glycines in ten residues** — an
+unusually flexible loop.
+
+This makes the thermostability axis more winnable than it first appears, provided
+designs are selected for it. Almost any redesign of positions 102–103 removes the DG,
+and any substitution away from Gly rigidifies the loop.
+
+In the validation run, **design_2 (`WGPPYFYAMD`) replaced two glycines with two
+prolines** — the textbook loop-thermostabilisation move, reducing unfolded-state
+backbone entropy. It is simultaneously at the novelty floor (3 mutations, 90%
+high-binder regime) and liability-reduced. That combination is the selection target.
+
+**Caveat, stated plainly:** removing a DG hotspot improves *chemical* stability, not
+melting temperature. Only the Gly→Pro rigidification bears directly on the measured
+thermostability axis. And a rigidified loop can equally lock a non-binding
+conformation — that needs structural review, not a score.
+
+### Why there is no learned stability model here
+
+Nebius `stab-ddg` computes *binding* ΔΔG, not folding stability. FoldX and CamSol are
+licensed and unavailable. No dataset in the challenge carries a melting temperature —
+FACS has binding classes, SPR has `kd_nM` only. **A thermostability predictor cannot
+be trained on provided data**, so `score_developability.py` reports mechanistic risk
+with ordinal weights and explicitly does not predict Tm.
 
 ---
 
@@ -137,6 +197,7 @@ pipeline/
   run_design.sh            batch driver (design → prepare → fold → score)
   run-her2.upstream.sh     organisers' 4-design example, kept for reference
   analyze_designs.py       sequence diff + metric join
+  score_developability.py  liabilities, biophysics, loop rigidity vs wild-type
 inputs/12-her2/            design spec and 1N8Z-derived input structure
 runs/her2-validation-seed1/
   designs/                 4 generated structures
