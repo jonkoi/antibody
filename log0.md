@@ -750,3 +750,94 @@ shortlist doesn't go stale.
 3. Check on `runs/team15-hotspot-n100-seed7` before the VM shuts down — unclear if it's
    another worker's redundant re-run or a deliberate second seed for more candidates.
 4. Resolve the `pipeline/` script duplication (unchanged from Session B).
+
+---
+
+## Session D — 14 Nov 2026, ~14:10–15:20 UTC
+
+### Asked
+User gave explicit open-ended authorisation ("everything is permitted, unlimited token
+usage") and asked whether there was more to do — more models, more sources, a "hail mary".
+Picked the single highest-leverage thing still missing: **TASKS.md's "open question 2" —
+does the designed CDRH3 keep the real HER2 epitope, or does the folding model just report
+high confidence while the loop drifts? — had been answered for the de novo track
+(`runs/denovo-vhh/README.md`: it fails) but never for the optimisation track, the one we
+are actually submitting from.**
+
+### 🔴 THE FINDING: 3 of our 18 shortlisted candidates drift off-epitope. 14 are confirmed clean.
+
+Reused the de novo investigation's own validated method — **unguided Boltz-2 co-fold with
+MSA**, the only method in this whole project that passed its own positive control (19/19
+residues on the real trastuzumab–HER2 crystal epitope) — but applied it to the *paired*
+Fv (light + designed heavy + both HER2 fragments) instead of a VHH monomer, since nobody
+had checked whether the optimisation track's own designs keep the epitope either.
+
+Submitted all 18 shortlist candidates + a wild-type control as one 19-target JapanFold
+Boltz-2 job (`use_msa_server: true`), **$0.041 total, 36 seconds median per target.**
+Reused `pipeline/denovo/epitope.py`'s residue-contact scoring (extended to check both
+antibody chains against both HER2 fragments, not just one VHH chain against one).
+Full results:
+[`runs/final-shortlist/epitope_check_18.csv`](runs/final-shortlist/epitope_check_18.csv),
+raw confidence
+[`runs/final-shortlist/boltz2_unguided_confidence.json`](runs/final-shortlist/boltz2_unguided_confidence.json),
+contact analysis
+[`runs/final-shortlist/boltz2_unguided_epitope_contacts.json`](runs/final-shortlist/boltz2_unguided_epitope_contacts.json),
+structures in
+[`runs/final-shortlist/boltz2_unguided/`](runs/final-shortlist/boltz2_unguided/).
+
+**WT control reproduces the crystal epitope again** (recall 1.0, 4/4 core hotspots,
+global ipTM 0.976) — the positive control holds for the paired format too, not just VHH.
+
+| verdict | count | which |
+| --- | --- | --- |
+| **PASS** (recall ≥0.85, all 4 core hotspots) | **14** | `WGQDGPYWMD WGGKGPYWMD WGGRGPYWMD WGGMGPYWMD WGKDGPYWMD WGWDGFYWWD WGLDGPYWMD WGWDGPYMMD WGGWGPYWMD WGWDGPYWMD WGHDGPYHMD WGHDGPYWMD WGPDGPYWMD WGTDGPYWMD` |
+| **CAUTION** (recall 0.84, misses one of the 4) | 1 | `WGDDGPYWMD` (misses hotspot 591) |
+| **FAIL** (recall ≤0.53, misses ≥2 of the 4) | **3** | `WGYDGPYWMD` `WGHDGPYMMD` `WGGMGFYWWD` |
+
+**All 5 of the top-5 hand-picked candidates from Sessions B/C pass**, including
+`WGHDGPYWMD` (the #1-by-affinity pick) and `WGGKGPYWMD`/`WGGRGPYWMD` (the liability-swap
+picks). Nothing about the final recommendation changes — but 3 of the other 13 in the
+backup pool should be dropped, and weren't known to be bad until this check.
+Cleaned list (the 14 PASS, i.e. the backup pool minus the 3 failures and the 1 caution):
+[`runs/final-shortlist/optimisation_shortlist_epitope_confirmed.csv`](runs/final-shortlist/optimisation_shortlist_epitope_confirmed.csv).
+
+### A real trap inside this finding: global ipTM alone would have given the wrong answer for `WGGMGFYWWD`
+
+`WGGMGFYWWD` has a *high* global ipTM (0.938) and even a fairly high antibody↔HER2
+cross-chain average (0.831) — it would pass a confidence-only screen. **Its actual
+residue contacts miss both hotspots on the second HER2 fragment** (591, 593), recall
+0.368. Checking its per-pair chain ipTM shows why: light↔HER2-D and heavy↔HER2-D are both
+~0.74–0.79, clearly lower than its light↔HER2-C/heavy↔HER2-C pairs (~0.89–0.91) — it
+anchors confidently on one HER2 fragment and drags the rest of its score up while sliding
+off the other. **This is the same trap the de novo README flagged** ("interface
+confidence is an artefact of target distortion... the more the target is deformed, the
+higher the reported interface confidence") — here with the opposite surface reading:
+confidence can stay high while part of the complex is simply wrong. Conversely,
+`WGHDGPYWMD` has a *low* global ipTM (0.807) yet **full** epitope recall (0.947,
+4/4 core) — low confidence here just means looser packing, not a wrong site. **Read the
+actual contacts, never the confidence number alone — true in both directions.**
+
+### Other "more to do" considered and explicitly deferred (not chased this session)
+
+For the record, since the user asked broadly what else exists to try:
+- **Re-rank with the new XGBoost binding model** from the concurrent session (Session C)
+  once leakage-discounted — real candidate work, not done.
+- **ESM-C variant/pseudo-likelihood scores** (confirmed available on Nebius `esmc-300m`/
+  `esmc-600m` per the `docs/sota-antibody-design.md` correction) — cheap, orthogonal,
+  untried on our shortlist.
+- **`antifold` (Nebius) or BoltzGen `protein-redesign` (JapanFold)** as independent
+  generators to break out of the single `F6P A8W` local optimum — bigger, untried bets.
+- **Multi-seed Boltz-2 replica variance** on the final picks, the same way log0 finding 6
+  quantified AF2/Boltz-2 single-run noise — would firm up confidence in the epitope-check
+  numbers above, which are single-replica (`diffusion_samples: 1`).
+These are judged lower-leverage than the epitope check, not worthless — pick any of them
+up if there is still time after the submission itself is locked.
+
+### Next actions, revised again
+1. **Drop `WGYDGPYWMD`, `WGHDGPYMMD`, `WGGMGFYWWD` from anything submitted** — confirmed
+   off-epitope. Treat `WGDDGPYWMD` as a last resort, not a first choice.
+2. Final recommended set, now epitope-confirmed on top of novelty/liability/affinity:
+   **`WGGKGPYWMD` or `WGGRGPYWMD` as the lead** (liability-neutral-or-better, full epitope
+   recall, top-5 affinity), **`WGHDGPYWMD`** alongside for its affinity edge (epitope
+   confirmed, liability cost disclosed), backups from the 14-row confirmed list.
+3. Everything else from Sessions B/C's next-actions lists still stands.
