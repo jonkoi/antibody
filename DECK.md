@@ -1,4 +1,4 @@
-# Team 15 — ranked HER2 antibody designs
+# Team 05 — ranked HER2 antibody designs
 
 Four-minute version · 7 slides · Oslo Antibodies × AI Hackathon · 14 Nov 2026
 
