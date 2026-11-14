@@ -56,7 +56,6 @@ runs/*/refold_boltz2/
 # chai1_replica_features.csv IS committed (2.5MB, 14,721 rows): regenerating it
 # means a 25-minute parse of a 487MB archive, so it is cheap insurance.
 nebius-runs/
-=======
 # --- third-party raw datasets (Chinery et al., via hackathon bucket) ---
 data/her2-trastuzumab/
 data/README.upstream.md
