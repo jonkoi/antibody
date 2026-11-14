@@ -1,0 +1,31 @@
+Total number of designs:    24
+Duplicates found: 4. Removing duplicates. 20 designs remain.
+
+Num designs that pass the has_x filter with threshold 0 where lower is better: 20
+Remaining designs: 20
+Num designs that pass the filter_rmsd filter with threshold 2.5 where lower is better: 0
+Remaining designs: 0
+Num designs that pass the filter_rmsd_design filter with threshold 2.5 where lower is better: 17
+Remaining designs: 0
+Num designs that pass the CYS_fraction filter with threshold 0 where lower is better: 20
+Remaining designs: 0
+Num designs that pass the ALA_fraction filter with threshold 0.3 where lower is better: 20
+Remaining designs: 0
+Num designs that pass the GLY_fraction filter with threshold 0.3 where lower is better: 20
+Remaining designs: 0
+Num designs that pass the GLU_fraction filter with threshold 0.3 where lower is better: 20
+Remaining designs: 0
+Num designs that pass the LEU_fraction filter with threshold 0.3 where lower is better: 20
+Remaining designs: 0
+Num designs that pass the VAL_fraction filter with threshold 0.3 where lower is better: 20
+Remaining designs: 0
+Only 0 designs pass filters. We highly recommend relaxing the thresholds.
+
+
+copy top design files: 0it [00:00, ?it/s]copy top design files: 10it [00:00, 1715.25it/s]
+copy diversity files:   0%|          | 0/20 [00:00<?, ?it/s]copy diversity files: 100%|██████████| 20/20 [00:00<00:00, 1268.52it/s]
+Files + CSV saved to /home/ubuntu/japanfold/state/agent/jobs/6b8b9c9dc2b24bece9e7019132dccaee.10/out/final_ranked_designs
+
+Writing design files is done. Now making plots for a final summary .pdf file with statistics.
+Making liability plots for top 0 sequences.: 0it [00:00, ?it/s]Making liability plots for top 0 sequences.: 0it [00:00, ?it/s]
+A description of metrics and summarizing plots was written to: /home/ubuntu/japanfold/state/agent/jobs/6b8b9c9dc2b24bece9e7019132dccaee.10/out/final_ranked_designs/results_overview.pdf
