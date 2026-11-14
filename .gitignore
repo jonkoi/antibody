@@ -1,0 +1,24 @@
+# --- secrets: never commit ---
+.env
+*.env
+credentials.private.json
+*.private.json
+team-15
+*.pem
+id_rsa*
+
+# --- archives that CONTAIN secrets ---
+participant-12.zip
+*-hackathon-codes*.txt
+
+# --- vendored third-party skills (large, not our work) ---
+.claude/skills/
+
+# --- run outputs ---
+__pycache__/
+*.pyc
+
+# --- third-party material, kept locally but not redistributed ---
+ai-antibodies-hackathon-apheris.pdf
+summery.md
+amass-biomedical-evidence-scout.skill

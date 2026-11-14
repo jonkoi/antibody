@@ -1,0 +1,29 @@
+{
+  "provenance": {
+    "cli_contract_version": "foundry.cli.v1",
+    "ended_at": "2026-11-14T09:50:04.369155Z",
+    "inputs": [
+      {
+        "path": "/work/runs/her2/design",
+        "tier": "none"
+      }
+    ],
+    "module": {
+      "name": "apheris-rfd4-proteina",
+      "version": "0.3.0"
+    },
+    "resolved_config": {
+      "top_fraction": 0.2,
+      "top_n": 2
+    },
+    "started_at": "2026-11-14T09:50:03.890832Z"
+  },
+  "result": {
+    "apo_queries": "apo/queries.json",
+    "queries": "holo/queries.json",
+    "selection": "selection.csv",
+    "template": "holo/template.cif"
+  },
+  "schema_version": "foundry.cli.v1",
+  "task": "refold-prepare"
+}

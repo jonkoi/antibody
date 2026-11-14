@@ -1,0 +1,56 @@
+{
+  "provenance": {
+    "cli_contract_version": "foundry.cli.v1",
+    "ended_at": "2026-11-14T09:51:01.030100Z",
+    "inputs": [
+      {
+        "path": "/work/runs/her2/prepared/holo/queries.json",
+        "tier": "none"
+      }
+    ],
+    "module": {
+      "name": "apheris-boltz",
+      "version": "1.3.0"
+    },
+    "resolved_config": {
+      "missing_msas": "fail",
+      "num_diffusion_samples": 1,
+      "query_failures": "skip",
+      "recycling_steps": 3,
+      "sampling_steps": 200,
+      "seeds": [
+        42
+      ],
+      "template_paths": [
+        "../prepared/holo/template.cif"
+      ],
+      "weights": "/app/weights/boltz2_conf.ckpt",
+      "write_detailed_scores": true
+    },
+    "started_at": "2026-11-14T09:50:05.177630Z"
+  },
+  "result": {
+    "predictions": [
+      {
+        "detailed_scores_path": "her2_cdrh3_3/seed_42/her2_cdrh3_3_seed_42_sample_1_detailed_scores.cbor.gz",
+        "path": "her2_cdrh3_3/seed_42/her2_cdrh3_3_seed_42_sample_1_model.cif",
+        "query_id": "her2_cdrh3_3",
+        "query_index": 0,
+        "sample": 1,
+        "scores_path": "her2_cdrh3_3/seed_42/her2_cdrh3_3_seed_42_sample_1_scores.json",
+        "seed": 42
+      },
+      {
+        "detailed_scores_path": "her2_cdrh3_2/seed_42/her2_cdrh3_2_seed_42_sample_1_detailed_scores.cbor.gz",
+        "path": "her2_cdrh3_2/seed_42/her2_cdrh3_2_seed_42_sample_1_model.cif",
+        "query_id": "her2_cdrh3_2",
+        "query_index": 1,
+        "sample": 1,
+        "scores_path": "her2_cdrh3_2/seed_42/her2_cdrh3_2_seed_42_sample_1_scores.json",
+        "seed": 42
+      }
+    ]
+  },
+  "schema_version": "foundry.cli.v1",
+  "task": "predict"
+}
