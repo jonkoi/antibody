@@ -1,0 +1,27 @@
+{
+  "provenance": {
+    "cli_contract_version": "foundry.cli.v1",
+    "ended_at": "2026-11-14T11:26:16.796744Z",
+    "inputs": [
+      {
+        "path": "/work/runs/team15-claude-n100-seed1/design",
+        "tier": "none"
+      }
+    ],
+    "module": {
+      "name": "apheris-rfd4-proteina",
+      "version": "0.3.0"
+    },
+    "resolved_config": {
+      "criterion": "auto",
+      "model": "boltz2",
+      "predictions": "../boltz2"
+    },
+    "started_at": "2026-11-14T11:26:14.092987Z"
+  },
+  "result": {
+    "metrics": "refold_metrics.csv"
+  },
+  "schema_version": "foundry.cli.v1",
+  "task": "refold-score"
+}

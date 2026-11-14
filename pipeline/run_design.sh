@@ -23,7 +23,15 @@ SEED=${SEED:-1}
 TSRK=${TSRK:-}                              # sequence randomness: 1 exploratory, 2 balanced
 RECYCLE=${RECYCLE:-high/front_loaded}       # recommended for antibodies
 INPUT=${INPUT:-Data/12-her2/her2_cdrh3.yaml}
-FOLDER=${FOLDER:-boltz2}                    # scoring model name
+# Folding model. Boltz-2 confidence does NOT discriminate binders from non-binders
+# (AUC 0.645; 94.3% of known non-binders pass ipTM > 0.7; its top-10 ranking contained
+# no real binders). OpenFold3-OpenBind reproduces AlphaFold3, which is the only model in
+# the benchmark with usable ranking signal. See pipeline/calibrate_iptm.py.
+FOLDER=${FOLDER:-openfold3-of3ob}
+# Replicas per design. Single-run scores are noise: between-replica RMSD has a median of
+# 4.5-5.5 A and sd(ipTM) is 0.012-0.016, so differences below ~0.035 are unresolvable with
+# one run. See pipeline/analyze_replica_variance.py.
+REPLICAS=${REPLICAS:-5}
 OUT=${OUT:-runs/her2-${WEIGHTS}-n${N}-seed${SEED}}
 
 # map scoring model name -> image tag; template-capable models fold HER2 in context
@@ -62,16 +70,19 @@ prepare() {
 }
 
 predict() {
-  echo ">> fold with $FOLDER -> $OUT/$FOLDER"
+  echo ">> fold with $FOLDER, $REPLICAS replicas -> $OUT/$FOLDER"
   rm -rf "$OUT/$FOLDER"
-  local cmd template=()
+  local cmd template=() seeds
   cmd=$(docker inspect -f '{{join .Config.Cmd " "}}' "$FOLD")
   [ "$TEMPLATED" = 1 ] && template=(--template-paths "$OUT/prepared/holo/template.cif")
+  # distinct seeds AND diffusion samples: a single run cannot resolve the score
+  # differences we care about, and replica agreement is itself a useful filter
+  seeds=$(seq -s, 42 $((42 + REPLICAS - 1)))
   # shellcheck disable=SC2086
   "${run[@]}" "$FOLD" $cmd predict \
     --input "$OUT/prepared/holo/queries.json" --output "$OUT/$FOLDER" \
     "${template[@]}" --write-detailed-scores true \
-    --num-diffusion-samples 1 --seeds 42 --query-failures skip
+    --num-diffusion-samples "$REPLICAS" --seeds "$seeds" --query-failures skip
 }
 
 score() {

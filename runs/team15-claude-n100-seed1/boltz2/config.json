@@ -1,0 +1,16 @@
+{
+  "missing_msas": "fail",
+  "num_diffusion_samples": 1,
+  "query_failures": "skip",
+  "recycling_steps": 3,
+  "sampling_steps": 200,
+  "schema_version": "foundry.cli.v1",
+  "seeds": [
+    42
+  ],
+  "template_paths": [
+    "../prepared/holo/template.cif"
+  ],
+  "weights": "/app/weights/boltz2_conf.ckpt",
+  "write_detailed_scores": true
+}
