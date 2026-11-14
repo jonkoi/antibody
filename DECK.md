@@ -45,12 +45,18 @@ Two monotonic curves, running opposite ways, from **two independent sources** �
 our novelty gate and the organisers' measured library.
 
 - **Zero of our 13 conservative designs survived.**
-- **Two designs were rejected for being 0 mutations from an already-measured
-  sequence** — the model re-invented known variants.
-- The gate forces every submission into the regime where measured binding is
-  least likely.
+- **Two were rejected for being 0 mutations from an already-measured sequence** —
+  the model re-invented known variants.
 
-*Speaker note: this is the whole pitch. If you only land one slide, land this.*
+**Then we over-read our own table — and slide 6 is the correction.** We concluded
+the gate makes conservative designs impossible. It does not. The honest reading is
+**generate-then-filter cannot find them**: RFD4 scatters mutations across the
+binding interface, which is exactly where the 524,346-variant library samples
+densest.
+
+*Speaker note: show the table, then immediately say we drew the wrong conclusion
+from it. The correction is the strongest part of the talk — do not let the
+audience think we are still claiming impossibility.*
 
 ---
 
@@ -104,7 +110,47 @@ Lead with AUC, then use the thresholds to make the point about transferability.*
 
 ---
 
-## Slide 6 — What we did differently
+## Slide 6 — Only 4 of the 10 positions matter ★
+
+We computed the HER2 contacts directly from 1N8Z. **Of the 10 designable
+residues, exactly four touch HER2: W99, G103, F104, Y105.** Only seven HER2
+residues sit within 5 Å of CDRH3, and the run's four targeted hotspots are four
+of those seven — so the target set was right.
+
+**Our own ΔΔG scan has a blind spot we should admit.** It rated G103A at 0.042
+kcal/mol, essentially zero. But G103's **backbone carbonyl** makes the **2.42 Å
+hydrogen bond to Lys593 — the tightest contact in the entire interface.** Alanine
+keeps the backbone carbonyl, so **alanine scanning is structurally blind to
+backbone-mediated contacts.** We would have gone on mutating it.
+
+**That reframes the whole problem.** ≥3 mutations can be placed entirely on the
+six positions that touch nothing — and there are **2,091,995** such sequences at
+3–4 substitutions. Our generative designs preserved **at most 2 of 4** contacts;
+zero of 71 preserved three or more.
+
+A second approach, enumerating on the non-contact positions, produced five designs
+at **3 substitutions** that **preserve 3 of 4 contacts** — and **all five pass the
+novelty gate.** Validated with StaB-ddG, which neither approach trained:
+
+| design | ΔΔG kcal/mol | fold worse than WT |
+| --- | ---: | ---: |
+| **cw_3** | **0.17 ± 0.17** | **1.3×** |
+| **cw_4** | **0.20 ± 0.16** | **1.4×** |
+| cw_2 | 0.42 ± 0.17 | 2.0× |
+| cw_1 | 0.50 ± 0.18 | 2.3× |
+| cw_5 | 0.74 ± 0.18 | 3.5× |
+
+Median ΔΔG **0.42** against our **1.38**. All five inside the ~7× noise floor,
+where only 3 of our 14 were — and **cw_3 and cw_4 are statistically
+indistinguishable from wild-type**, which nothing of ours achieved.
+
+**So the lesson is about method, not about the design space:** the conservative
+region was never exhausted, it was unreachable by a generator that did not know
+which positions to leave alone.
+
+---
+
+## Slide 7 — What we did differently
 
 **1. Novelty-gate first, then fold.** The default pipeline folds the top 20, then
 discovers rejections — it wasted **30% of our GPU** on designs that cannot be
@@ -130,24 +176,34 @@ liability. *(LAP reference, PLOS Comput Biol 2024;20(3):e1011881.)*
 
 ---
 
-## Slide 7 — The result
+## Slide 8 — The submission
 
-**14 designs, all `team-validate` clean against the 525,063-sequence gate.**
-Class `novel`, 97.4–97.8% identity to trastuzumab, minimum distance 3–4
-mutations.
+**Four designs. All novelty-verified against 525,063 reference CDRH3s, all
+passing the hard expression filters (zero unpaired cysteines, zero N-glyc
+sequons).**
 
-> **FILL AT 16:30 — the PhDs' pick goes here.**
-> Lead candidate: `_61` (`SLGSADYAFD`) — best predicted binding ΔΔG of the 14
-> (0.42 kcal/mol, ~2× of wild-type, inside the assay noise floor), high tier on
-> the measured-data model (0.840), and tied-cleanest on developability (5
-> liabilities, none in CDRH3).
+| # | design | CDRH3 | subs | contacts kept | ΔΔG (fold) | liab | why |
+| --- | --- | --- | ---: | ---: | ---: | ---: | --- |
+| 1 | **cw_3** | WGGMGPYWMD | 3 | **3/4** | **0.17 (1.3×)** | 8 | WT-equivalent on independent energetics |
+| 2 | **cw_2** | WGGKGPYWMD | 3 | **3/4** | 0.42 (2.0×) | 8 | best predicted KD of the low-liability three |
+| 3 | **cw_4** | WGGRGPYWMD | 3 | **3/4** | 0.20 (1.4×) | 8 | WT-equivalent, 2 high-severity |
+| 4 | **her2_cdrh3_61** | SLGSADYAFD | 6 | 1/4 | 0.42 (2.0×) | **5** | **the hedge** — fails independently |
 
-*If the PhDs choose differently, use their pick and say why — a biologist's call
-over a model's is itself the Judgment point.*
+**Why a hedge.** The first three share `F104P` and `A106W` and differ at one other
+position, so they are three variations on one design, not three independent bets.
+F104 is a verified contact (3.42 Å stacking with Phe573). **If F104P is wrong, all
+three fail together.** `_61` has a different mutation pattern, the cleanest
+developability of anything we scored, and costs nothing in predicted affinity.
+
+**Two flags we are not hiding:** every coworker design carries **two CDR3
+tryptophans** (retained W99 plus `A106W`), an oxidation and aggregation hotspot.
+And cw_1/cw_5 were dropped partly because keeping both D102 and G103 reintroduces
+wild-type's own `DG` isomerisation motif — **preserving the contact brings back the
+parent's liability.**
 
 ---
 
-## Slide 8 — Where we are honest ★ (this is the 40%)
+## Slide 9 — Where we are honest ★ (this is the 40%)
 
 **Five claims we inherited and disproved by checking them against raw data:**
 
@@ -158,6 +214,8 @@ over a model's is itself the Judgment point.*
 | `stab-ddg` scores thermostability | it scores **binding** ΔΔG for point mutations |
 | the IMGT CDRH3 is our design window | it is `SR` + our 10 residues + `Y` |
 | epitope hotspots are Leu573 / Val591 | they are **PHE 573 / ILE 591** — our own annotation was wrong; the organisers' spec, which drove the run, was correct |
+| "the novelty gate makes conservative designs impossible" (**ours, slide 3**) | **false** — five enumerated designs at 3 substitutions all pass. 0% acceptance was a property of *our generator*, not the design space |
+| our ΔΔG scan found no hotspot at G103 (0.042 kcal/mol) | **blind spot** — G103's contact is its **backbone carbonyl** (2.42 Å to Lys593, the interface's tightest), and alanine keeps it. Alanine scanning cannot see backbone contacts |
 
 **Three things we will not claim:**
 
@@ -193,7 +251,7 @@ hedge across both rather than pick a winner.
 
 ---
 
-## Slide 9 — What we would do next
+## Slide 10 — What we would do next
 
 1. **Novelty-aware generation.** Constrain sampling against the 525,063
    reference *during* design, not after. Our 30% rejection rate is pure waste,
@@ -241,7 +299,7 @@ scaffold as a **theranostic / stability play**, not a Herceptin replacement.
 
 ---
 
-## Slide 10 — Close
+## Slide 11 — Close
 
 **We did not beat trastuzumab. We measured why the competition is hard, and we
 know which of our numbers to trust.**
