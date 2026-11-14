@@ -81,9 +81,17 @@ def load_references(facs_zip: Path, spr_csv: Path, length: int) -> tuple[set[str
     return refs, dict(skipped)
 
 
-def enumerate_legal(wild_type: str, refs: set[str], distance: int) -> list[dict]:
+def enumerate_legal(wild_type: str, refs: set[str], distance: int,
+                    allowed: list[int] | None = None) -> list[dict]:
+    """`allowed` restricts which positions may be substituted (0-based).
+
+    Used to confine the search to the positions that measured winners actually
+    change, which both shrinks the space and keeps every candidate inside the
+    region the data supports.
+    """
     n = len(wild_type)
     alts = {i: [c for c in ALPHABET if c != wild_type[i]] for i in range(n)}
+    sites = sorted(allowed) if allowed is not None else list(range(n))
 
     # group references by which positions differ from wild-type
     by_mask: dict[int, list[str]] = defaultdict(list)
@@ -99,7 +107,7 @@ def enumerate_legal(wild_type: str, refs: set[str], distance: int) -> list[dict]
     gly = {i for i, c in enumerate(wild_type) if c == "G"}
     wt_has_dg = "DG" in wild_type
 
-    for positions in itertools.combinations(range(n), distance):
+    for positions in itertools.combinations(sites, distance):
         p_mask = sum(1 << p for p in positions)
 
         # A per mask, keeping only masks that can still produce a violation
@@ -156,20 +164,30 @@ def main() -> int:
     parser.add_argument("--spr", type=Path, required=True)
     parser.add_argument("--wild-type", default=WILD_TYPE)
     parser.add_argument("--distance", type=int, default=MIN_DISTANCE)
+    parser.add_argument("--positions", type=str,
+                        help="restrict substitutions to these 1-based positions, "
+                             "e.g. '3,4,6,8,9' for the winner-tolerant set")
     parser.add_argument("--out", type=Path)
     args = parser.parse_args()
 
     wt = args.wild_type
+    allowed = None
+    if args.positions:
+        allowed = [int(p) - 1 for p in args.positions.split(",")]
+        if min(allowed) < 0 or max(allowed) >= len(wt):
+            print("error: --positions out of range", file=sys.stderr)
+            return 1
     started = time.time()
     refs, skipped = load_references(args.facs, args.spr, len(wt))
     print(f"references at length {len(wt)}: {len(refs):,}   "
           f"(excluded by length: {skipped or 'none'})")
 
-    space = len(list(itertools.combinations(range(len(wt)), args.distance))) \
+    sites = allowed if allowed is not None else list(range(len(wt)))
+    space = len(list(itertools.combinations(sites, args.distance))) \
         * (len(ALPHABET) - 1) ** args.distance
     print(f"candidate space at distance {args.distance}: {space:,}")
 
-    survivors = enumerate_legal(wt, refs, args.distance)
+    survivors = enumerate_legal(wt, refs, args.distance, allowed)
     elapsed = time.time() - started
 
     dg = sum(s["removes_dg"] for s in survivors)

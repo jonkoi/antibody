@@ -174,6 +174,53 @@ WGGMGPYNMD  WGGMGWYKMD  WGGRGPYHMD  WGGRGWYQMD  WGGWGPYQMD  WGGKGPYRMD
 Caveat: the prior rests on seven measurements. Treat the position split as a strong hint,
 not a law, and note that "tolerant" conflates "does not break binding" with "improves it".
 
+### 0c. 9% of our "legal" set was never submittable — and expression is an unscored gate
+
+Prompted by `docs/sota-antibody-design.md`, which notes that in two independent competitions
+amino-acid composition predicted expression far better than any structure-confidence metric
+(AUC 0.77 / 0.91 versus 0.55–0.58 for ipTM and pLDDT), and that a no-cysteine filter alone
+raised one campaign's functional rate from 5.9% to 10.6%. **Expression is a gate that is
+never scored: a design that does not express is measured on none of the three axes.**
+
+`pipeline/score_expression.py` applies that screen. Running it exposed a real defect:
+
+| set | hard-filter failures |
+| --- | --- |
+| distance-3 legal set (51,417) | **4,689 (9.1%)** — 4,609 unpaired cysteine, 83 N-glyc sequon |
+| distance-4 tolerant set (448) | **65 (14.5%)** — all unpaired cysteine |
+
+`enumerate_candidates.py` checked only novelty, so roughly one in eleven candidates we had
+been calling legal would have been rejected by abguard on an unpaired cysteine. Wild-type
+has four cysteines (one structural disulfide per domain), so an odd count in a design is the
+signature. **Always run the expression screen before ranking.**
+
+**The composition signal itself is flat for this track, and that is expected.** Optimisation
+designs differ from wild-type at 10 of 227 residues, so global composition barely moves —
+zero composition warnings across all 51,417. The ranking value of Glu/Lys composition will
+show up in the de novo track, where sequences are genuinely new. For the optimisation track
+this script is a filter, not a ranker.
+
+**Funnel after every filter:**
+
+```
+823,080  all distance-3 variants
+ 51,417  clear the novelty gate            (6.2%)
+ 46,728  ...and pass the hard filters      (9.1% lost to cysteine / sequon)
+  1,588  ...and touch only tolerant positions
+    615  ...and remove the DG hotspot
+     55  ...and carry one exact winner substitution   -> data/shortlist_optimisation.csv
+```
+
+All 12 candidates recommended in 0b survive the hard filters, so that recommendation stands.
+
+**⚠️ Tension to carry into the pitch.** The top candidates all raise net charge (+4.2 to
++6.2 against wild-type's +3.2), because the winner-favoured substitutions remove an aspartate
+at position 4 and add Lys/Arg/Gln at position 8. High positive charge in a CDR is associated
+with polyreactivity and poor pharmacokinetics, and it moves *away* from the Glu-rich
+composition that predicted expression in both competitions. The affinity prior and the
+expression prior disagree here. We have not resolved it; a charge-neutral subset of the 615
+is the obvious hedge.
+
 ### 1. Binding collapses with substitution count; the novelty floor sits on the knee
 Computed over all 524,346 FACS variants:
 
@@ -400,3 +447,23 @@ no ipTM field at all, so the AF3 noise figure is a PAE-derived proxy.*
 
 Raw third-party tables are gitignored; derived outputs (`data/legal_3mutants*.csv`) are
 committed.
+
+### Dead end: distance 4 does not let you stack known-good substitutions
+
+The "no legal candidate hits two exact winner substitutions" result in 0b looked like a
+budget problem, so we tested whether a fourth substitution relaxes it. It does not.
+
+`enumerate_candidates.py` gained a `--positions` flag and was run at distance 4 restricted
+to the five winner-tolerant positions (3, 4, 6, 8, 9): 651,605 candidates, 77 s.
+
+**Only 448 clear the novelty gate — 0.1%, versus 6.2% at distance 3 across all positions.**
+Restricting to the tolerant positions makes novelty *harder*, because those are exactly the
+positions the FACS screen explored most heavily, so the references blanket that subspace.
+
+Worse, **none of the 448 carries even one exact winner substitution** (max winner score 4.0,
+all from non-winner residues at tolerant positions). Hitting a winner substitution moves a
+candidate toward the measured sequences, which is what makes it illegal. **The
+well-supported region is the excluded region at every distance** — this is structural, not
+a budget artefact, and adding substitutions will not fix it.
+
+Also, 65 of the 448 contain an unpaired cysteine, which is what prompted finding 0c.
