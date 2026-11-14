@@ -114,6 +114,66 @@ her2_cdrh3_90   WGSLTFYAMD   G101S D102L G103T
 Four of these also remove the Met oxidation site (M107F). **These are the submission
 candidates the stock pipeline threw away.**
 
+### 0b. The seven measured winners tell us which positions to touch — and we were wrong
+
+`pipeline/winner_prior.py`. Of 182 non-WT variants with a measured KD, seven beat
+trastuzumab's 0.146 nM median. They are the most direct evidence in the challenge about
+which positions tolerate change, and nothing in the pipeline was using them.
+
+```
+WGSQGFYAYD  0.0234 nM   G3S D4Q M9Y        WGGEGFYAMD  0.1170 nM   D4E
+WGSDGWYAMD  0.0608 nM   G3S F6W            WGGDGFYLMD  0.1280 nM   A8L
+WGGQGFYAMD  0.0900 nM   D4Q                WGGDGFYEMD  0.1420 nM   A8E
+WGGSGPYLFD  0.0950 nM   D4S F6P A8L M9F
+```
+
+| | positions |
+| --- | --- |
+| **Tolerant** (changed by a winner) | **3, 4, 6, 8, 9** — pos 4 in four of seven |
+| **Conserved** (untouched by all seven) | **1, 2, 5, 7, 10** |
+
+Favoured residues: pos 3 → S; pos 4 → Q, S, E; pos 6 → W, P; pos 8 → L, E; pos 9 → Y, F.
+
+**This corrects a heuristic we had been applying.** Wild-type is glycine-rich at positions
+2, 3 and 5, and Gly→Pro rigidifies a loop, so our developability shortlist favoured proline
+at position 5 — **1,412 of its 1,927 candidates put Pro there. But position 5 is untouched
+by every measured winner.** Position 3 is the glycine winners *do* change (G3S, twice), so
+**position 3 is the defensible rigidification site and position 5 is not.** The earlier
+shortlist was systematically aimed at the wrong glycine.
+
+**The novelty gate excludes exactly the combinations the data says work.** Of 1,794 legal
+candidates that touch only tolerant positions, 1,668 hit *zero* exact winner substitutions
+and 126 hit *one*. **None hits two or more** — because any pairing of two known-good
+substitutions lands within distance 2 of a measured sequence and is therefore illegal. This
+is the central tension of the challenge, now quantified: the best-characterised designs are
+precisely the ones we may not submit.
+
+**Three substitutions cannot satisfy every criterion at once:**
+
+| filter | candidates |
+| --- | --- |
+| touch only tolerant positions | 1,794 |
+| …and remove the DG hotspot | 690 |
+| …and place Pro at a glycine | 116 |
+| …**and both** | **0** |
+
+Removing DG costs a substitution at position 4; rigidifying costs one at position 3; that
+leaves exactly one for affinity. **The budget is the design problem** — the three axes
+cannot be optimised separately and recombined.
+
+**Consensus shortlist.** The winner prior and the FACS sequence model are independent, and
+their top-200 sets overlap 120/200. Both rank the same 12 candidates first — all remove the
+DG hotspot, all touch only winner-tolerant positions, all carry one exact winner
+substitution (F6W or F6P):
+
+```
+WGGRGWYKMD  WGGRGPYRMD  WGGRGPYQMD  WGGWGPYNMD  WGGWGWYKMD  WGGWGPYRMD
+WGGMGPYNMD  WGGMGWYKMD  WGGRGPYHMD  WGGRGWYQMD  WGGWGPYQMD  WGGKGPYRMD
+```
+
+Caveat: the prior rests on seven measurements. Treat the position split as a strong hint,
+not a law, and note that "tolerant" conflates "does not break binding" with "improves it".
+
 ### 1. Binding collapses with substitution count; the novelty floor sits on the knee
 Computed over all 524,346 FACS variants:
 
