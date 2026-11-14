@@ -467,3 +467,34 @@ well-supported region is the excluded region at every distance** — this is str
 a budget artefact, and adding substitutions will not fix it.
 
 Also, 65 of the 448 contain an unpaired cysteine, which is what prompted finding 0c.
+
+### Cross-validation with the parallel session — and a correction to finding 3
+
+A parallel session independently implemented the same ipTM calibration
+(`pipeline/calibrate_confidence.py`, `findings/lane-b-confidence.md`) against the same
+matrices. **The two implementations agree exactly**: AUC 0.754 / 0.645 / 0.568 for
+AlphaFold3 / Boltz-2 / Chai-1, identical sample counts (91 vs 8,137; 91 vs 8,190; 89 vs
+7,952) and identical class medians. Two independent codebases, same numbers.
+
+**They also caught something I overstated.** Their confidence intervals are
+AF3 [0.696, 0.813] and Boltz-2 [0.584, 0.707] — **these overlap.** AF3 beating Boltz-2 is
+only marginally resolved, so "switch to an AF3-family model because its AUC is higher" is
+weaker than I presented it in finding 3.
+
+The decisive argument is the *absolute* one, not the relative one:
+
+- At ipTM ≥ 0.7, **Boltz-2 passes 94.3% of known non-binders.** No threshold on Boltz-2 is
+  usable as a gate, whatever its AUC relative to AF3.
+- A defensible Boltz-2 cut-off (5% false positives) discards almost every real pair.
+- AF3 reaches a 3.0% false-positive rate at ipTM ≥ 0.7 while keeping 47% of real pairs.
+
+So the `run_design.sh` default change to OpenFold3-OpenBind stands, but **the justification
+should be "no Boltz-2 threshold separates binders from non-binders", not "AF3 has a
+significantly better AUC".** The second claim is not supported at these sample sizes.
+
+**Repo hygiene.** `pipeline/` now holds 25 scripts from several sessions, with genuine
+duplication: `calibrate_iptm.py` / `calibrate_confidence.py` and
+`analyze_replica_variance.py` / `calibrate_replicas.py` do the same analyses, and
+`build_submission_table.py` / `make_submission.py` overlap. Nothing has been deleted,
+because other sessions are still working — but before the pitch, one of each pair should
+go, and the Execution criterion is 20% of the score.
