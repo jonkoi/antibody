@@ -1,9 +1,9 @@
-# Team 15 — 4 minutes, 6 slides
+# Team 15 — 4 minutes, 7 slides
 
 Backing detail for Q&A: **[DECK-DETAIL.md](DECK-DETAIL.md)** ·
 Submission: **[team15_01.csv](team15_01.csv)** · Evidence: **[findings/](findings/)**
 
-Budget ~40 seconds per slide. One idea each. The bold line is the thing to say;
+Budget ~35 seconds per slide. One idea each. The bold line is the thing to say;
 everything else is there to be pointed at, not read out.
 
 ---
@@ -83,7 +83,39 @@ best geometry. We stopped using it.*
 
 ---
 
-## 5 — The four designs
+## 5 — Literature as an instrument, not a footnote
+
+We used **AMASS** (43M papers + 1.2M trials, dual-corpus) as a *measuring device*
+in the loop. It changed the design strategy and **caught three of our errors.**
+
+**It gave us the target.** Querying the trastuzumab–HER2 epitope, then computing
+contacts on 1N8Z, is what produced **the four-residue answer on slide 2** — and
+found that **Gly103's 2.42 Å hydrogen bond to Lys593 is the tightest contact in
+the interface**, made by a *backbone carbonyl*. That is the single fact our whole
+approach turned on, and it is why our alanine scan had been blind to it.
+
+**It stopped three wrong claims reaching this talk:**
+
+| we were about to say | it found |
+| --- | --- |
+| nanobody NB46 "has Tm 90 °C" | that figure is retention during radiolabeling — **no Tm for NB46 exists** |
+| cite a nanobody Tm predictor as our number | all three are nanobody-specific, **none transfers** to our scaffold |
+| thermostability implies better binding | the two are **explicitly uncorrelated** (PMID 39593207) |
+
+**It priced our biggest risk.** Our top designs share `F104P` + `A106W`. AMASS
+found **no** published data for either substitution — and documented CDR3
+tryptophan as an oxidation and aggregation liability (PMID 30608647, 31678251).
+So we labelled it a correlated bet instead of a result.
+
+> **Every claim carries an amassId plus PMID/DOI. The useful part wasn't the
+> citations — it was being told we were wrong three times before a judge did.**
+
+*Say: this is also the one scoring axis we could not compute, so literature is
+all we have — and we say so rather than substituting a proxy.*
+
+---
+
+## 6 — The designs, ranked
 
 | # | design | CDRH3 | what it leads on |
 | --- | --- | --- | --- |
@@ -101,7 +133,7 @@ two framework changes, so it's a controlled test, not a fourth guess.
 
 ---
 
-## 6 — What we got wrong
+## 7 — What we got wrong
 
 Nine claims we inherited or made ourselves, and disproved by checking:
 
@@ -128,9 +160,9 @@ thermostability. We argue it from literature and say so.
 
 - [ ] `team15_01.csv` attached, @Davide Campagna tagged, nothing else in the message
 - [ ] Filename prefix confirmed with the organisers
-- [ ] Slide 5 matches the CSV exactly — 4 rows, `fw_WGGMGPYWMD` in slot 3
+- [ ] Slide 6 matches the CSV exactly — 4 rows, `fw_WGGMGPYWMD` in slot 3
 - [ ] **No thermostability number spoken aloud** — literature rationale only
 - [ ] No affinity claim below ~7× (the assay's own replicate spread)
 - [ ] Chinery et al. (doi:10.1101/2024.03.26.586756) credited for the HER2 data
-- [ ] Both presenters have read `findings/interface-hbond-check.md` — slide 5 changed late
+- [ ] Both presenters have read `findings/interface-hbond-check.md` — slide 6 changed late
 - [ ] Read aloud once, timed. **If it runs over 4:00, cut slide 4's table to two rows.**

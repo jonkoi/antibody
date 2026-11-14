@@ -6,7 +6,7 @@ Y105 A106 M107 D108; sequential numbering, which matches the PDB auth numbering 
 
 ## UPDATE 2026-11-14 (after the Boltz-2 refold of enum_1 to enum_5; supersedes the backbone argument in section 2)
 
-Verified on `runs/enumeration track/boltz2/*/seed_42/*_model.cif` (same dihedral code):
+Verified on `runs/enumerated/boltz2/*/seed_42/*_model.cif` (same dihedral code):
 
 | model | phi(101) | phi(104) |
 | --- | --- | --- |
@@ -27,7 +27,7 @@ Verified on `runs/enumeration track/boltz2/*/seed_42/*_model.cif` (same dihedral
 - Still standing: both positions pack against VL (section 2), A106W adds a second CDR3 Trp
   (section 4), and no experimental data exist for the pair (section 1).
 
-## The five designs (runs/enumeration track/submission.csv)
+## The five designs (runs/enumerated/submission.csv)
 
 | id | CDRH3 | substitutions vs trastuzumab | own predicted KD |
 | --- | --- | --- | --- |
@@ -141,7 +141,7 @@ Usable tool: ITsFlexible classifies CDR3 loops as rigid/flexible
 - Also: `AMBC_Sd5ej9sWSdBtbZfD4s4Pc1SVZDC` PMID 21390239; `AMBC_W0ka7h6RaNlpPCnFCcssmBJmXE8` PMID 27612038;
   `AMBC_QpARilhT4Alv1iMBbu9s5HsE5YR` PMID 21440514.
 
-**Your own liability report** (`runs/enumeration track/all_liabilities.json`): wild-type has 2 TrpOx flags
+**Your own liability report** (`runs/enumerated/all_liabilities.json`): wild-type has 2 TrpOx flags
 (CDR3 W99, FR4 W103); each design has **3**, because A106W makes CDRH3 a two-Trp loop (medium
 severity). W106 also sits two residues from Asp108; the electrostatics paper suggests negative
 neighbours raise risk, which the authors' two-parameter model could test. enum_2 to enum_4 happen to
