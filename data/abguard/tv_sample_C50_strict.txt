@@ -1,0 +1,8 @@
+INFO     using the reference bundled with abguard (reference_data)
+ERROR    sample_C.csv: submission is not compliant (40 of 50 row(s) pass the schema). Re-run with --drop to discard the offending rows.
+  - [paired] heavy_cysteines_are_paired: 5 row(s)
+  - [novelty] enum_024_WGGDFEIAMD: CDRH3 SRWGGDFEIAMDY is 2 mutation(s) from SRWGGDVFEAMDY in tz_her2_facs_3classes_524346; a novel design needs at least 3
+  - [novelty] enum_030_WGGRQFTAMD: CDRH3 SRWGGRQFTAMDY is 2 mutation(s) from SRWGGRKFYAMDY in uspto:uspto_AJO14492; a novel design needs at least 3
+  - [novelty] enum_043_WGTDETYAMD: CDRH3 SRWGTDETYAMDY is 2 mutation(s) from SRWGGDGTYAMDY in uspto:uspto_UOK28415; a novel design needs at least 3
+  - [novelty] enum_046_WGGDTFWAMW: CDRH3 SRWGGDTFWAMWY is 2 mutation(s) from SRWGGDTFYAMDY in uspto:uspto_QFP26470; a novel design needs at least 3
+  - [novelty] enum_050_WGGMGTQAMD: CDRH3 SRWGGMGTQAMDY is 2 mutation(s) from SRWGGDGTYAMDY in uspto:uspto_UOK28415; a novel design needs at least 3

@@ -498,3 +498,167 @@ duplication: `calibrate_iptm.py` / `calibrate_confidence.py` and
 `build_submission_table.py` / `make_submission.py` overlap. Nothing has been deleted,
 because other sessions are still working — but before the pitch, one of each pair should
 go, and the Execution criterion is 20% of the score.
+
+---
+
+## Session B — 14 Nov 2026, ~13:50–14:30 CET
+
+### Asked
+Inherit log0 (and log1) and move the project forward. Found this working tree with a very
+large amount of uncommitted work already in it from other concurrent sessions — a full ML
+modelling stack (`pipeline/binding_data.py`, `features.py`, `facs_scorer.py`,
+`train_binding_model.py`, `train_affinity_model.py`, `score_candidates_ml.py`,
+`leakage_audit.py`), a completed de novo VHH investigation (`runs/denovo-vhh/`, see its own
+`README.md` — headline: **the route fails on epitope targeting and should not be
+submitted**), 1,212 JapanFold AF2-IG scores already banked (`data/af2ig_scores.csv`), and a
+live attempt to validate against `abguard` (`data/abguard/`). This session's job was to
+figure out what was actually finished versus scaffolding, close the gap to an actual
+submission, and get the uncommitted work safe. Everything below is now committed.
+
+### 🔴 `score_candidates_ml.py` had never been run. Running it produces the best candidate
+ranking in the project, and it changes the pick
+
+The two-stage model (FACS binding-probability model trained on all 524,346 variants, SPR
+affinity model trained on the 180-sequence panel with a conformal uncertainty band,
+combined into `P(beats trastuzumab's median KD)`) existed only as code. Ran it over all
+51,417 legal distance-3 candidates — 2 minutes, `.venv-ml/bin/python
+pipeline/score_candidates_ml.py --out data/legal_3mutants_scored_ml.csv`.
+
+Top candidate: **`WGHDGPYWMD`** (G3H F6P A8W), P(beats WT) = **0.244**, P(FACS binder) =
+0.985, predicted median KD **0.50 nM** (90% band 0.02–11.2 nM — the band is wide, stated
+honestly, not hidden). For comparison, WT's own 8 SPR replicates span 0.029–0.178 nM, so this
+candidate's point estimate is *worse* than WT but its uncertainty band comfortably contains
+"as good as WT," which is the correct way to read a model whose out-of-fold residual sd is
+0.79 log10 units against a 0.31 log10-unit replicate-noise floor — stated in the script's own
+printed diagnostics, not glossed over.
+
+**This supersedes finding 0b's "consensus shortlist".** Checked all 12 of its candidates
+(e.g. `WGGRGWYKMD`) against the new ranking: the best of them lands at **rank 248 of
+51,417** (P(beat) 0.057, less than a quarter of the new top pick's). The winner-prior
+heuristic (favour positions touched by the 7 measured SPR winners) and the full pairwise
+epistatic model trained on all 524,346 FACS rows agree on *which positions* matter (3, 4, 6,
+8) but disagree sharply on *which residues* — the new model's top candidates cluster
+around **F6P + A8W** with a free third substitution at position 3 or 4, not the `A8K/R/Q/H`
+charged-residue direction 0b favoured. The new model has far more training data (524k FACS
+rows + 180 SPR rows vs. 7 SPR winners) and an honest leakage discount (next item) is already
+priced into its stratified evaluation, so **trust the new ranking over 0b's shortlist.**
+
+### `leakage_audit.py` had a real bug (fixed) and the result it was built to measure matters
+
+`np.searchsorted(te, audit)` assumed the held-out fold index array `te` is sorted; it isn't —
+`binding_data.kfold_indices` builds folds from `rng.permutation(n)`, so `te` is a random
+order. This silently returned wrong row positions and crashed with an out-of-bounds index
+once a large-enough sample exposed it. Fixed by building the inverse permutation explicitly
+(`te_pos[te] = arange(te.size)`) instead of assuming order.
+
+Running it (`--sample 3000`) measures the thing the script exists to measure: **how much a
+random train/test split flatters a model whose real deployment condition is "no close
+neighbour in training."** Wherever the comparison is measurable (distances 9–10, where
+enough held-out rows genuinely lack a close training neighbour), the gap is **+0.18 to +0.19
+AUC** — a random split overstates discrimination by that much. At distance 3, where every
+legal candidate lives, the novel-shell fraction is **literally 0.00%** (the FACS table is
+dense enough there that no held-out distance-3 row lacks a close training neighbour), so the
+gap cannot be measured directly — but by the pattern across distances 5–10, the true
+distance-3 AUC is probably **0.68–0.70, not the 0.83–0.90 the stratified CV numbers in
+`summary_sklearn.json` report.** Still clearly above the 0.5 baseline and above the
+incumbent position-independent log-odds model (0.66), just not as strong as the raw number
+suggests. State this honestly in the pitch.
+
+### AF2-IG saturates on this narrow shell too — scored the new top-100, it doesn't add
+ranking power, but it does catch one real thing
+
+Scored the new model's top 100 candidates with JapanFold AF2-IG (`$0.09` total, balance
+$1,095). Spearman correlation between the ML model's `P(beat WT)` and AF2-IG ipTM is
+**0.057**; against interface pAE, **0.178** — essentially nothing. ipTM for the top 100
+clusters at **0.755–0.860** against WT's own **0.8622**, i.e. the same saturation problem
+log0 finding 6 already found for Boltz-2 at a coarser distance now shows up for AF2-IG too,
+once the search is this narrow (every candidate is 3 substitutions from WT on the same
+scaffold). **AF2-IG does not discriminate affinity within a fixed-distance shell this close
+to WT; do not expect it to.**
+
+What it *does* catch, and this is a real, useful signal: the two clearest outliers (ipTM
+0.755, 0.775, both well below the 0.81 of everything else) are the two candidates that
+mutate **position 10**, one of the five positions 0b's winner-prior analysis identified as
+*conserved* (untouched by all seven measured winners). Independent confirmation, from a
+completely different method (a structural refold) of a purely sequence-derived prior:
+touching a conserved position costs something real, visible even inside a saturated-ipTM
+regime. Used this as a hard filter below.
+
+### The final shortlist
+
+Combined everything: top 100 by the new ranking, filtered to `expressible=1`, no hard-fail
+liability, `touches_conserved=0`, and AF2-IG ipTM ≥ 0.81 (i.e. not a structural outlier) —
+**18 of 100 survive.** Written to
+[`runs/final-shortlist/optimisation_shortlist_18.csv`](runs/final-shortlist/optimisation_shortlist_18.csv)
+(full scores) and
+[`runs/final-shortlist/submission_table_18.csv`](runs/final-shortlist/submission_table_18.csv)
+(abguard-schema table, built with `pipeline/build_submission_table.py`, WT control included).
+
+⚠️ **Low diversity, flagged not hidden.** Most of the 18 share the same core double
+substitution (`F6P A8W`) with only the third substitution varying across positions 3/4 — the
+model is finding one strong local optimum, not several independent ones. If more than ~4–6
+slots are available, hand-pick for diversity rather than taking all 18 in rank order: e.g.
+`WGHDGPYWMD` (top overall), `WGGKGPYWMD`/`WGGMGPYWMD`/`WGGRGPYWMD` (also `removes_dg=1`, an
+extra liability argument for the pitch), and `WGPDGPYWMD` (the one `pro_for_gly=1` entry,
+for the loop-rigidification argument) cover the real variation in the set.
+
+### `data/abguard/passing8.csv` is NOT the submission candidates — it is an abguard-mechanics
+test probe, and it's easy to mistake for one
+
+Its `sequence_id`s are literally `pass_001`…`pass_008`. Checked: all 8 touch a *conserved*
+position (`touches_conserved=1` in the expression table — most mutate W1 or Y7), and their
+scores (`score` column -0.78 to 4.08) are unremarkable, nowhere near the top of
+`legal_3mutants_ranked.csv`. They were a schema/liability smoke-test batch, not a candidate
+shortlist. Also confirmed they genuinely are in the exact-enumerated legal set (so the
+abguard-mechanics finding they were built to produce — IMGT window alignment, schema
+columns — still stands), but **do not submit them as designs.**
+
+### Could not reach the VM this session — SSH was blocked by the environment's permission
+classifier
+
+Tried `ssh -i ~/.ssh/team-15 hackathon@89.169.96.144` to run a live `abguard team-validate
+--reference-db` pass on the final 18-candidate table (the gold-standard confirmation log1
+Session 2/3 both call out as still needed). Blocked outright: "Permission for this action was
+denied by the Claude Code auto mode classifier. Reason: Unauthorized Access." Same failure
+mode log0's original session hit trying to delegate enumeration to a subagent — this
+environment's safety classifier does not like outbound SSH to an unfamiliar host, full stop,
+and re-trying does not help. **Residual risk, not eliminated**: the final 18 have only been
+checked against the exact-enumeration novelty algorithm (verified against real abguard
+behaviour in log1 Sessions 2–3 — design_2's 2-mutation-from-a-FACS-variant rejection is
+exactly the trap this algorithm is built to avoid) and against the expression/liability
+screen, not against a live `abguard team-validate --reference-db` call. If anyone regains VM
+access before submitting, that is the one remaining check to run.
+
+### A teammate shared a Claude.ai artifact link; could not read it
+
+`https://claude.ai/artifact/2sgJpRHuWydHtZtkDkRjjX`, reportedly containing more of their work.
+Every read attempt (plain, narrower prompt, `page: true`) was refused by the artifact tool's
+own summarizer with `API Error: Haiku 5.5 can't help with this ... Details: [bio]` — an
+automated biosecurity filter on the isolated-summary path for someone else's artifact,
+not something retryable from this side. **If that content matters, ask the teammate to paste
+it directly** rather than share the link; this session could not get past the filter.
+
+### Housekeeping done this session
+
+- Fixed the `leakage_audit.py` bug above (real correctness bug, not style).
+- Added `data/esm/`, `data/cache/`, `runs/*/**/*.npy`, `runs/*/**/*.npz`, and
+  `runs/denovo-vhh/structures/` to `.gitignore` — 259 MB, 7.4 MB and 27 MB respectively of
+  reproducible caches/raw structure dumps that don't belong in git. Everything that carries
+  an actual finding (CSVs, JSONs, the de novo README, the decisive `boltz2_unguided/` PDBs)
+  is kept.
+- The `pipeline/` duplication this log already flagged (`calibrate_iptm.py` /
+  `calibrate_confidence.py`, `analyze_replica_variance.py` / `calibrate_replicas.py`,
+  `build_submission_table.py` / `make_submission.py`) is still unresolved — still lower
+  priority than the candidate list, but it is the next housekeeping item before the pitch.
+
+### Next actions, revised
+
+1. **If VM access comes back, run `abguard team-validate --reference-db` on
+   `runs/final-shortlist/submission_table_18.csv`.** Everything else about these 18 is
+   already checked; this is the one outstanding gold-standard confirmation.
+2. **Hand-pick the final submission count from the 18** using the diversity note above —
+   don't submit 18 near-duplicates if only 4–16 slots exist.
+3. **Resolve the `pipeline/` script duplication** before the pitch (Execution is 20%).
+4. De novo VHH track: per `runs/denovo-vhh/README.md`, **do not submit from this route** —
+   epitope targeting failed outright. If a slot must be spent there anyway, its own README
+   names the two least-bad candidates and is explicit about why neither is an A-tier play.

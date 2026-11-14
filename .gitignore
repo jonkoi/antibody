@@ -72,3 +72,16 @@ data/spr-supplementary/
 # full complex structures: ~920KB each, regenerable from the committed seed/config
 runs/**/inference_samples/**/*.cif
 runs/**/boltz2/**/*_model.cif
+
+# Mehta et al. splits + trained classifiers copied off the VM (third-party, CC BY 4.0, 82 MB)
+data/apheris-analysis-models/
+
+# --- large reproducible ML caches (regenerate via pipeline/esm_embed.py, train_*_model.py) ---
+data/esm/
+data/cache/
+runs/*/**/*.npy
+runs/*/**/*.npz
+
+# --- de novo VHH: raw BoltzGen structure dump, superseded by runs/denovo-vhh/README.md
+# and analysis.json; the decisive boltz2_unguided/ PDBs are kept ---
+runs/denovo-vhh/structures/

@@ -1,0 +1,50 @@
+[
+ {
+  "name": "w2-cont-full-s11",
+  "id": "d3116851dea08d95f373840d00ca7511",
+  "seed": 11,
+  "spec": "entities:\n  - protein:\n      id: A\n      sequence: CHQLCARGHCWGPGPTQCVNCSQFLRGQECVEECRVLQGLPREYVNARHCLPCHPECQPQNGSVTCFGPEADQCVACAHYKDPPFCVARCPSGVKPDLSYMPIWKFPDEEGACQPCPIN\n      binding_types:\n        binding: 69,70,72,73,81,82,83,84,85,91,103,105,108,110,112,114,115,116,117\n  - protein:\n      id: H\n      sequence: 115..130\n"
+ },
+ {
+  "name": "w2-cont-full-s12",
+  "id": "9252e06c0909c13897b457ee52f60889",
+  "seed": 12,
+  "spec": "entities:\n  - protein:\n      id: A\n      sequence: CHQLCARGHCWGPGPTQCVNCSQFLRGQECVEECRVLQGLPREYVNARHCLPCHPECQPQNGSVTCFGPEADQCVACAHYKDPPFCVARCPSGVKPDLSYMPIWKFPDEEGACQPCPIN\n      binding_types:\n        binding: 69,70,72,73,81,82,83,84,85,91,103,105,108,110,112,114,115,116,117\n  - protein:\n      id: H\n      sequence: 115..130\n"
+ },
+ {
+  "name": "w2-cont-full-s13",
+  "id": "a1ce58433f25546544d4129d55a57f9e",
+  "seed": 13,
+  "spec": "entities:\n  - protein:\n      id: A\n      sequence: CHQLCARGHCWGPGPTQCVNCSQFLRGQECVEECRVLQGLPREYVNARHCLPCHPECQPQNGSVTCFGPEADQCVACAHYKDPPFCVARCPSGVKPDLSYMPIWKFPDEEGACQPCPIN\n      binding_types:\n        binding: 69,70,72,73,81,82,83,84,85,91,103,105,108,110,112,114,115,116,117\n  - protein:\n      id: H\n      sequence: 115..130\n"
+ },
+ {
+  "name": "w2-cont-full-s14",
+  "id": "8065788b26bb924393acb5956625a1e6",
+  "seed": 14,
+  "spec": "entities:\n  - protein:\n      id: A\n      sequence: CHQLCARGHCWGPGPTQCVNCSQFLRGQECVEECRVLQGLPREYVNARHCLPCHPECQPQNGSVTCFGPEADQCVACAHYKDPPFCVARCPSGVKPDLSYMPIWKFPDEEGACQPCPIN\n      binding_types:\n        binding: 69,70,72,73,81,82,83,84,85,91,103,105,108,110,112,114,115,116,117\n  - protein:\n      id: H\n      sequence: 115..130\n"
+ },
+ {
+  "name": "w2-cont-core-s15",
+  "id": "80fc889f890ddad50ca0df868a2850cf",
+  "seed": 15,
+  "spec": "entities:\n  - protein:\n      id: A\n      sequence: CHQLCARGHCWGPGPTQCVNCSQFLRGQECVEECRVLQGLPREYVNARHCLPCHPECQPQNGSVTCFGPEADQCVACAHYKDPPFCVARCPSGVKPDLSYMPIWKFPDEEGACQPCPIN\n      binding_types:\n        binding: 83,84,85,103,105,108\n  - protein:\n      id: H\n      sequence: 115..130\n"
+ },
+ {
+  "name": "w2-cont-core-s16",
+  "id": "282986e34d220e4224fe83a8fb72ba3e",
+  "seed": 16,
+  "spec": "entities:\n  - protein:\n      id: A\n      sequence: CHQLCARGHCWGPGPTQCVNCSQFLRGQECVEECRVLQGLPREYVNARHCLPCHPECQPQNGSVTCFGPEADQCVACAHYKDPPFCVARCPSGVKPDLSYMPIWKFPDEEGACQPCPIN\n      binding_types:\n        binding: 83,84,85,103,105,108\n  - protein:\n      id: H\n      sequence: 115..130\n"
+ },
+ {
+  "name": "w2-cont-nb-s17",
+  "id": "8bec05c6d92af3a2236d8fcdb33abef4",
+  "seed": 17,
+  "spec": "entities:\n  - protein:\n      id: A\n      sequence: CHQLCARGHCWGPGPTQCVNCSQFLRGQECVEECRVLQGLPREYVNARHCLPCHPECQPQNGSVTCFGPEADQCVACAHYKDPPFCVARCPSGVKPDLSYMPIWKFPDEEGACQPCPIN\n      binding_types:\n        binding: 69,70,72,73,81,82,83,84,85,91,103,105,108,110,112,114,115,116,117\n        not_binding: 1,5,10,15,20,25,30,35,40,45,50\n  - protein:\n      id: H\n      sequence: 115..130\n"
+ },
+ {
+  "name": "w2-cont-nb-s18",
+  "id": "71ffa57ca9ff0dc4570ebdc7a366cb5e",
+  "seed": 18,
+  "spec": "entities:\n  - protein:\n      id: A\n      sequence: CHQLCARGHCWGPGPTQCVNCSQFLRGQECVEECRVLQGLPREYVNARHCLPCHPECQPQNGSVTCFGPEADQCVACAHYKDPPFCVARCPSGVKPDLSYMPIWKFPDEEGACQPCPIN\n      binding_types:\n        binding: 69,70,72,73,81,82,83,84,85,91,103,105,108,110,112,114,115,116,117\n        not_binding: 1,5,10,15,20,25,30,35,40,45,50\n  - protein:\n      id: H\n      sequence: 115..130\n"
+ }
+]

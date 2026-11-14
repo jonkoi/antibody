@@ -1,0 +1,11 @@
+sequence_id,cdrh3,cdrh3_confidence,identity_to_trastuzumab,novelty_class,required_cdrh3_mutations,cdrh3_min_distance,cdrh3_nearest_source,cdrh3_nearest_id,is_novel_enough
+probe_001_WGGDGFYAMD,SRWGGDGFYAMDY,0.8753755,1.0,novel,3,0,trastuzumab,,false
+probe_002_WGWSGFYAMD,SRWGWSGFYAMDY,0.8753755,0.9911894273127754,novel,3,2,trastuzumab,,false
+probe_003_WGSSGFYAMD,SRWGSSGFYAMDY,0.8753755,0.9911894273127754,novel,3,2,trastuzumab,,false
+probe_004_WGSQGFYAYD,SRWGSQGFYAYDY,0.87778646,0.986784140969163,novel,3,3,trastuzumab,,
+probe_005_WGPPYFYAMD,SRWGPPYFYAMDY,0.8753755,0.986784140969163,novel,3,3,trastuzumab,,
+probe_006_WGPPGFYAFD,SRWGPPGFYAFDY,0.8836793,0.986784140969163,novel,3,3,trastuzumab,,
+probe_007_WGSTGFYAFD,SRWGSTGFYAFDY,0.8836793,0.986784140969163,novel,3,3,trastuzumab,,
+probe_008_WGPSGFYAFD,SRWGPSGFYAFDY,0.8836793,0.986784140969163,novel,3,3,trastuzumab,,
+probe_009_WGSPGFYAFD,SRWGSPGFYAFDY,0.8836793,0.986784140969163,novel,3,3,trastuzumab,,
+probe_010_WGSLTFYAMD,SRWGSLTFYAMDY,0.8753755,0.986784140969163,novel,3,3,trastuzumab,,

@@ -1,0 +1,21 @@
+INFO     probes_AB.csv: 10 design(s), 0 with hard errors, 67 liability occurrence(s)
+shape: (13, 5)
+┌─────────┬────────────────────────┬──────────┬───────────────┬───────────┐
+│ tag     ┆ name                   ┆ severity ┆ n_occurrences ┆ n_designs │
+│ ---     ┆ ---                    ┆ ---      ┆ ---           ┆ ---       │
+│ str     ┆ str                    ┆ str      ┆ u32           ┆ u32       │
+╞═════════╪════════════════════════╪══════════╪═══════════════╪═══════════╡
+│ Isom    ┆ Isomerization          ┆ high     ┆ 11            ┆ 10        │
+│ DeAmdH  ┆ Deamidation (high)     ┆ high     ┆ 10            ┆ 10        │
+│ FragH   ┆ Fragmentation (high)   ┆ high     ┆ 0             ┆ 0         │
+│ mCys    ┆ Missing cysteine       ┆ high     ┆ 0             ┆ 0         │
+│ xCys    ┆ Extra cysteine         ┆ high     ┆ 0             ┆ 0         │
+│ Ngly    ┆ N-linked glycosylation ┆ high     ┆ 0             ┆ 0         │
+│ TrpOx   ┆ Trp oxidation          ┆ medium   ┆ 21            ┆ 10        │
+│ DeAmdM  ┆ Deamidation (medium)   ┆ medium   ┆ 10            ┆ 10        │
+│ MetOx   ┆ Met oxidation          ┆ medium   ┆ 5             ┆ 5         │
+│ Hydro   ┆ Hydrolysis             ┆ medium   ┆ 0             ┆ 0         │
+│ FragM   ┆ Fragmentation (medium) ┆ medium   ┆ 0             ┆ 0         │
+│ DeAmdL  ┆ Deamidation (low)      ┆ low      ┆ 10            ┆ 10        │
+│ IntBind ┆ Integrin binding       ┆ low      ┆ 0             ┆ 0         │
+└─────────┴────────────────────────┴──────────┴───────────────┴───────────┘

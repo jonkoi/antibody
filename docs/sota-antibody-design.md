@@ -177,8 +177,9 @@ even survive to be measured.** Bits to Binders' retrospective filter (GC ≥60%,
   only for peptides.
 - **ESM-2 log-probabilities did not correlate with KD at all; ESM3 and ESM-C did correlate
   strongly with binding category.** If we use a PLM likelihood, it should be ESM-C, not ESM-2.
-  ⚠️ JapanFold exposes ESM-C as *embeddings* (mean/max/cls pooled), not as a
-  pseudo-log-likelihood, so this is not a drop-in — the LM head is not exposed.
+  ✅ **Directly runnable:** Nebius `esmc-300m` / `esmc-600m` produce "embeddings **or variant
+  scores**", i.e. the likelihood head is exposed there. JapanFold's ESM-C is embeddings-only,
+  so use the Nebius lane for this, not JapanFold.
 - Adaptyv's own conclusion on their ranking metrics (AF2 iPAE, ipTM): *"valuable preliminary
   screens but insufficiently predictive of true experimental binding probability or
   affinity … one could potentially filter out a large amount of viable binders."*
@@ -227,11 +228,28 @@ mixed support.**
 | Deterministic design rescoring + PAE matrix | **AF2-IG `write_pae: true`** | JapanFold | **$0.00084/target** |
 | Antibody-antigen co-fold, second opinion | **OpenDDE · Antibody-Antigen** (13,671 jobs run) | JapanFold | $0.011/target |
 | Epitope-restrained folding | `use_tfg_guidance` on OpenDDE | JapanFold | — |
-| AF3-family ranking (`log0`: AUC 0.754) | `alphafold3`, `openfold3-openbind`, `protenix-v2` | Nebius scientific-batch | — |
+| AF3-family ranking (`log0`: AUC 0.754) | `openfold3`, `protenix-v2` — **⚠️ real AlphaFold3 is NOT on our key** | Nebius | — |
 | Antibody inverse folding | `antifold` | Nebius | — |
-| Fab ΔΔG_folding scan | PyRosetta / Flex ddG (per `protein-scoring` skill) | Nebius | — |
+| Fab ΔΔG_folding scan | **nothing — not on any platform we have** (see note below) | — | — |
 | VHH Tm | NanoMelt (CC BY-NC-SA) | local pip | free |
 | PLM embeddings | ESM-C 300M/600M/6B, SaProt 650M/1.3B | JapanFold | ~$0.006/job |
+
+**⚠️ Provenance of this table.** The JapanFold rows were verified this session against a
+live `list_models` call. The Nebius rows were verified against `forge.py models` on our key
+(37 models). Everything else is inherited from `log1` Session 1 or from skill descriptions.
+Three rows were wrong on the first pass, because they were taken from skill descriptions
+rather than checked: real **AlphaFold3 is not on our Nebius key** (only `openfold3` and
+`protenix-v2`), there is **no Rosetta/PyRosetta/Flex ddG/FoldX** on it either, and **ESM-C
+variant scores are available** on Nebius after all. All three are fixed above.
+
+**🔴 The Rosetta ΔΔG_folding scan that Ng et al. used is NOT runnable on our stack.**
+`forge.py models` shows no Rosetta, PyRosetta, Flex ddG or FoldX on our Nebius key; the only
+ddG model is `stab-ddg`, which is *binding* ddG. `log0`'s original statement — "there is no
+folding-stability predictor in the Apheris or Nebius stacks for Fab format" — stands, and an
+earlier draft of this document contradicted it in error. **Consequence for the headline
+finding in Part 4:** we can *use* Ng et al.'s published, experimentally validated
+`VH S85N+R87T`, but we cannot *extend* their scan to search for better framework mutations
+ourselves. The framework lever is limited to what the literature already validated.
 
 **Correction to `log1` Session 1:** RFD4's `max_residues` is **512**, not 1024. The 1024
 figure is the global `reference_residues` and applies to AF2-IG and BoltzGen. RFdiffusion3

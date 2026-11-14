@@ -1,0 +1,73 @@
+# abguard --help
+                                                                                
+ Usage: abguard [OPTIONS] COMMAND [ARGS]...                                     
+                                                                                
+ Liability and novelty checks for antibody design submissions.                  
+                                                                                
+ Validates VHH, scFv and paired-antibody design tables against a dataframely    
+ schema (IMGT-numberable, valid amino acids, <=250 residues per chain, no       
+ unpaired cysteines, unique IDs) and reports sequence liabilities from the LAP  
+ Antibody Liability Reference (PLOS Comput Biol 2024;20(3):e1011881).           
+                                                                                
+ With --reference-db it also applies the novelty gate: a design must differ     
+ from trastuzumab and from every known CDRH3 by at least 3 mutations in CDRH3   
+ if it is a trastuzumab variant (>=70% identity), or 2 if it is de novo.        
+                                                                                
+╭─ Options ────────────────────────────────────────────────────────────────────╮
+│ --help          Show this message and exit.                                  │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭─ Commands ───────────────────────────────────────────────────────────────────╮
+│ team-validate         Validate one team's submission table.                  │
+│ competition-validate  Validate every team's submission in a folder and       │
+│                       reject shared sequences.                               │
+│ liability-report      Summarise how often each LAP liability occurs in a     │
+│                       submission.                                            │
+│ novelty-report        Show how novel each design is, without filtering       │
+│                       anything.                                              │
+│ reference-ingest      Add assay CSVs to the reference database, one table    │
+│                       per file.                                              │
+│ reference-build       Derive the reference CDRH3s once, so grading runs do   │
+│                       not have to.                                           │
+│ reference-export      Package a reference database as a Parquet bundle, for  │
+│                       shipping.                                              │
+│ reference-info        List the tables in a reference and which column each   │
+│                       is numbered on.                                        │
+│ reference             Print the LAP Antibody Liability Reference this tool   │
+│                       implements.                                            │
+│ dashboard             Launch the marimo liability dashboard.                 │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+
+# abguard reference (LAP liability reference)
+shape: (13, 5)
+┌─────────┬────────────────────────┬──────────┬──────────┬─────────────────────────────────────────┐
+│ tag     ┆ name                   ┆ severity ┆ scope    ┆ motif                                   │
+│ ---     ┆ ---                    ┆ ---      ┆ ---      ┆ ---                                     │
+│ str     ┆ str                    ┆ str      ┆ str      ┆ str                                     │
+╞═════════╪════════════════════════╪══════════╪══════════╪═════════════════════════════════════════╡
+│ DeAmdH  ┆ Deamidation (high)     ┆ high     ┆ cdr      ┆ N[GS] in CDRs                           │
+│ FragH   ┆ Fragmentation (high)   ┆ high     ┆ cdr      ┆ DP in CDRs                              │
+│ Isom    ┆ Isomerization          ┆ high     ┆ cdr      ┆ D[DGHST] in CDRs                        │
+│ mCys    ┆ Missing cysteine       ┆ high     ┆ position ┆ C not present at IMGT 23 or 104         │
+│ xCys    ┆ Extra cysteine         ┆ high     ┆ position ┆ C present outside IMGT 23 and 104       │
+│ Ngly    ┆ N-linked glycosylation ┆ high     ┆ fv       ┆ N[^P][ST] in variable fragment          │
+│ DeAmdM  ┆ Deamidation (medium)   ┆ medium   ┆ cdr      ┆ N[AHNT] in CDRs                         │
+│ Hydro   ┆ Hydrolysis             ┆ medium   ┆ cdr      ┆ NP in CDRs                              │
+│ FragM   ┆ Fragmentation (medium) ┆ medium   ┆ cdr      ┆ TS in CDRs                              │
+│ TrpOx   ┆ Trp oxidation          ┆ medium   ┆ cdr      ┆ W in CDRs                               │
+│ MetOx   ┆ Met oxidation          ┆ medium   ┆ cdr      ┆ M in CDRs                               │
+│ DeAmdL  ┆ Deamidation (low)      ┆ low      ┆ cdr      ┆ [STK]N in CDRs                          │
+│ IntBind ┆ Integrin binding       ┆ low      ┆ fv       ┆ GPR|RGD|RYD|LDV|DGE|KGD|NGR in variable │
+│         ┆                        ┆          ┆          ┆ fragment                                │
+└─────────┴────────────────────────┴──────────┴──────────┴─────────────────────────────────────────┘
+
+# abguard reference-info (bundled reference)
+INFO     bundle built by abguard 0.1.0 with scheme=imgt min_confidence=0.1 (2.0 MB zstd)
+shape: (1, 5)
+┌───────────────┬────────┬─────────────────┬───────────┬─────────┐
+│ table         ┆ n_rows ┆ sequence_column ┆ id_column ┆ n_bytes │
+│ ---           ┆ ---    ┆ ---             ┆ ---       ┆ ---     │
+│ str           ┆ i64    ┆ str             ┆ str       ┆ i64     │
+╞═══════════════╪════════╪═════════════════╪═══════════╪═════════╡
+│ abguard_cdrh3 ┆ 610109 ┆ null            ┆ null      ┆ 2028925 │
+└───────────────┴────────┴─────────────────┴───────────┴─────────┘

@@ -1,0 +1,2 @@
+sequence_id,cdrh3,cdrh3_confidence,identity_to_trastuzumab,novelty_class,required_cdrh3_mutations,cdrh3_min_distance,cdrh3_nearest_source,cdrh3_nearest_id,is_novel_enough
+denovo_00,ARDRIVDDYYYYGMDV,0.83808094,0.7272727272727273,novel,3,11,trastuzumab,,

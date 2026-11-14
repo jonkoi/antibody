@@ -1,0 +1,9 @@
+sequence_id,cdrh3,cdrh3_confidence,identity_to_trastuzumab,novelty_class,required_cdrh3_mutations,cdrh3_min_distance,cdrh3_nearest_source,cdrh3_nearest_id,is_novel_enough
+pass_001_QVGDGFQAMD,SRQVGDGFQAMDY,0.86844075,0.986784140969163,novel,3,3,trastuzumab,,
+pass_002_IGPDGQYAMD,SRIGPDGQYAMDY,0.8670424,0.986784140969163,novel,3,3,trastuzumab,,
+pass_003_WGGDGQPHMD,SRWGGDGQPHMDY,0.8753755,0.986784140969163,novel,3,3,trastuzumab,,
+pass_004_NGGDGWRAMD,SRNGGDGWRAMDY,0.8672631,0.986784140969163,novel,3,3,trastuzumab,,
+pass_005_HGPDGNYAMD,SRHGPDGNYAMDY,0.87254906,0.986784140969163,novel,3,3,trastuzumab,,
+pass_006_WYGDGNTAMD,SRWYGDGNTAMDY,0.8569417,0.986784140969163,novel,3,3,trastuzumab,,
+pass_007_AGGDGMYQMD,SRAGGDGMYQMDY,0.8667722,0.986784140969163,novel,3,3,trastuzumab,,
+pass_008_WGTDGNMAMD,SRWGTDGNMAMDY,0.8753755,0.986784140969163,novel,3,3,trastuzumab,,

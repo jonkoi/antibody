@@ -1,0 +1,12 @@
+INFO     using the reference bundled with abguard (reference_data)
+ERROR    probes_AB.csv: submission is not compliant (0 of 10 row(s) pass the schema). Re-run with --drop to discard the offending rows.
+  - [novelty] probe_001_WGGDGFYAMD: CDRH3 SRWGGDGFYAMDY is 0 mutation(s) from SRWGGDGFYAMDY in trastuzumab; a novel design needs at least 3
+  - [novelty] probe_002_WGWSGFYAMD: CDRH3 SRWGWSGFYAMDY is 1 mutation(s) from SRWGASGFYAMDY in tz_her2_facs_3classes_524346; a novel design needs at least 3
+  - [novelty] probe_003_WGSSGFYAMD: CDRH3 SRWGSSGFYAMDY is 1 mutation(s) from SRWGASGFYAMDY in tz_her2_facs_3classes_524346; a novel design needs at least 3
+  - [novelty] probe_004_WGSQGFYAYD: CDRH3 SRWGSQGFYAYDY is 0 mutation(s) from SRWGSQGFYAYDY in trastuzumab_her2_spr_all_768; a novel design needs at least 3
+  - [novelty] probe_005_WGPPYFYAMD: CDRH3 SRWGPPYFYAMDY is 2 mutation(s) from SRWGPYGFYAMDY in tz_her2_facs_3classes_524346; a novel design needs at least 3
+  - [novelty] probe_006_WGPPGFYAFD: CDRH3 SRWGPPGFYAFDY is 0 mutation(s) from SRWGPPGFYAFDY in tz_her2_facs_3classes_524346; a novel design needs at least 3
+  - [novelty] probe_007_WGSTGFYAFD: CDRH3 SRWGSTGFYAFDY is 0 mutation(s) from SRWGSTGFYAFDY in tz_her2_facs_3classes_524346; a novel design needs at least 3
+  - [novelty] probe_008_WGPSGFYAFD: CDRH3 SRWGPSGFYAFDY is 1 mutation(s) from SRWGNSGFYAFDY in tz_her2_facs_3classes_524346; a novel design needs at least 3
+  - [novelty] probe_009_WGSPGFYAFD: CDRH3 SRWGSPGFYAFDY is 1 mutation(s) from SRWGMPGFYAFDY in tz_her2_facs_3classes_524346; a novel design needs at least 3
+  - [novelty] probe_010_WGSLTFYAMD: CDRH3 SRWGSLTFYAMDY is 2 mutation(s) from SRWGSRGFYAMDY in tz_her2_facs_3classes_524346; a novel design needs at least 3
