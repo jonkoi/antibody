@@ -178,30 +178,45 @@ liability. *(LAP reference, PLOS Comput Biol 2024;20(3):e1011881.)*
 
 ## Slide 8 — The submission
 
-**Four designs. All novelty-verified against 525,063 reference CDRH3s, all
-passing the hard expression filters (zero unpaired cysteines, zero N-glyc
-sequons).**
+**Chosen on the one contact that decides it:** the residue-103 backbone carbonyl
+to **HER2 Lys593 NZ** hydrogen bond — 2.42 Å in the crystal, the tightest contact
+in the interface. Measured in a Boltz-2 refold against a wild-type control folded
+identically (**control: 2.63 Å**).
 
-| # | design | CDRH3 | subs | contacts kept | ΔΔG (fold) | liab | why |
-| --- | --- | --- | ---: | ---: | ---: | ---: | --- |
-| 1 | **cw_3** | WGGMGPYWMD | 3 | **3/4** | **0.17 (1.3×)** | 8 | WT-equivalent on independent energetics |
-| 2 | **cw_2** | WGGKGPYWMD | 3 | **3/4** | 0.42 (2.0×) | 8 | best predicted KD of the low-liability three |
-| 3 | **cw_4** | WGGRGPYWMD | 3 | **3/4** | 0.20 (1.4×) | 8 | WT-equivalent, 2 high-severity |
-| 4 | **her2_cdrh3_61** | SLGSADYAFD | 6 | 1/4 | 0.42 (2.0×) | **5** | **the hedge** — fails independently |
+| # | design | CDRH3 | subs | **H-bond** | ΔΔG (fold) | liab |
+| --- | --- | --- | ---: | ---: | ---: | ---: |
+| 1 | **her2_cdrh3_61** | `SLGSADYAFD` | 6 | **2.51 Å** | 0.42 (2.0×) | **5** |
+| 2 | cw_4 | `WGGRGPYWMD` | 3 | 3.48 Å | **0.20 (1.4×)** | 8 |
+| 3 | cw_1 | `WGHDGPYWMD` | 3 | 4.07 Å | 0.50 (2.3×) | 9 |
+| 4 | cw_5 | `WGPDGPYWMD` | 3 | 3.20 Å | 0.74 (3.5×) | 9 |
 
-**Why a hedge.** The first three share `F104P` and `A106W` and differ at one other
-position, so they are three variations on one design, not three independent bets.
-F104 sits **4.27 Å** from HER2 — peripheral, not a tight contact — but it packs
-against the light chain (Tyr49/Leu46/Tyr55), and **its backbone phi is −141° in
-1N8Z where proline needs about −65°**. **If F104P is wrong, all three fail
-together.** `_61` has a different mutation pattern, the cleanest
-developability of anything we scored, and costs nothing in predicted affinity.
+`abguard team-validate --reference-db` → **4/4 valid** against 525,063 references.
 
-**Two flags we are not hiding:** every coworker design carries **two CDR3
-tryptophans** (retained W99 plus `A106W`), an oxidation and aggregation hotspot.
-And cw_1/cw_5 were dropped partly because keeping both D102 and G103 reintroduces
-wild-type's own `DG` isomerisation motif — **preserving the contact brings back the
-parent's liability.**
+**This ranking is the reverse of the one we had an hour earlier**, and that is the
+slide. We had cw_3 and cw_2 first on binding energetics. On the actual hydrogen
+bond they are **7.38 Å and 6.74 Å** — the interface is gone, and cw_2's Tyr105 is
+**11.11 Å** from Phe573, meaning the paratope has moved off the surface patch. We
+had been reassured by a metric that measured *any* CDRH3 atom to *any* hotspot
+atom, which gave 2.2–3.0 Å for everything and was far too permissive.
+
+**And the mechanism is the same one from slide 6, now cutting the other way.**
+`her2_cdrh3_61` holds the bond best — **tighter than the wild-type control** —
+while carrying **Ala at position 103**. The bond is made by the backbone carbonyl,
+which alanine retains. So sequence-level "contact preservation" is the wrong
+filter: designs with Gly at 103 lost the bond, and one that mutated it kept it.
+**Loop geometry decides, not residue identity.**
+
+**What we will not claim.** A refold is not a measurement; nothing here has been
+near an instrument; this is one model at one seed; and Boltz-2 is the model whose
+*confidence* we showed is barely better than chance (slide 5). We use its
+coordinates against a matched control, not its confidence — a more defensible use,
+but still one model.
+
+Three of the four share `F104P` and `A106W`, so they are one correlated
+hypothesis: F104 packs against the light chain (Tyr49/Leu46/Tyr55), and `A106W`
+adds a second CDR3 tryptophan, a documented oxidation and aggregation liability
+(PMID 30608647, 31678251). **`her2_cdrh3_61` carries neither**, so slot 1 fails
+independently.
 
 ---
 

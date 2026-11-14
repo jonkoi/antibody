@@ -79,12 +79,17 @@ axes has no number from us, and we say so rather than substitute a proxy.
 
 ## The submission
 
-| # | design | CDRH3 | subs | contacts kept | ΔΔG (fold vs WT) | liab | role |
-| --- | --- | --- | ---: | ---: | ---: | ---: | --- |
-| 1 | cw_3 | `WGGMGPYWMD` | 3 | 3/4 | **0.17 ± 0.17 (1.3×)** | 8 | best energetics |
-| 2 | cw_2 | `WGGKGPYWMD` | 3 | 3/4 | 0.42 (2.0×) | 8 | best predicted KD |
-| 3 | her2_cdrh3_71 | `STSTYFYAFD` | 6 | 2/4 | 1.35 (9.7×) | 6 | **only design retaining Phe104** |
-| 4 | her2_cdrh3_61 | `SLGSADYAFD` | 6 | 1/4 | 0.42 (2.0×) | **5** | independent pattern, cleanest |
+Ranked by the one contact that decides it: the **residue-103 backbone carbonyl to
+HER2 Lys593 NZ hydrogen bond**, 2.42 Å in the crystal and the tightest contact in
+the interface. Measured in a Boltz-2 refold against a wild-type control folded
+identically (control: 2.63 Å).
+
+| # | design | CDRH3 | subs | **H-bond** | ΔΔG (fold vs WT) | liab |
+| --- | --- | --- | ---: | ---: | ---: | ---: |
+| 1 | her2_cdrh3_61 | `SLGSADYAFD` | 6 | **2.51 Å** | 0.42 (2.0×) | **5** |
+| 2 | cw_4 | `WGGRGPYWMD` | 3 | 3.48 Å | **0.20 (1.4×)** | 8 |
+| 3 | cw_1 | `WGHDGPYWMD` | 3 | 4.07 Å | 0.50 (2.3×) | 9 |
+| 4 | cw_5 | `WGPDGPYWMD` | 3 | 3.20 Å | 0.74 (3.5×) | 9 |
 
 ΔΔG is StaB-ddG binding penalty — a model neither design approach trained. cw_2
 and cw_3 land inside the ~7× noise floor, and cw_3 is statistically
@@ -92,18 +97,29 @@ and cw_3 land inside the ~7× noise floor, and cw_3 is statistically
 (zero unpaired cysteines, zero N-glycosylation sequons); approved trastuzumab
 itself scores 8 liabilities.
 
-**Refold check.** All five enumerated designs were folded with Boltz-2 against
-the HER2 template alongside a wild-type control. CDRH3 stays **2.2–3.0 Å** from
-the four epitope hotspots (wild-type control: 2.63 Å), so there is no loop drift,
-and backbone phi at residue 104 lands at **−59° to −78°** — the proline-compatible
-range — so `F104P` does not clash with the loop.
+**The refold is what chose these four, and it overturned our earlier ranking.**
+Minimum distance from *any* CDRH3 atom to the hotspots gave 2.2–3.0 Å for every
+design and suggested no drift. That metric was far too permissive. On the specific
+hydrogen bond, **two designs we had ranked first and second have lost the
+interface entirely** — cw_3 at 7.38 Å, cw_2 at 6.74 Å with Tyr105 11.11 Å from
+Phe573, i.e. the paratope off the surface patch.
+[findings/interface-hbond-check.md](findings/interface-hbond-check.md) has the
+full table.
 
-**Known risk, stated plainly.** cw_2 and cw_3 share `F104P` and `A106W`. F104 is
-peripheral to HER2 (nearest atom **4.27 Å**) but packs against the light chain
-(Tyr49/Leu46/Tyr55), and `A106W` gives each design a second CDR3 tryptophan — a
-documented oxidation and aggregation hotspot (PMID 30608647, 31678251). Slots 3
-and 4 therefore hold designs that fail *independently*, slot 3 being the only
-design we have that retains Phe104.
+Note the irony: **`her2_cdrh3_61` holds the bond best (2.51 Å) while carrying Ala
+at position 103**, because the bond is made by the backbone carbonyl, which
+alanine retains. Sequence-level "contact preservation" is the wrong filter —
+designs with Gly at 103 lost the bond, and one that mutated it kept it.
+
+**Known risk, stated plainly.** cw_1, cw_4 and cw_5 all carry `F104P` and
+`A106W`, so they remain one correlated hypothesis. F104 is peripheral to HER2
+(nearest atom **4.27 Å**) but packs against the light chain (Tyr49/Leu46/Tyr55),
+and `A106W` gives each a second CDR3 tryptophan — a documented oxidation and
+aggregation hotspot (PMID 30608647, 31678251). **`her2_cdrh3_61` carries neither**,
+so slot 1 fails independently of the rest, which is part of why it leads.
+
+A refold is also not a measurement. None of these designs has been near an
+instrument, and this is one model at one seed.
 
 ---
 
@@ -175,6 +191,12 @@ more than any single design:
 - an earlier epitope table reported per-residue distances that had been written
   rather than computed; the computed values are W99 4.05 Å, F104 4.27 Å,
   Y105 3.32 Å
+- **"no loop drift"** — an artefact of measuring any-atom-to-any-atom
+  distance. On the specific Lys593 hydrogen bond, two of our top picks had
+  lost the interface by 4–5 Å
+- **the phi(104) result proved little** — a co-folding model yields
+  proline-compatible angles for any proline-containing sequence. The
+  informative measurement was the hydrogen bond, which a reviewer pointed us at
 
 ---
 
