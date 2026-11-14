@@ -109,7 +109,7 @@ Three need a structural biologist. Full write-up with sequences and figures:
 <https://claude.ai/artifact/K1Kd6wCkfJ2v9yUYExp6M1>
 
 1. **Are the four hotspot atoms the right epitope definition?** The run aimed at HER2
-   Lys593 NZ, Leu573 CD1, Val591 CG2, Pro572 CD (from 1N8Z). That set is the *entire*
+   Lys593 NZ, Phe573 CD1, Ile591 CG2, Pro572 CD (from 1N8Z). That set is the *entire*
    operational definition of "target the trastuzumab epitope". Everything downstream
    inherits it. **This blocks scaling to a real batch.**
 2. **Did the designed loop stay on the epitope, or drift?** A folding model will return

@@ -1,0 +1,83 @@
+# abguard liability-report shortlist.csv
+INFO     shortlist.csv: 14 design(s), 0 with hard errors, 87 liability occurrence(s)
+shape: (13, 5)
+┌─────────┬────────────────────────┬──────────┬───────────────┬───────────┐
+│ tag     ┆ name                   ┆ severity ┆ n_occurrences ┆ n_designs │
+│ ---     ┆ ---                    ┆ ---      ┆ ---           ┆ ---       │
+│ str     ┆ str                    ┆ str      ┆ u32           ┆ u32       │
+╞═════════╪════════════════════════╪══════════╪═══════════════╪═══════════╡
+│ DeAmdH  ┆ Deamidation (high)     ┆ high     ┆ 14            ┆ 14        │
+│ Isom    ┆ Isomerization          ┆ high     ┆ 14            ┆ 14        │
+│ FragH   ┆ Fragmentation (high)   ┆ high     ┆ 0             ┆ 0         │
+│ mCys    ┆ Missing cysteine       ┆ high     ┆ 0             ┆ 0         │
+│ xCys    ┆ Extra cysteine         ┆ high     ┆ 0             ┆ 0         │
+│ Ngly    ┆ N-linked glycosylation ┆ high     ┆ 0             ┆ 0         │
+│ TrpOx   ┆ Trp oxidation          ┆ medium   ┆ 17            ┆ 14        │
+│ DeAmdM  ┆ Deamidation (medium)   ┆ medium   ┆ 14            ┆ 14        │
+│ MetOx   ┆ Met oxidation          ┆ medium   ┆ 10            ┆ 10        │
+│ FragM   ┆ Fragmentation (medium) ┆ medium   ┆ 4             ┆ 4         │
+│ Hydro   ┆ Hydrolysis             ┆ medium   ┆ 0             ┆ 0         │
+│ DeAmdL  ┆ Deamidation (low)      ┆ low      ┆ 14            ┆ 14        │
+│ IntBind ┆ Integrin binding       ┆ low      ┆ 0             ┆ 0         │
+└─────────┴────────────────────────┴──────────┴───────────────┴───────────┘
+
+# abguard team-validate shortlist.csv --reference-db her2_novelty.duckdb
+INFO     shortlist: 14/14 design(s) valid
+shape: (14, 5)
+┌───────────────┬────────────────────────┬────────────────────────┬────────┬───────────────────────┐
+│ sequence_id   ┆ heavy_sequence         ┆ design_description     ┆ kind   ┆ light_sequence        │
+│ ---           ┆ ---                    ┆ ---                    ┆ ---    ┆ ---                   │
+│ str           ┆ str                    ┆ str                    ┆ str    ┆ str                   │
+╞═══════════════╪════════════════════════╪════════════════════════╪════════╪═══════════════════════╡
+│ her2_cdrh3_60 ┆ EVQLVESGGGLVQPGGSLRLSC ┆ CDRH3 WSYAYDYAMD; 5    ┆ paired ┆ DIQMTQSPSSLSASVGDRVTI │
+│               ┆ AASGFNIK…              ┆ subs from …            ┆        ┆ TCRASQDVN…            │
+│ her2_cdrh3_94 ┆ EVQLVESGGGLVQPGGSLRLSC ┆ CDRH3 WTAAVDYAHD; 6    ┆ paired ┆ DIQMTQSPSSLSASVGDRVTI │
+│               ┆ AASGFNIK…              ┆ subs from …            ┆        ┆ TCRASQDVN…            │
+│ her2_cdrh3_71 ┆ EVQLVESGGGLVQPGGSLRLSC ┆ CDRH3 STSTYFYAFD; 6    ┆ paired ┆ DIQMTQSPSSLSASVGDRVTI │
+│               ┆ AASGFNIK…              ┆ subs from …            ┆        ┆ TCRASQDVN…            │
+│ her2_cdrh3_88 ┆ EVQLVESGGGLVQPGGSLRLSC ┆ CDRH3 SLSLGNYAFD; 6    ┆ paired ┆ DIQMTQSPSSLSASVGDRVTI │
+│               ┆ AASGFNIK…              ┆ subs from …            ┆        ┆ TCRASQDVN…            │
+│ her2_cdrh3_6  ┆ EVQLVESGGGLVQPGGSLRLSC ┆ CDRH3 STSAYGYAMD; 6    ┆ paired ┆ DIQMTQSPSSLSASVGDRVTI │
+│               ┆ AASGFNIK…              ┆ subs from …            ┆        ┆ TCRASQDVN…            │
+│ her2_cdrh3_96 ┆ EVQLVESGGGLVQPGGSLRLSC ┆ CDRH3 STSSVGYAMD; 6    ┆ paired ┆ DIQMTQSPSSLSASVGDRVTI │
+│               ┆ AASGFNIK…              ┆ subs from …            ┆        ┆ TCRASQDVN…            │
+│ her2_cdrh3_77 ┆ EVQLVESGGGLVQPGGSLRLSC ┆ CDRH3 STAAVDYAMD; 6    ┆ paired ┆ DIQMTQSPSSLSASVGDRVTI │
+│               ┆ AASGFNIK…              ┆ subs from …            ┆        ┆ TCRASQDVN…            │
+│ her2_cdrh3_85 ┆ EVQLVESGGGLVQPGGSLRLSC ┆ CDRH3 STAAVGYAMD; 6    ┆ paired ┆ DIQMTQSPSSLSASVGDRVTI │
+│               ┆ AASGFNIK…              ┆ subs from …            ┆        ┆ TCRASQDVN…            │
+│ her2_cdrh3_19 ┆ EVQLVESGGGLVQPGGSLRLSC ┆ CDRH3 STASVGYAMD; 6    ┆ paired ┆ DIQMTQSPSSLSASVGDRVTI │
+│               ┆ AASGFNIK…              ┆ subs from …            ┆        ┆ TCRASQDVN…            │
+│ her2_cdrh3_61 ┆ EVQLVESGGGLVQPGGSLRLSC ┆ CDRH3 SLGSADYAFD; 6    ┆ paired ┆ DIQMTQSPSSLSASVGDRVTI │
+│               ┆ AASGFNIK…              ┆ subs from …            ┆        ┆ TCRASQDVN…            │
+│ her2_cdrh3_75 ┆ EVQLVESGGGLVQPGGSLRLSC ┆ CDRH3 STFSVDYAMD; 6    ┆ paired ┆ DIQMTQSPSSLSASVGDRVTI │
+│               ┆ AASGFNIK…              ┆ subs from …            ┆        ┆ TCRASQDVN…            │
+│ her2_cdrh3_7  ┆ EVQLVESGGGLVQPGGSLRLSC ┆ CDRH3 STASVDYAMD; 6    ┆ paired ┆ DIQMTQSPSSLSASVGDRVTI │
+│               ┆ AASGFNIK…              ┆ subs from …            ┆        ┆ TCRASQDVN…            │
+│ her2_cdrh3_4  ┆ EVQLVESGGGLVQPGGSLRLSC ┆ CDRH3 YWSLHYYAMD; 6    ┆ paired ┆ DIQMTQSPSSLSASVGDRVTI │
+│               ┆ AASGFNIK…              ┆ subs from …            ┆        ┆ TCRASQDVN…            │
+│ her2_cdrh3_15 ┆ EVQLVESGGGLVQPGGSLRLSC ┆ CDRH3 STSAVDYAMD; 6    ┆ paired ┆ DIQMTQSPSSLSASVGDRVTI │
+│               ┆ AASGFNIK…              ┆ subs from …            ┆        ┆ TCRASQDVN…            │
+└───────────────┴────────────────────────┴────────────────────────┴────────┴───────────────────────┘
+
+# abguard reference
+shape: (13, 5)
+┌─────────┬────────────────────────┬──────────┬──────────┬─────────────────────────────────────────┐
+│ tag     ┆ name                   ┆ severity ┆ scope    ┆ motif                                   │
+│ ---     ┆ ---                    ┆ ---      ┆ ---      ┆ ---                                     │
+│ str     ┆ str                    ┆ str      ┆ str      ┆ str                                     │
+╞═════════╪════════════════════════╪══════════╪══════════╪═════════════════════════════════════════╡
+│ DeAmdH  ┆ Deamidation (high)     ┆ high     ┆ cdr      ┆ N[GS] in CDRs                           │
+│ FragH   ┆ Fragmentation (high)   ┆ high     ┆ cdr      ┆ DP in CDRs                              │
+│ Isom    ┆ Isomerization          ┆ high     ┆ cdr      ┆ D[DGHST] in CDRs                        │
+│ mCys    ┆ Missing cysteine       ┆ high     ┆ position ┆ C not present at IMGT 23 or 104         │
+│ xCys    ┆ Extra cysteine         ┆ high     ┆ position ┆ C present outside IMGT 23 and 104       │
+│ Ngly    ┆ N-linked glycosylation ┆ high     ┆ fv       ┆ N[^P][ST] in variable fragment          │
+│ DeAmdM  ┆ Deamidation (medium)   ┆ medium   ┆ cdr      ┆ N[AHNT] in CDRs                         │
+│ Hydro   ┆ Hydrolysis             ┆ medium   ┆ cdr      ┆ NP in CDRs                              │
+│ FragM   ┆ Fragmentation (medium) ┆ medium   ┆ cdr      ┆ TS in CDRs                              │
+│ TrpOx   ┆ Trp oxidation          ┆ medium   ┆ cdr      ┆ W in CDRs                               │
+│ MetOx   ┆ Met oxidation          ┆ medium   ┆ cdr      ┆ M in CDRs                               │
+│ DeAmdL  ┆ Deamidation (low)      ┆ low      ┆ cdr      ┆ [STK]N in CDRs                          │
+│ IntBind ┆ Integrin binding       ┆ low      ┆ fv       ┆ GPR|RGD|RYD|LDV|DGE|KGD|NGR in variable │
+│         ┆                        ┆          ┆          ┆ fragment                                │
+└─────────┴────────────────────────┴──────────┴──────────┴─────────────────────────────────────────┘

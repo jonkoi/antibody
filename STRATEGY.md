@@ -7,8 +7,15 @@ what. The commands, paths and scripts are in **[EXECUTION.md](EXECUTION.md)**.
 
 Also: [TASKS.md](TASKS.md) (checklist) · [HANDOFF.md](HANDOFF.md) (state)
 
-> **The challenge deck is corrupt** and unreadable, so the pools below come from
-> our own notes, not the organisers' text. Re-share it and re-check this.
+> **Deadline 18:00 today — confirmed.** If that is Oslo local time (CET) and this
+> machine is on UTC, check the hour you actually have left.
+>
+> **The organisers' PDF slide deck**
+> (`2026-11_Oslo_hackathon_Apheris_challenge.pdf`) is still unreadable — 302,382
+> UTF-8 replacement bytes, 0 of 159 streams decompress. HANDOFF.md is fine; this
+> is only about that PDF. So the prize pools below come from our own notes rather
+> than the organisers' text, and are the one thing here not independently
+> verified.
 
 ---
 
@@ -74,6 +81,15 @@ entirely on how adventurous the design is:**
 thirteen.** Acceptance climbs monotonically as designs get more adventurous;
 measured affinity collapses monotonically over the same range. **The two curves
 run in exactly opposite directions**, which is the trap stated as a number.
+
+**But the accepted designs are not extrapolations** — an earlier version of this
+document implied the viable region was simply empty, which overstated it. The
+measured high-binder rate by substitution count (from the FACS training data) is
+98.2%, 90.9%, 72.7%, 58.5%, 42.2%, 31.7%, 28.5%, 24.5% at 2–9 substitutions, and
+**our accepted designs sit at 5–9 substitutions, a regime holding 95.2% of all
+training rows.** They are Hamming 3–4 from any individual measured sequence yet
+squarely inside the measured distribution: novel, but densely covered. The base
+rate there is ~28–32%, so a high model score is genuine lift, not noise.
 
 Two of the rejected designs were **zero mutations** from a variant already in the
 FACS table — the model re-invented sequences that have already been measured.
@@ -234,17 +250,17 @@ for it would be misrepresentation.
 
 ## Who does what
 
-**Organisers / team chat (minutes, blocks everything):** confirm the deadline,
-and **re-share the deck — the updated file is still corrupt** (every one of its
-159 streams fails to decompress). Send the original bytes through a channel that
-does not re-encode text, or just tell us the deadline, the pools and the scoring
-axes in a message. Nebius credentials have arrived and are installed.
+**Organisers / team chat:** deadline **confirmed 18:00**. Nebius credentials
+installed. Still outstanding: **ask whether the submission wants the structures**
+(we hold 111MB that dies with the VM — see TASKS.md), and re-share the PDF deck
+through a channel that does not re-encode text, or just confirm the prize pools
+and scoring axes in a message.
 
 **The two PhDs — where a model cannot substitute.** Full write-up with sequences
 and figures: <https://claude.ai/artifact/K1Kd6wCkfJ2v9yUYExp6M1>
 
 1. **Are the four hotspot atoms the right epitope definition?** We aimed the model
-   at HER2 Lys593 NZ, Leu573 CD1, Val591 CG2 and Pro572 CD, taken from 1N8Z. That
+   at HER2 Lys593 NZ, Phe573 CD1, Ile591 CG2 and Pro572 CD, taken from 1N8Z. That
    set is our *entire* operational definition of "targets the trastuzumab
    epitope", and every design inherits it. **This blocks any larger batch** — the
    most valuable question in the project.

@@ -61,7 +61,7 @@ were free to change. Held fixed: the entire light chain, the heavy framework and
 CDRH1/CDRH2, HER2 domain IV backbone, and the relative pose of antibody and antigen.
 
 The model was aimed at four HER2 contact atoms taken from PDB **1N8Z**:
-Lys593 NZ, Leu573 CD1, Val591 CG2, Pro572 CD. That hotspot set is the entire
+Lys593 NZ, Phe573 CD1, Ile591 CG2, Pro572 CD. That hotspot set is the entire
 operational definition of "target the trastuzumab epitope" in this run.
 
 HER2 is split into chains C (489–580) and D (591–607) because input validation
