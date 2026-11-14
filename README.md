@@ -2,281 +2,183 @@
 
 Oslo Antibodies × AI Hackathon, 14 November 2026.
 
-Pipeline for redesigning trastuzumab's CDRH3 against HER2 domain IV, plus the
-validation run that established it works end to end.
-
-The competition scores a design on three axes against the measured trastuzumab
-baseline — **affinity** (SPR), **epitope preservation** (competitive binding) and
-**thermostability**. S-tier means improving on all three.
-
-**Picking this up mid-stream?** Start with [HANDOFF.md](HANDOFF.md) for state and next
-actions, then [log0.md](log0.md) (data analysis, pipeline code) and [log1.md](log1.md)
-(platform survey, external thermostability resources). Dead ends are recorded there —
-read them before repeating work.
-open questions, next actions and gotchas.
+**Submission: [SUBMISSION.csv](SUBMISSION.csv)** — 4 designs, `abguard
+team-validate` clean (**4/4 valid**) against all 525,063 reference CDRH3s.
+**Pitch: [DECK.md](DECK.md)** · **Evidence: [findings/](findings/)**
 
 ---
 
-## Pipeline
+## What we set out to do, and what actually happened
 
-Four stages. Stage 3 is the load-bearing one: the folding model never sees what
-the design model intended, so agreement between them is independent evidence
-rather than the design model marking its own homework.
+Redesign the 10-residue tip of trastuzumab's CDRH3 (heavy chain 99–108) to bind
+HER2 domain IV better, while differing from every one of 525,063 known CDRH3s by
+≥3 mutations. Judged on **affinity**, **epitope preservation** and
+**thermostability**.
 
-| Stage | Tool | What it does |
-| --- | --- | --- |
-| 1. design | RFD4-Proteina (`module-run design`) | Proposes CDRH3 backbone + sequence, everything else frozen |
-| 2. prepare | `module-run refold-prepare` | Selects top-N, writes folding inputs incl. HER2 template |
-| 3. fold | Boltz-2 / Protenix / OpenFold3 / Mol-1 | Independently re-folds each design with HER2 |
-| 4. score | `module-run refold-score` | Compares refold to design → confidence metrics |
+We built a generative pipeline, ran 100 designs, found that the approach **does
+not work**, then found out why — and what does.
+
+### 1. The novelty filter and binding affinity pull in opposite directions
+
+| substitutions from wild-type | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| passed the novelty gate (our 100) | **0%** | **0%** | **0%** | 33% | 82% | 74% | 93% | 100% |
+| measured high-binder rate (524,346 variants) | 98.2% | 90.9% | 72.7% | 58.5% | 42.2% | 31.7% | 28.5% | 24.5% |
+
+Not one of our 13 conservative designs survived. Two were rejected for being
+*zero* mutations from an already-measured sequence — the model re-invented known
+variants.
+
+### 2. But we over-read that, and the correction is the real result
+
+Five designs produced by a coworker, **enumerated rather than generated**, sit at
+**3 substitutions and all five pass the same gate**. So 0% acceptance was a
+property of **our generator's output distribution**, not of the design space:
+RFD4-Proteina scatters mutations across the binding interface, which is exactly
+where the measured library samples densest.
+
+**Generate-then-filter cannot find the conservative region. Constraint-aware
+enumeration can.**
+
+### 3. Only 4 of the 10 designable residues touch HER2
+
+Computed from 1N8Z: **W99, G103, F104, Y105**. The other six contact nothing, so
+≥3 mutations can be placed entirely on them — 2,091,995 such sequences exist at
+3–4 substitutions. Our generative designs preserved at most **2 of 4** contacts;
+zero of 71 preserved three or more. The enumerated set preserves **3 of 4**.
+
+### 4. Alanine scanning is blind to the interface's tightest contact
+
+Our ΔΔG scan rated G103A at 0.042 kcal/mol — essentially zero. But G103's
+**backbone carbonyl** makes the **2.42 Å hydrogen bond to Lys593, the tightest
+contact in the whole interface.** Alanine retains the backbone carbonyl. We would
+have gone on mutating it.
+
+### 5. Nothing beats trastuzumab by a margin the assay can resolve
+
+Wild-type is measured 8 times spanning **6.2×**, and those replicates are bimodal
+(3.44× apart by printed precision, suggesting two merged runs), so the honest
+detection floor is **~7×**. Of 150 measured variants at ≥3 mutations, two are
+nominally tighter and **zero** beat it resolvably.
+
+### 6. Boltz-2's ipTM cannot rank these designs
+
+ROC AUC against ~8,190 mismatched pairs: AF3 0.754, **Boltz-2 0.645**, Chai-1
+0.568. Boltz-2's *non-pair* median ipTM is 0.884, and our designs sat at
+0.82–0.90 — inside the range of random pairings. A fixed threshold measures the
+model's scale, not its quality: Chai-1 has the best false-positive rate and the
+worst AUC.
+
+### 7. Thermostability is unaddressed
+
+Verified across **all 59** Nebius models and the Apheris stack: nothing predicts
+it. `stab-ddg` is StaB-ddG, which scores *binding* ΔΔG. One of the three judged
+axes has no number from us, and we say so rather than substitute a proxy.
+
+---
+
+## The submission
+
+| # | design | CDRH3 | subs | contacts kept | ΔΔG (fold vs WT) | liab | role |
+| --- | --- | --- | ---: | ---: | ---: | ---: | --- |
+| 1 | cw_3 | `WGGMGPYWMD` | 3 | 3/4 | **0.17 ± 0.17 (1.3×)** | 8 | best energetics |
+| 2 | cw_2 | `WGGKGPYWMD` | 3 | 3/4 | 0.42 (2.0×) | 8 | best predicted KD |
+| 3 | her2_cdrh3_71 | `STSTYFYAFD` | 6 | 2/4 | 1.35 (9.7×) | 6 | **only design retaining Phe104** |
+| 4 | her2_cdrh3_61 | `SLGSADYAFD` | 6 | 1/4 | 0.42 (2.0×) | **5** | independent pattern, cleanest |
+
+ΔΔG is StaB-ddG binding penalty — a model neither design approach trained. cw_2
+and cw_3 land inside the ~7× noise floor, and cw_3 is statistically
+**indistinguishable from wild-type**. All four pass the hard expression filters
+(zero unpaired cysteines, zero N-glycosylation sequons); approved trastuzumab
+itself scores 8 liabilities.
+
+**Refold check.** All five enumerated designs were folded with Boltz-2 against
+the HER2 template alongside a wild-type control. CDRH3 stays **2.2–3.0 Å** from
+the four epitope hotspots (wild-type control: 2.63 Å), so there is no loop drift,
+and backbone phi at residue 104 lands at **−59° to −78°** — the proline-compatible
+range — so `F104P` does not clash with the loop.
+
+**Known risk, stated plainly.** cw_2 and cw_3 share `F104P` and `A106W`. F104 is
+peripheral to HER2 (nearest atom **4.27 Å**) but packs against the light chain
+(Tyr49/Leu46/Tyr55), and `A106W` gives each design a second CDR3 tryptophan — a
+documented oxidation and aggregation hotspot (PMID 30608647, 31678251). Slots 3
+and 4 therefore hold designs that fail *independently*, slot 3 being the only
+design we have that retains Phe104.
+
+---
+
+## Reproducing it
 
 ```bash
-# on the hackathon VM, from ~/rfd4 (holds Data/ and Settings/)
-N=100 TOPN=20 SEED=1 bash pipeline/run_design.sh all
+# novelty reference: 525,063 CDRH3s from the two HER2 tables
+abguard reference-ingest her2_novelty.duckdb \
+  hackathon-data/her2-trastuzumab/tz_her2_facs_3classes_524346.csv.zip \
+  hackathon-data/her2-trastuzumab/trastuzumab_her2_spr_all_768.csv
+abguard reference-build her2_novelty.duckdb
 
-# sweep a second folding model over the same designs
-FOLDER=protenix-v2 bash pipeline/run_design.sh predict score
+# the gate. --reference-db is REQUIRED: without it prior art is never checked,
+# and `abguard novelty-report` ignores the flag entirely.
+abguard team-validate SUBMISSION.csv --reference-db her2_novelty.duckdb
+
+# analyses, stdlib only, no numpy/pandas
+python3 pipeline/analyze_spr.py           # assay floor, cost per substitution
+python3 pipeline/calibrate_confidence.py  # ipTM ROC AUC per folding model
+python3 pipeline/predict_binding.py       # FACS binding model, test AUC 0.984
+python3 pipeline/cif_to_pdb.py --help     # mmCIF → PDB for StaB-ddG
+python3 pipeline/make_submission.py --help
 ```
 
-`run_design.sh` generalises the organisers' 4-design example into a parameterised
-batch driver and adds a fold-model sweep. Weights, design count, seed, sequence
-randomness (`TSRK`) and folding model are all environment knobs.
-
-### Analysis
-
-```bash
-# sequence diff + refold metrics
-python3 pipeline/analyze_designs.py \
-  --designs runs/her2-validation-seed1/designs \
-  --reference inputs/12-her2/her2_fv_1n8z.cif \
-  --scored runs/her2-validation-seed1/scored/refold_metrics.csv
-
-# liabilities, biophysics and loop rigidity vs wild-type
-python3 pipeline/score_developability.py \
-  --designs runs/her2-validation-seed1/designs \
-  --reference inputs/12-her2/her2_fv_1n8z.cif
-```
-
-Both parse mmCIF directly with no external dependencies. The first diffs each
-design's window against wild-type and joins to refold metrics; the second scores
-chemical liabilities and biophysical character.
-
----
-
-## The findings that drive selection
-
-### 1. Binding collapses with mutation count, and the novelty floor sits on the knee
-
-From the 524,346-variant FACS table, high-binder rate against CDRH3 edit distance
-from trastuzumab:
-
-| mutations | 1 | 2 | **3** | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| high binders | 96.0% | 97.5% | **90.0%** | 74.6% | 59.4% | 43.9% | 33.6% | 26.8% | 18.9% | 15.8% |
-
-One and two mutations bind best but **fail the novelty gate**. Three is the tightest
-design that passes, and it retains 90% high-binder rate. Every further mutation costs
-roughly 15 percentage points.
-
-The validation run produced designs at 3, 7, 7 and 9 mutations — three of four in the
-19–34% regime when they could have been at 90%. **Nothing in the generation step
-constrains mutation count, and it should.**
-
-The constraint is harder than "mutate exactly 3 positions": abguard requires ≥3
-substitutions from trastuzumab *and* from every one of the 525,063 provided CDRH3s,
-so a candidate that is a one-residue extension of a known 2-mutant is rejected.
-Selecting 3-mutants is a constrained search over the provided set, not sampling.
-
-### 2. Wild-type trastuzumab CDRH3 is itself a developability liability
-
-`WGGDGFYAMD` carries an **Asp-Gly isomerization hotspot** (the worst chemical
-liability class), a Met oxidation site, and **three glycines in ten residues** — an
-unusually flexible loop.
-
-This makes the thermostability axis more winnable than it first appears, provided
-designs are selected for it. Almost any redesign of positions 102–103 removes the DG,
-and any substitution away from Gly rigidifies the loop.
-
-In the validation run, **design_2 (`WGPPYFYAMD`) replaced two glycines with two
-prolines** — the textbook loop-thermostabilisation move, reducing unfolded-state
-backbone entropy. It is simultaneously at the novelty floor (3 mutations, 90%
-high-binder regime) and liability-reduced. That combination is the selection target.
-
-**Caveat, stated plainly:** removing a DG hotspot improves *chemical* stability, not
-melting temperature. Only the Gly→Pro rigidification bears directly on the measured
-thermostability axis. And a rigidified loop can equally lock a non-binding
-conformation — that needs structural review, not a score.
-
-### 3. Only 6.2% of the minimal-change space is legal
-
-`pipeline/enumerate_candidates.py` enumerates the complete distance-3 set exactly
-and filters it against every provided CDRH3. Pure standard library, 5.6 seconds.
-
-| | count |
-| --- | --- |
-| candidates at distance 3 | 823,080 |
-| **clear the novelty gate** | **51,417 (6.2%)** |
-| ...also remove the DG hotspot | 29,124 |
-| ...also place Pro at a wild-type Gly | 3,842 |
-| ...both | 2,652 |
-| ...both, retaining the conserved Trp | **1,927** |
-
-**93.8% of minimal-change designs are illegal** — the 525,042 provided sequences
-densely blanket trastuzumab's neighbourhood. A generative model sampling this space
-blind wastes most of its output, because nothing tells it where the forbidden
-regions are. Enumerating first and folding only legal candidates is strictly better
-use of GPU time.
-
-The position profile of the 1,927 shortlist converges on the same levers the
-developability analysis identified independently: position 5 is substituted in all
-of them, and the proline lands at position 5 (1,412) or position 3 (565) — two of
-the three wild-type glycines.
-
-Brute force would be 823,080 x 525,042 comparisons. Three observations collapse it:
-the distance to a reference splits into a part independent of the candidate plus a
-part confined to the three mutated positions; that first part depends on the
-reference only through a 10-bit mask, so it is computed 1,024 times per position set
-rather than 525,042; and each surviving reference generates its forbidden
-combinations directly instead of being compared against all 6,859 candidates.
-
-### 4. Do not rank on Boltz-2 interface confidence
-
-`pipeline/calibrate_iptm.py` scores the provided 91x91 ipTM matrices, where the
-diagonal holds real nanobody-antigen pairs and everything off it is a shuffled
-non-binder (base rate 1.1%).
-
-| model | ROC AUC | passes at ipTM > 0.7 | top-10 ranked |
-| --- | --- | --- | --- |
-| AlphaFold3 | **0.754** | 236 non-binders; rejects 48 of 91 real | **51.8% real (47x)** |
-| Boltz-2 | 0.645 | **7,723 non-binders — 94.3% of them** | **0% real** |
-| Chai-1 | 0.568 | 17 | finds only 7 of 89 real |
-
-**Boltz-2's top 10 contained no real binders at all**, and its median confidence for
-pairs that demonstrably do not bind is 0.884. Our validation run used Boltz-2, and
-its 0.946 / 0.965 scores are matched by 7.5% of known non-binders — a likelihood
-ratio of 3.4. AF3's maximum across the whole benchmark is 0.93, so those numbers are
-not even on its scale.
-
-AF3 is a poor classifier but a useful *ranker*: 31-fold enrichment in its top 100.
-Apheris ships **OpenFold3-OpenBind**, an AF3 reproduction, and Protenix v2. Refold
-with those rather than Boltz-2, use confidence for relative ordering within one
-target, and never as a pass/fail gate.
-
-**Caveat:** that benchmark is nanobody-antigen pairs folded without templates, while
-we fold a CDRH3-redesigned Fv against HER2 *with* a template, and OpenFold3-OpenBind
-reproduces AF3 rather than being it. The transfer is plausible, not demonstrated.
-
-### Why there is no learned stability model here
-
-Nebius `stab-ddg` computes *binding* ΔΔG, not folding stability. FoldX and CamSol are
-licensed and unavailable. No dataset in the challenge carries a melting temperature —
-FACS has binding classes, SPR has `kd_nM` only. **A thermostability predictor cannot
-be trained on provided data**, so `score_developability.py` reports mechanistic risk
-with ordinal weights and explicitly does not predict Tm.
-
----
-
-## Design constraints
-
-Only **heavy chain positions 99–108** — a 10-residue window at the tip of CDRH3 —
-were free to change. Held fixed: the entire light chain, the heavy framework and
-CDRH1/CDRH2, HER2 domain IV backbone, and the relative pose of antibody and antigen.
-
-The model was aimed at four HER2 contact atoms taken from PDB **1N8Z**:
-Lys593 NZ, Phe573 CD1, Ile591 CG2, Pro572 CD. That hotspot set is the entire
-operational definition of "target the trastuzumab epitope" in this run.
-
-HER2 is split into chains C (489–580) and D (591–607) because input validation
-rejects a numbering gap inside one chain — the 581–590 loop is unresolved in 1N8Z.
-
----
-
-## Validation run
-
-`runs/her2-validation-seed1/` — 4 designs, seed 1, `her2-novel-2026-11-09`
-weights, top 2 refolded with Boltz-2. ~4 min wall on one H100.
-
-Wild-type window (B99–108): `WGGDGFYAMD`
-
-| design | window | subs | identity | min_ipae ↓ | iptm ↑ | binder_pLDDT ↑ |
-| --- | --- | --- | --- | --- | --- | --- |
-| her2_cdrh3_2 | `WGPPYFYAMD` | 3 | 70% | 0.331 | 0.946 | 95.6 |
-| her2_cdrh3_3 | `WASSSEYYFD` | 7 | 30% | 0.310 | 0.965 | 98.5 |
-| her2_cdrh3_1 | `DSPAAGYAFD` | 7 | 30% | not refolded | | |
-| her2_cdrh3_0 | `DLSLSDFSFD` | 9 | 10% | not refolded | | |
-
-Two observations from four designs — both need a real batch to confirm:
-
-**The conserved Trp tracks selection.** Designs 0 and 1 both lost W99; designs 2
-and 3 kept it, and those are exactly the two `refold-prepare` ranked into the top
-2. W99 anchors the base of CDRH3.
-
-**design_2 sits on the novelty knife-edge.** Three substitutions is exactly
-abguard's floor for the optimisation track, and 70% window identity is exactly the
-boundary the task description words as "under 70%". Designs this conservative need
-checking with abguard rather than by arithmetic — and the IMGT CDRH3 that abguard
-scores is not necessarily the same 10-residue window the model was given.
-
-### Confidence metrics are saturated here
-
-iptm 0.95–0.97 and pLDDT 96–99 are not evidence of excellent designs. The refold
-was handed HER2 as a template, framework and both other CDRs were frozen at
-wild-type, and only ten residues ever moved — the folding model is largely
-reproducing a complex it was given most of the answer to.
-
-Consequences for selection:
-
-1. **iptm and pLDDT will not discriminate** across a large pool. Ranking several
-   hundred designs that all score 0.94–0.97 is ranking on noise.
-2. **min_ipae has some spread** (0.310 vs 0.331) but two points is not a
-   distribution.
-3. **Confidence is not binding.** Calibrated against ~8,100 shuffled
-   VHH–antigen pairs, Boltz-2's ipTM has ROC AUC **0.645**, and an ipTM ≥ 0.70
-   cut-off admits **94.3%** of them. (An earlier version of this README claimed
-   "454 SPR-measured non-binders, 21 at ipTM ≥ 0.7" — that set does not exist;
-   see findings/lane-b-confidence.md.) Cut-offs should be calibrated rather than taken from raw
-   confidence.
-
----
-
-## Novelty gate
-
-Every submission is filtered by `abguard`, which assigns the track itself —
-teams do not choose it. From `abguard --help`:
-
-- identity to nearest known antibody **≥ 70%** → optimisation track → CDRH3 must
-  differ from trastuzumab *and from every reference CDRH3* by **≥ 3** substitutions
-- identity **< 70%** → de novo track → **≥ 2** substitutions from trastuzumab
-
-abguard ships its own reference of **610,109** CDRH3s and uses it by default, so
-no reference needs building. Also enforced: VHH/scFv/Fab only, ≤ 250 aa, no
-unpaired cysteines, IMGT-numberable at ≥ 0.1 confidence.
+Pipeline: `design` (RFD4-Proteina) → **novelty gate** → `fold` (Boltz-2) →
+`score`. **Run the gate before folding** — the default `refold-prepare` ranking
+spent 30% of our GPU on designs the gate later rejected, all in the substitution
+range where binding does not survive.
 
 ---
 
 ## Layout
 
 ```
-pipeline/
-  run_design.sh            batch driver (design → prepare → fold → score)
-  run-her2.upstream.sh     organisers' 4-design example, kept for reference
-  analyze_designs.py       sequence diff + metric join
-  score_developability.py  liabilities, biophysics, loop rigidity vs wild-type
-inputs/12-her2/            design spec and 1N8Z-derived input structure
-runs/her2-validation-seed1/
-  designs/                 4 generated structures
-  design_metrics/          per-design generation metrics
-  prepared/                refold inputs + HER2 template
-  refold_boltz2/           Boltz-2 outputs (structures, scores, PAE)
-  scored/                  refold_metrics.csv
+SUBMISSION.csv          the 4 designs, team-validate clean
+DECK.md                 the pitch, every number frozen and sourced
+findings/               the evidence, one file per lane
+pipeline/               tooling, stdlib only
+inputs/12-her2/         organisers' design spec and 1N8Z-derived structure
+inputs/12-her2-hotspot/ variant spec pinning F104 and Y105
+runs/                   run artefacts and result tables
+STRATEGY.md   the argument       EXECUTION.md  the commands
+PLAN.md       who does what      CONNECT.md    credentials and the VM
+HANDOFF.md log0.md log1.md       earlier state and recorded dead ends
 ```
 
-## Environment
+---
 
-One H100 80GB on Nebius. Every Foundry model is a local Docker image — there is no
-Foundry Hub on the VM, so `foundry-toolkit` is not used and the images are invoked
-with `docker run` directly.
+## Corrections we made to our own work
 
-Inputs under `inputs/` and `run-her2.upstream.sh` come from the hackathon bucket
-(`s3://apheris-oslo-hackathon/`) and are the organisers' material, included for
-reproducibility.
+Each was found by checking a claim against raw data, and several came from
+methods or people outside the work. They are listed because the habit mattered
+more than any single design:
+
+- a "454 SPR-measured non-binder" set we were calibrating against **does not
+  exist** — 29 rows, and its README forbids using them as negatives
+- `abguard` does **not** check novelty without `--reference-db`
+- `stab-ddg` scores **binding** ΔΔG, not thermostability
+- the IMGT CDRH3 is `SR` + our design window + `Y`, not the window itself
+- two of four epitope hotspots were misnamed in our prose from the first commit:
+  **PHE 573** not "Leu573", **ILE 591** not "Val591". The organisers' spec names
+  no residues and was always correct, so the designs were aimed at real
+  coordinates — only our description was wrong
+- **"the gate makes conservative designs impossible" — disproved** by the
+  enumerated set
+- our ΔΔG scan is **blind to G103's backbone-mediated contact**
+- we attributed a 3.42 Å contact to F104; that is the **Phe573↔Tyr105** stack,
+  and F104's nearest HER2 atom is 4.27 Å
+- an earlier epitope table reported per-residue distances that had been written
+  rather than computed; the computed values are W99 4.05 Å, F104 4.27 Å,
+  Y105 3.32 Å
+
+---
+
+Both HER2 tables are from **Chinery et al., doi:10.1101/2024.03.26.586756** —
+cite them when using this data. Liabilities per the **LAP Antibody Liability
+Reference, PLOS Comput Biol 2024;20(3):e1011881**. Structure: **PDB 1N8Z**
+(Cho et al., Nature 2003, doi:10.1038/nature01392).

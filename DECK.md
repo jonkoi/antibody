@@ -191,8 +191,10 @@ sequons).**
 
 **Why a hedge.** The first three share `F104P` and `A106W` and differ at one other
 position, so they are three variations on one design, not three independent bets.
-F104 is a verified contact (3.42 Å stacking with Phe573). **If F104P is wrong, all
-three fail together.** `_61` has a different mutation pattern, the cleanest
+F104 sits **4.27 Å** from HER2 — peripheral, not a tight contact — but it packs
+against the light chain (Tyr49/Leu46/Tyr55), and **its backbone phi is −141° in
+1N8Z where proline needs about −65°**. **If F104P is wrong, all three fail
+together.** `_61` has a different mutation pattern, the cleanest
 developability of anything we scored, and costs nothing in predicted affinity.
 
 **Two flags we are not hiding:** every coworker design carries **two CDR3

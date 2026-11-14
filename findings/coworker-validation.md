@@ -108,8 +108,12 @@ They pass the hard expression filters, so nothing is disqualifying. But:
 ### The correlated risk
 **All five share `F104P` and `A106W`**, and differ at only one other position. So
 they are five variations on one design, not five independent bets. F104 is a
-verified contact (3.42 Å aromatic stacking with Phe573; F104A costs 0.46
-kcal/mol), and proline there also constrains the backbone. **If F104P is wrong,
+**peripheral** to HER2, not a tight contact: its nearest HER2 atom is **4.27 Å**
+(an earlier version of this file said 3.42 Å, which is actually the HER2
+Phe573–CDRH3 **Tyr105** stack — a different pair). F104's real role is **VH/VL
+packing**, against light-chain Tyr49/Leu46/Tyr55. The sharper objection to F104P
+is geometric: **backbone phi at F104 is −141° in 1N8Z, and proline requires
+about −65°**, so F104P is incompatible with the wild-type loop conformation. **If F104P is wrong,
 all five fail together.**
 
 ---
