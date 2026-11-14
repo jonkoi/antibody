@@ -1,0 +1,17 @@
+{
+  "entries": [
+    {
+      "artifact": {
+        "artifact_id": "167969ae-e711-5bdd-bd33-07c220dad5da",
+        "compression": "none",
+        "media_type": "application/x-tar",
+        "sha256": "68a5186b58de196a328b58dc56f58d50bf78457a01e6f8a0d6a52ac9d2c1fc82",
+        "size_bytes": 215040
+      },
+      "name": "workload",
+      "semantic_type": "stab-ddg-workload-tar/v1"
+    }
+  ],
+  "manifest_id": "oslo-stab-ddg-designs-ddg",
+  "schema": "fs2-serve.nebius.ai/scientific-artifact-manifest/v1"
+}
