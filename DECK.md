@@ -186,45 +186,52 @@ liability. *(LAP reference, PLOS Comput Biol 2024;20(3):e1011881.)*
 
 ## Slide 8 — The submission
 
-**Chosen on the one contact that decides it:** the residue-103 backbone carbonyl
-to **HER2 Lys593 NZ** hydrogen bond — 2.42 Å in the crystal, the tightest contact
-in the interface. Measured in a Boltz-2 refold against a wild-type control folded
-identically (**control: 2.63 Å**).
+**Four designs. `abguard team-validate --reference-db` → 4/4 valid** against all
+525,063 reference CDRH3s, 0 hard errors, every chain 2 cysteines and ≤250 aa.
 
-| # | design | CDRH3 | subs | **H-bond** | ΔΔG (fold) | liab |
-| --- | --- | --- | ---: | ---: | ---: | ---: |
-| 1 | **her2_cdrh3_61** | `SLGSADYAFD` | 6 | **2.51 Å** | 0.42 (2.0×) | **5** |
-| 2 | enum_4 | `WGGRGPYWMD` | 3 | 3.48 Å | **0.20 (1.4×)** | 8 |
-| 3 | enum_1 | `WGHDGPYWMD` | 3 | 4.07 Å | 0.50 (2.3×) | 9 |
-| 4 | enum_5 | `WGPDGPYWMD` | 3 | 3.20 Å | 0.74 (3.5×) | 9 |
+| # | design | CDRH3 | subs | ΔΔG (fold vs WT) | Lys593 H-bond | liab | what it is |
+| --- | --- | --- | ---: | ---: | ---: | ---: | --- |
+| 1 | **her2_cdrh3_61** | `SLGSADYAFD` | 6 | 0.42 (2.0×) | **2.51 Å** | **5** | independent pattern |
+| 2 | enum_4 | `WGGRGPYWMD` | 3 | **0.20 (1.4×)** | 3.48 Å | 8 | best energetics |
+| 3 | **fw_WGGMGPYWMD** | `WGGMGPYWMD` | 3 + 2 framework | 0.17 (1.3×)¹ | — | 10 | **the thermostability bet** |
+| 4 | enum_1 | `WGHDGPYWMD` | 3 | 0.50 (2.3×) | 4.07 Å | 9 | best sequence-model score |
 
-`abguard team-validate --reference-db` → **4/4 valid** against 525,063 references.
+¹ ΔΔG measured on the CDRH3-only version; the framework pair is untested energetically.
 
-**This ranking is the reverse of the one we had an hour earlier**, and that is the
-slide. We had enum_3 and enum_2 first on binding energetics. On the actual hydrogen
-bond they are **7.38 Å and 6.74 Å** — the interface is gone, and enum_2's Tyr105 is
-**11.11 Å** from Phe573, meaning the paratope has moved off the surface patch. We
-had been reassured by a metric that measured *any* CDRH3 atom to *any* hotspot
-atom, which gave 2.2–3.0 Å for everything and was far too permissive.
+**Every design engages the full epitope.** Per-hotspot contact at 4.5 Å is **4/4
+for all of them**, and for the wild-type control. That is the necessary condition
+and it is met.
 
-**And the mechanism is the same one from slide 6, now cutting the other way.**
-`her2_cdrh3_61` holds the bond best — **tighter than the wild-type control** —
-while carrying **Ala at position 103**. The bond is made by the backbone carbonyl,
-which alanine retains. So sequence-level "contact preservation" is the wrong
-filter: designs with Gly at 103 lost the bond, and one that mutated it kept it.
-**Loop geometry decides, not residue identity.**
+### Why these four, and not a ranking
 
-**What we will not claim.** A refold is not a measurement; nothing here has been
-near an instrument; this is one model at one seed; and Boltz-2 is the model whose
-*confidence* we showed is barely better than chance (slide 5). We use its
-coordinates against a matched control, not its confidence — a more defensible use,
-but still one model.
+**Three criteria gave three different orderings, and none is authoritative.**
 
-Three of the four share `F104P` and `A106W`, so they are one correlated
-hypothesis: F104 packs against the light chain (Tyr49/Leu46/Tyr55), and `A106W`
-adds a second CDR3 tryptophan, a documented oxidation and aggregation liability
-(PMID 30608647, 31678251). **`her2_cdrh3_61` carries neither**, so slot 1 fails
-independently.
+| criterion | best | worst |
+| --- | --- | --- |
+| epitope recall (all 4 hotspots) | **4/4 — no discrimination** | — |
+| StaB-ddG binding penalty | enum_3 (0.17) | enum_5 (0.74) |
+| Lys593 backbone H-bond | her2_cdrh3_61 (2.51 Å) | enum_3 (7.38 Å) |
+| fold confidence (ipTM) | enum_5 (0.933) | enum_4 (0.860) |
+
+The ΔΔG and H-bond orderings are near-opposite, and **ipTM agrees with neither** —
+it gives its *lowest* score to the design with the best retained geometry. So we
+submit **one design leading on each criterion** rather than pretending one wins.
+
+**Slot 1 is the hedge that fails independently.** `her2_cdrh3_61` came from the
+generative track, carries neither `F104P` nor `A106W`, has no CDR3 tryptophan and
+the fewest liabilities of anything we scored — fewer than approved trastuzumab,
+which has 8. Slots 2–4 share `F104P` and `A106W`, so they rise and fall together.
+
+**Slot 3 is a controlled experiment, not a design.** It is slot 2's sibling
+CDRH3 plus framework `S85N`/`R87T`, so the framework pair is the *only* added
+variable. The rationale is a literature thermostability transfer (Ng et al.). It
+creates an N-glycosylation sequon `NLT` at VH85–87 — which we measured at
+**21.1 Å from the nearest HER2 atom and 19.4 Å from the nearest light chain**,
+against 2.4–4.3 Å for the real contacts, so a glycan cannot reach either
+interface. **We say plainly: no measured Tm, and the benefit is
+glycosylation-dependent and unconfirmed for the expression system.** Including it
+is also a deliberate reversal of our own expression screen, which excluded 83
+candidates for carrying a sequon.
 
 ---
 
@@ -241,6 +248,8 @@ independently.
 | epitope hotspots are Leu573 / Val591 | they are **PHE 573 / ILE 591** — our own annotation was wrong; the organisers' spec, which drove the run, was correct |
 | "the novelty gate makes conservative designs impossible" (**ours, slide 3**) | **false** — five enumerated designs at 3 substitutions all pass. 0% acceptance was a property of *our generator*, not the design space |
 | our ΔΔG scan found no hotspot at G103 (0.042 kcal/mol) | **blind spot** — G103's contact is its **backbone carbonyl** (2.42 Å to Lys593, the interface's tightest), and alanine keeps it. Alanine scanning cannot see backbone contacts |
+| "cw_2/cw_3 lost the interface" (**ours, an hour ago**) | **over-corrected** — we promoted one atom-pair distance to a filter and reversed the submission on it. Per-hotspot recall is **4/4 for every design**; the H-bond is a tiebreaker |
+| phi(104) proves `F104P` is safe (**ours**) | **near-vacuous** — a co-folding model gives proline-compatible angles for *any* proline-containing sequence |
 
 **Three things we will not claim:**
 
@@ -341,11 +350,13 @@ know which of our numbers to trust.**
 
 ## Pre-flight, 17:40
 
+- [ ] `team15_01.csv` attached, @Davide Campagna tagged, **nothing else in the message**
+- [ ] Filename prefix confirmed with the organisers (`team15` vs a team short code)
+- [ ] Slide 8 table matches `team15_01.csv` exactly — 4 rows, `fw_WGGMGPYWMD` in slot 3
 - [ ] Every number traceable to a file in `findings/`
 - [ ] Slide 5 presents **AUC first**, thresholds second
-- [ ] Slide 7 shows the PhDs' actual pick
-- [ ] No thermostability number anywhere
+- [ ] **No thermostability number anywhere** — only the literature rationale, labelled as unconfirmed
 - [ ] No affinity claim below ~7×
-- [ ] `_77` carries no score
 - [ ] Chinery et al. (doi:10.1101/2024.03.26.586756) cited for both HER2 tables
-- [ ] One person has read it aloud once, start to finish
+- [ ] Presenters have read `findings/interface-hbond-check.md` — slide 8 changed late
+- [ ] One person has read the deck aloud once, start to finish
