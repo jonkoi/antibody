@@ -1,0 +1,134 @@
+{
+ "schema": "fs2-serve.nebius.ai/scientific-run-result/v2",
+ "operation_id": "op-595bc7c8c88bad49",
+ "model_id": "stab-ddg",
+ "status": "succeeded",
+ "terminal_status": "succeeded",
+ "input_manifest": {
+  "artifact_id": "679ca429-1684-572a-837d-cba3a9dd7d13",
+  "compression": "none",
+  "media_type": "application/vnd.fs2.scientific-manifest+json",
+  "sha256": "805fbfd051ddc999446b4b494fa2c2b4b683969286592a8a8d0dbbaefe304c01",
+  "size_bytes": 506
+ },
+ "output_manifest": {
+  "artifact_id": "15874cf8-d668-55ef-92fe-a4f3d6e92f11",
+  "sha256": "c76758091c441e945697ccac87375e9e17fa35e6c1a3e62de256e72a7bc5f65b",
+  "size_bytes": 644,
+  "media_type": "application/vnd.fs2.scientific-manifest+json",
+  "compression": "none"
+ },
+ "semantic_validation": {
+  "status": "passed",
+  "validator_id": "stab-ddg-score-v1",
+  "variants_scored": 5,
+  "units": "kcal/mol"
+ },
+ "native_result": {
+  "validation": {
+   "status": "passed",
+   "validator_id": "stab-ddg-score-v1",
+   "variants_scored": 5,
+   "units": "kcal/mol"
+  },
+  "files": [
+   {
+    "name": "scores",
+    "semantic_type": "stab-ddg-scores-csv/v1",
+    "media_type": "text/csv",
+    "compression": null,
+    "file": {
+     "path": "scores.csv",
+     "sha256": "8e8c134621b3b4b0ccf674fa32044244c618ec45415e5a984d99889a7fb3978e",
+     "size_bytes": 286
+    }
+   },
+   {
+    "name": "result",
+    "semantic_type": "stab-ddg-result/v1",
+    "media_type": "application/json",
+    "compression": null,
+    "file": {
+     "path": "result.json",
+     "sha256": "5b00cff79985608104638271e63865dd315acdadcaa7180c392f951ed55a8f42",
+     "size_bytes": 72743
+    }
+   }
+  ],
+  "command_seconds": 6.213815683033317,
+  "command_timing_scope": "terminal-stage-only",
+  "runtime_metrics": null
+ },
+ "customer_storage": {
+  "available": true,
+  "bucket": "fs2-oslo-hackathon-participant-12-68d7bd704e",
+  "prefix": "runs/stab-ddg/op-595bc7c8c88bad49/",
+  "manifest_key": "runs/stab-ddg/op-595bc7c8c88bad49/manifest.json",
+  "files": [
+   {
+    "path": "artifacts/scores.csv",
+    "sha256": "8e8c134621b3b4b0ccf674fa32044244c618ec45415e5a984d99889a7fb3978e",
+    "size_bytes": 286,
+    "key": "runs/stab-ddg/op-595bc7c8c88bad49/artifacts/scores.csv"
+   },
+   {
+    "path": "artifacts/result.json",
+    "sha256": "5b00cff79985608104638271e63865dd315acdadcaa7180c392f951ed55a8f42",
+    "size_bytes": 72743,
+    "key": "runs/stab-ddg/op-595bc7c8c88bad49/artifacts/result.json"
+   },
+   {
+    "path": "result.json",
+    "sha256": "18cc47f3a66ba5d79e50ad6438434e069db13da2d8c2ac5fb6f7a634295e6f6f",
+    "size_bytes": 664,
+    "key": "runs/stab-ddg/op-595bc7c8c88bad49/result.json"
+   }
+  ]
+ },
+ "progress": {
+  "schema": "scientific-ai/progress/v1",
+  "updated_at": null,
+  "current_step_id": null,
+  "steps": [
+   {
+    "step_id": "delivered_calls",
+    "command": null,
+    "state": "completed",
+    "unit": "call",
+    "initial_step": null,
+    "target_step": null,
+    "observed_step": null,
+    "durable_step": null,
+    "timestep_ps": null,
+    "completed_ns": null,
+    "durable_completed_ns": null,
+    "target_ns": null,
+    "ns_per_day": null,
+    "ns_per_day_source": null,
+    "completed_units": 1.0,
+    "durable_completed_units": 1.0,
+    "target_units": null,
+    "rate": null,
+    "rate_unit": null,
+    "rate_source": null,
+    "rate_window_seconds": null,
+    "observed_at": null,
+    "durable_at": null,
+    "rate_updated_at": null
+   }
+  ],
+  "available": true,
+  "stale": false,
+  "stale_after_seconds": null,
+  "source": "verified-delivery"
+ },
+ "execution": {
+  "stage_id": "score",
+  "shard_id": "main",
+  "role": "run",
+  "owner": {
+   "tenant_id": "oslo-hackathon",
+   "principal_id": "d8bccecafbf03af2615ba0b9f2f769ae71b555c595e6887e0f0583dcf6186158"
+  }
+ }
+}

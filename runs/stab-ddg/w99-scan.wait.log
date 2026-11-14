@@ -1,5 +1,0 @@
-  [   0s] queued
-  [  75s] running
-  [ 106s] finalizing
-  [ 118s] succeeded
-Done in 118 seconds. Download with: forge.py fetch op-42d5133ce80a2a65 --dest results/op-42d5133ce80a2a65

@@ -179,14 +179,14 @@ What does exist:
 
 ## 4. Which CDRH3 residues of trastuzumab contact HER2
 
-**Computed (4.5 Å): only four CDR-H3 residues touch HER2.**
+**Computed (4.5 Å): only four CDR-H3 residues touch HER2.** (Distances corrected 2026-11-14; an earlier draft listed uncomputed values for Trp99/Phe104/Tyr105.)
 
 | CDR-H3 residue (chain B, sequential) | HER2 partners | closest |
 | --- | --- | --- |
-| **Trp99** | Pro572, Phe573 | 3.4 Å |
+| **Trp99** | Pro572, Phe573 | 4.05 Å |
 | **Gly103** | Asp570, Pro579, Ile591, **Lys593** | **2.42 Å** (O···Lys593 NZ) |
-| **Phe104** | Lys593 | 3.1 Å |
-| **Tyr105** | Asp570, Pro571, Pro572, Phe573 | 2.9 Å |
+| **Phe104** | Lys593 | 4.27 Å |
+| **Tyr105** | Asp570, Pro571, Pro572, Phe573 | 3.32 Å |
 
 Trastuzumab CDR-H3 is `WGGDGFYAMDY`; the contacting subset is W99 … G103-F104-Y105.
 Gly100, Gly101, Asp102, Ala106, Met107, Asp108, Tyr109 make no 4.5 Å contact.
