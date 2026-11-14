@@ -34,6 +34,20 @@ AA3TO1 = {
 NOVELTY_FLOOR_OPTIMISATION = 3
 NOVELTY_FLOOR_DE_NOVO = 2
 
+# WARNING. The distance this script reports is to WILD-TYPE ONLY, and that is a
+# necessary-but-not-sufficient condition. The real gate measures distance to the
+# nearest of 525,063 reference CDRH3s, and the 524k-variant FACS table samples
+# the near-wild-type neighbourhood densely, so a design can sit >= 3 from
+# trastuzumab and still be 2 from some measured variant.
+#
+# This is not hypothetical: her2_cdrh3_2 (WGPPYFYAMD) is 3 substitutions from
+# wild-type, which this script called novel, and abguard REJECTED it -- it is 2
+# mutations from SRWGMPHFYAMDY in tz_her2_facs_3classes_524346.
+#
+# Treat the column below as a cheap pre-filter only. The verdict comes from:
+#   abguard team-validate <submission>.csv --reference-db her2_novelty.duckdb
+# See TASKS.md, "The novelty gate is much harder than arithmetic suggests".
+
 
 def parse_cif_chains(path: Path) -> dict[str, dict[int, str]]:
     """Return {chain_id: {seq_id: one_letter}} from an mmCIF's CA atoms.
@@ -180,7 +194,7 @@ def main() -> int:
         return 0
 
     print(f"wild-type {args.chain}{start}-{end}: {wt_window}\n")
-    header = f"{'design':<16}{'window':<14}{'subs':>5}{'ident':>8}{'novel':>7}" \
+    header = f"{'design':<16}{'window':<14}{'subs':>5}{'ident':>8}{'vs_wt':>7}" \
              f"{'min_ipae':>10}{'iptm':>8}{'pLDDT':>8}"
     print(header)
     print("-" * len(header))
@@ -196,7 +210,13 @@ def main() -> int:
     unrefolded = sum(1 for r in records if not r["refolded"])
     if unrefolded:
         print(f"\n{unrefolded} design(s) not refolded — metrics shown as '-'.")
-    print("\n'novel' = clears abguard's >=3-substitution floor for the optimisation track.")
+    print(
+        "\n'vs_wt' = clears the >=3-substitution floor AGAINST WILD-TYPE ONLY."
+        "\n  This is a pre-filter, NOT the novelty verdict. The real gate also"
+        "\n  compares against 525,063 reference CDRH3s, and designs that pass"
+        "\n  here have been rejected there. Confirm every submission with:"
+        "\n    abguard team-validate <submission>.csv --reference-db her2_novelty.duckdb"
+    )
     return 0
 
 

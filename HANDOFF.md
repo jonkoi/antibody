@@ -70,7 +70,7 @@ from the original `participant-12.zip`.
 - **No VHH / de novo designs generated.** Only trastuzumab CDRH3 redesign so far.
 - **No thermostability scoring.** Nebius `stab-ddg` and `protein-scoring` are available
   and unused.
-- **Confidence cut-off not calibrated** against the 454 measured non-binders.
+- **Confidence cut-off** now calibrated (see correction below); the "454 measured non-binders" referenced here do not exist.
 
 ---
 
@@ -81,8 +81,11 @@ pLDDT 96–99. This is not evidence of quality — the refold is template-guided
 framework and other CDRs are frozen, and only 10 residues ever move, so Boltz-2 is
 largely reproducing a complex it was handed. **iptm and pLDDT will not rank a large
 pool.** `min_ipae` showed some spread (0.310 vs 0.331) but two points is not a
-distribution. Calibrate against the 454 SPR-measured non-binders in
-`sigma2-ab-ag-champloo/` — 21 of them score ipTM ≥ 0.7.
+distribution. **Correction:** the "454 SPR-measured non-binders, 21 at
+ipTM >= 0.7" claimed here does not exist -- `spr-supplementary/` holds 29 and 12
+rows and its README forbids using them as negatives. Calibrated instead against
+~8,100 shuffled pairs: Boltz-2 ROC AUC 0.645, and ipTM >= 0.70 admits 94.3% of
+them. See findings/lane-b-confidence.md.
 
 **Conserved W99 tracks selection.** Designs that lost the Trp at the base of CDRH3
 (designs 0, 1) were exactly the two `refold-prepare` did not rank into the top 2.
@@ -146,7 +149,7 @@ two of the three axes are demonstrably satisfiable in VHH format at once.
 4. **Launch the production batch** — `N=100 TOPN=20 bash pipeline/run_design.sh all`.
    Long-running; start it before the pitch work, not after.
 5. **Score thermostability** on survivors with Nebius `stab-ddg`.
-6. **Calibrate the confidence cut-off** against the 454 non-binders.
+6. ~~Calibrate the confidence cut-off~~ -- DONE, see findings/lane-b-confidence.md.
 7. **Assemble up to 20 ranked designs**, split across whatever tracks abguard assigns.
 
 ---

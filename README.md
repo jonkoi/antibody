@@ -230,9 +230,11 @@ Consequences for selection:
    hundred designs that all score 0.94–0.97 is ranking on noise.
 2. **min_ipae has some spread** (0.310 vs 0.331) but two points is not a
    distribution.
-3. **Confidence is not binding.** The organisers ship 454 VHH–antigen pairs
-   measured by SPR as true non-binders, 21 of which still score ipTM ≥ 0.7.
-   Cut-offs should be calibrated against that set rather than taken from raw
+3. **Confidence is not binding.** Calibrated against ~8,100 shuffled
+   VHH–antigen pairs, Boltz-2's ipTM has ROC AUC **0.645**, and an ipTM ≥ 0.70
+   cut-off admits **94.3%** of them. (An earlier version of this README claimed
+   "454 SPR-measured non-binders, 21 at ipTM ≥ 0.7" — that set does not exist;
+   see findings/lane-b-confidence.md.) Cut-offs should be calibrated rather than taken from raw
    confidence.
 
 ---

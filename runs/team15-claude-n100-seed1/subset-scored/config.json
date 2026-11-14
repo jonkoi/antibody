@@ -1,0 +1,6 @@
+{
+  "criterion": "auto",
+  "model": "boltz2",
+  "predictions": "../boltz2",
+  "schema_version": "foundry.cli.v1"
+}
