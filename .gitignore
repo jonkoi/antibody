@@ -56,3 +56,19 @@ runs/*/refold_boltz2/
 # chai1_replica_features.csv IS committed (2.5MB, 14,721 rows): regenerating it
 # means a 25-minute parse of a 487MB archive, so it is cheap insurance.
 nebius-runs/
+=======
+# --- third-party raw datasets (Chinery et al., via hackathon bucket) ---
+data/her2-trastuzumab/
+data/README.upstream.md
+__pycache__/
+
+# --- subagent scratch dirs (working files, duplicated third-party data) ---
+analysis/
+# --- third-party material, kept locally, not redistributed ---
+2026-11_Oslo_hackathon_Apheris_challenge.pdf
+data/spr-supplementary/
+# --- bulky regenerable fold artefacts (structures + metrics are kept) ---
+*_detailed_scores.cbor.gz
+# full complex structures: ~920KB each, regenerable from the committed seed/config
+runs/**/inference_samples/**/*.cif
+runs/**/boltz2/**/*_model.cif

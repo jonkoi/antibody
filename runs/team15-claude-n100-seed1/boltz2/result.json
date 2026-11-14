@@ -1,0 +1,218 @@
+{
+  "provenance": {
+    "cli_contract_version": "foundry.cli.v1",
+    "ended_at": "2026-11-14T11:26:11.898064Z",
+    "inputs": [
+      {
+        "path": "/work/runs/team15-claude-n100-seed1/prepared/holo/queries.json",
+        "tier": "none"
+      }
+    ],
+    "module": {
+      "name": "apheris-boltz",
+      "version": "1.3.0"
+    },
+    "resolved_config": {
+      "missing_msas": "fail",
+      "num_diffusion_samples": 1,
+      "query_failures": "skip",
+      "recycling_steps": 3,
+      "sampling_steps": 200,
+      "seeds": [
+        42
+      ],
+      "template_paths": [
+        "../prepared/holo/template.cif"
+      ],
+      "weights": "/app/weights/boltz2_conf.ckpt",
+      "write_detailed_scores": true
+    },
+    "started_at": "2026-11-14T11:23:02.393535Z"
+  },
+  "result": {
+    "predictions": [
+      {
+        "detailed_scores_path": "her2_cdrh3_52/seed_42/her2_cdrh3_52_seed_42_sample_1_detailed_scores.cbor.gz",
+        "path": "her2_cdrh3_52/seed_42/her2_cdrh3_52_seed_42_sample_1_model.cif",
+        "query_id": "her2_cdrh3_52",
+        "query_index": 0,
+        "sample": 1,
+        "scores_path": "her2_cdrh3_52/seed_42/her2_cdrh3_52_seed_42_sample_1_scores.json",
+        "seed": 42
+      },
+      {
+        "detailed_scores_path": "her2_cdrh3_74/seed_42/her2_cdrh3_74_seed_42_sample_1_detailed_scores.cbor.gz",
+        "path": "her2_cdrh3_74/seed_42/her2_cdrh3_74_seed_42_sample_1_model.cif",
+        "query_id": "her2_cdrh3_74",
+        "query_index": 1,
+        "sample": 1,
+        "scores_path": "her2_cdrh3_74/seed_42/her2_cdrh3_74_seed_42_sample_1_scores.json",
+        "seed": 42
+      },
+      {
+        "detailed_scores_path": "her2_cdrh3_21/seed_42/her2_cdrh3_21_seed_42_sample_1_detailed_scores.cbor.gz",
+        "path": "her2_cdrh3_21/seed_42/her2_cdrh3_21_seed_42_sample_1_model.cif",
+        "query_id": "her2_cdrh3_21",
+        "query_index": 2,
+        "sample": 1,
+        "scores_path": "her2_cdrh3_21/seed_42/her2_cdrh3_21_seed_42_sample_1_scores.json",
+        "seed": 42
+      },
+      {
+        "detailed_scores_path": "her2_cdrh3_26/seed_42/her2_cdrh3_26_seed_42_sample_1_detailed_scores.cbor.gz",
+        "path": "her2_cdrh3_26/seed_42/her2_cdrh3_26_seed_42_sample_1_model.cif",
+        "query_id": "her2_cdrh3_26",
+        "query_index": 3,
+        "sample": 1,
+        "scores_path": "her2_cdrh3_26/seed_42/her2_cdrh3_26_seed_42_sample_1_scores.json",
+        "seed": 42
+      },
+      {
+        "detailed_scores_path": "her2_cdrh3_63/seed_42/her2_cdrh3_63_seed_42_sample_1_detailed_scores.cbor.gz",
+        "path": "her2_cdrh3_63/seed_42/her2_cdrh3_63_seed_42_sample_1_model.cif",
+        "query_id": "her2_cdrh3_63",
+        "query_index": 4,
+        "sample": 1,
+        "scores_path": "her2_cdrh3_63/seed_42/her2_cdrh3_63_seed_42_sample_1_scores.json",
+        "seed": 42
+      },
+      {
+        "detailed_scores_path": "her2_cdrh3_91/seed_42/her2_cdrh3_91_seed_42_sample_1_detailed_scores.cbor.gz",
+        "path": "her2_cdrh3_91/seed_42/her2_cdrh3_91_seed_42_sample_1_model.cif",
+        "query_id": "her2_cdrh3_91",
+        "query_index": 5,
+        "sample": 1,
+        "scores_path": "her2_cdrh3_91/seed_42/her2_cdrh3_91_seed_42_sample_1_scores.json",
+        "seed": 42
+      },
+      {
+        "detailed_scores_path": "her2_cdrh3_12/seed_42/her2_cdrh3_12_seed_42_sample_1_detailed_scores.cbor.gz",
+        "path": "her2_cdrh3_12/seed_42/her2_cdrh3_12_seed_42_sample_1_model.cif",
+        "query_id": "her2_cdrh3_12",
+        "query_index": 6,
+        "sample": 1,
+        "scores_path": "her2_cdrh3_12/seed_42/her2_cdrh3_12_seed_42_sample_1_scores.json",
+        "seed": 42
+      },
+      {
+        "detailed_scores_path": "her2_cdrh3_3/seed_42/her2_cdrh3_3_seed_42_sample_1_detailed_scores.cbor.gz",
+        "path": "her2_cdrh3_3/seed_42/her2_cdrh3_3_seed_42_sample_1_model.cif",
+        "query_id": "her2_cdrh3_3",
+        "query_index": 7,
+        "sample": 1,
+        "scores_path": "her2_cdrh3_3/seed_42/her2_cdrh3_3_seed_42_sample_1_scores.json",
+        "seed": 42
+      },
+      {
+        "detailed_scores_path": "her2_cdrh3_31/seed_42/her2_cdrh3_31_seed_42_sample_1_detailed_scores.cbor.gz",
+        "path": "her2_cdrh3_31/seed_42/her2_cdrh3_31_seed_42_sample_1_model.cif",
+        "query_id": "her2_cdrh3_31",
+        "query_index": 8,
+        "sample": 1,
+        "scores_path": "her2_cdrh3_31/seed_42/her2_cdrh3_31_seed_42_sample_1_scores.json",
+        "seed": 42
+      },
+      {
+        "detailed_scores_path": "her2_cdrh3_4/seed_42/her2_cdrh3_4_seed_42_sample_1_detailed_scores.cbor.gz",
+        "path": "her2_cdrh3_4/seed_42/her2_cdrh3_4_seed_42_sample_1_model.cif",
+        "query_id": "her2_cdrh3_4",
+        "query_index": 9,
+        "sample": 1,
+        "scores_path": "her2_cdrh3_4/seed_42/her2_cdrh3_4_seed_42_sample_1_scores.json",
+        "seed": 42
+      },
+      {
+        "detailed_scores_path": "her2_cdrh3_40/seed_42/her2_cdrh3_40_seed_42_sample_1_detailed_scores.cbor.gz",
+        "path": "her2_cdrh3_40/seed_42/her2_cdrh3_40_seed_42_sample_1_model.cif",
+        "query_id": "her2_cdrh3_40",
+        "query_index": 10,
+        "sample": 1,
+        "scores_path": "her2_cdrh3_40/seed_42/her2_cdrh3_40_seed_42_sample_1_scores.json",
+        "seed": 42
+      },
+      {
+        "detailed_scores_path": "her2_cdrh3_47/seed_42/her2_cdrh3_47_seed_42_sample_1_detailed_scores.cbor.gz",
+        "path": "her2_cdrh3_47/seed_42/her2_cdrh3_47_seed_42_sample_1_model.cif",
+        "query_id": "her2_cdrh3_47",
+        "query_index": 11,
+        "sample": 1,
+        "scores_path": "her2_cdrh3_47/seed_42/her2_cdrh3_47_seed_42_sample_1_scores.json",
+        "seed": 42
+      },
+      {
+        "detailed_scores_path": "her2_cdrh3_82/seed_42/her2_cdrh3_82_seed_42_sample_1_detailed_scores.cbor.gz",
+        "path": "her2_cdrh3_82/seed_42/her2_cdrh3_82_seed_42_sample_1_model.cif",
+        "query_id": "her2_cdrh3_82",
+        "query_index": 12,
+        "sample": 1,
+        "scores_path": "her2_cdrh3_82/seed_42/her2_cdrh3_82_seed_42_sample_1_scores.json",
+        "seed": 42
+      },
+      {
+        "detailed_scores_path": "her2_cdrh3_88/seed_42/her2_cdrh3_88_seed_42_sample_1_detailed_scores.cbor.gz",
+        "path": "her2_cdrh3_88/seed_42/her2_cdrh3_88_seed_42_sample_1_model.cif",
+        "query_id": "her2_cdrh3_88",
+        "query_index": 13,
+        "sample": 1,
+        "scores_path": "her2_cdrh3_88/seed_42/her2_cdrh3_88_seed_42_sample_1_scores.json",
+        "seed": 42
+      },
+      {
+        "detailed_scores_path": "her2_cdrh3_14/seed_42/her2_cdrh3_14_seed_42_sample_1_detailed_scores.cbor.gz",
+        "path": "her2_cdrh3_14/seed_42/her2_cdrh3_14_seed_42_sample_1_model.cif",
+        "query_id": "her2_cdrh3_14",
+        "query_index": 14,
+        "sample": 1,
+        "scores_path": "her2_cdrh3_14/seed_42/her2_cdrh3_14_seed_42_sample_1_scores.json",
+        "seed": 42
+      },
+      {
+        "detailed_scores_path": "her2_cdrh3_10/seed_42/her2_cdrh3_10_seed_42_sample_1_detailed_scores.cbor.gz",
+        "path": "her2_cdrh3_10/seed_42/her2_cdrh3_10_seed_42_sample_1_model.cif",
+        "query_id": "her2_cdrh3_10",
+        "query_index": 15,
+        "sample": 1,
+        "scores_path": "her2_cdrh3_10/seed_42/her2_cdrh3_10_seed_42_sample_1_scores.json",
+        "seed": 42
+      },
+      {
+        "detailed_scores_path": "her2_cdrh3_17/seed_42/her2_cdrh3_17_seed_42_sample_1_detailed_scores.cbor.gz",
+        "path": "her2_cdrh3_17/seed_42/her2_cdrh3_17_seed_42_sample_1_model.cif",
+        "query_id": "her2_cdrh3_17",
+        "query_index": 16,
+        "sample": 1,
+        "scores_path": "her2_cdrh3_17/seed_42/her2_cdrh3_17_seed_42_sample_1_scores.json",
+        "seed": 42
+      },
+      {
+        "detailed_scores_path": "her2_cdrh3_28/seed_42/her2_cdrh3_28_seed_42_sample_1_detailed_scores.cbor.gz",
+        "path": "her2_cdrh3_28/seed_42/her2_cdrh3_28_seed_42_sample_1_model.cif",
+        "query_id": "her2_cdrh3_28",
+        "query_index": 17,
+        "sample": 1,
+        "scores_path": "her2_cdrh3_28/seed_42/her2_cdrh3_28_seed_42_sample_1_scores.json",
+        "seed": 42
+      },
+      {
+        "detailed_scores_path": "her2_cdrh3_39/seed_42/her2_cdrh3_39_seed_42_sample_1_detailed_scores.cbor.gz",
+        "path": "her2_cdrh3_39/seed_42/her2_cdrh3_39_seed_42_sample_1_model.cif",
+        "query_id": "her2_cdrh3_39",
+        "query_index": 18,
+        "sample": 1,
+        "scores_path": "her2_cdrh3_39/seed_42/her2_cdrh3_39_seed_42_sample_1_scores.json",
+        "seed": 42
+      },
+      {
+        "detailed_scores_path": "her2_cdrh3_53/seed_42/her2_cdrh3_53_seed_42_sample_1_detailed_scores.cbor.gz",
+        "path": "her2_cdrh3_53/seed_42/her2_cdrh3_53_seed_42_sample_1_model.cif",
+        "query_id": "her2_cdrh3_53",
+        "query_index": 19,
+        "sample": 1,
+        "scores_path": "her2_cdrh3_53/seed_42/her2_cdrh3_53_seed_42_sample_1_scores.json",
+        "seed": 42
+      }
+    ]
+  },
+  "schema_version": "foundry.cli.v1",
+  "task": "predict"
+}
