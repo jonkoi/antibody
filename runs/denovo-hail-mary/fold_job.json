@@ -1,0 +1,55 @@
+{
+  "created_at": "2026-11-14T15:25:25.871456+00:00",
+  "done": 0,
+  "error": null,
+  "finished_at": null,
+  "id": "14c0fd3d006eb13479a0407a7a013340",
+  "kind": "predict",
+  "links": {
+    "archive": "/v1/jobs/14c0fd3d006eb13479a0407a7a013340/archive",
+    "logs": "/v1/jobs/14c0fd3d006eb13479a0407a7a013340/logs",
+    "results": "/v1/jobs/14c0fd3d006eb13479a0407a7a013340/results",
+    "self": "/v1/jobs/14c0fd3d006eb13479a0407a7a013340",
+    "usage": "/v1/jobs/14c0fd3d006eb13479a0407a7a013340/usage",
+    "wait": "/v1/jobs/14c0fd3d006eb13479a0407a7a013340?wait=60"
+  },
+  "model": "boltz2",
+  "name": "team15-one-shot-denovo-check",
+  "object": "job",
+  "params": {
+    "diffusion_samples": 3,
+    "fast": false,
+    "output_format": "pdb",
+    "seed": 73,
+    "use_msa_server": true,
+    "write_pae": false
+  },
+  "progress": null,
+  "protocol": null,
+  "queue": {
+    "accounts_ahead": 0,
+    "fleet": {
+      "accounts_waiting": 1,
+      "busy": 219,
+      "chips": 237,
+      "out_of_service": 36
+    },
+    "reason": "all_chips_busy",
+    "yours": {
+      "of": 1,
+      "position": 1
+    }
+  },
+  "residues": 336,
+  "results_ready": false,
+  "stage": null,
+  "started_at": null,
+  "status": "queued",
+  "total": 9,
+  "wait": {
+    "how": "GET this URL with your API key instead of sleeping. It answers the moment the job ends, or after 60 s with the job as it is then; call it again while status is queued or running.",
+    "seconds": 60,
+    "url": "https://api.japanfold.aiand.com/v1/jobs/14c0fd3d006eb13479a0407a7a013340?wait=60"
+  },
+  "waiting_for_device": true
+}

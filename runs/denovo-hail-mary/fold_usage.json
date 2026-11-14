@@ -1,0 +1,190 @@
+{
+  "amount": 0.018392,
+  "amount_micros": 18392,
+  "billable_s": 254.66,
+  "closed_at": "2026-11-14T15:26:44.498000+00:00",
+  "currency": "usd",
+  "excluded_s": 0.0,
+  "job": "14c0fd3d006eb13479a0407a7a013340",
+  "kind": "predict",
+  "links": {
+    "job": "/v1/jobs/14c0fd3d006eb13479a0407a7a013340"
+  },
+  "load_s": 47.56,
+  "meter": {
+    "bias": "under",
+    "bound_s": 6.0,
+    "method": "sampled-lease-integral+engine-clock-cap",
+    "sample_gap_s": 3.0,
+    "visible": true
+  },
+  "model": "boltz2",
+  "name": "team15-one-shot-denovo-check",
+  "object": "usage",
+  "reconcile": {
+    "agree": 1,
+    "capped": 0,
+    "checked": 1,
+    "over_engine": 0,
+    "rate": 1.0,
+    "worst_delta_s": -2.047
+  },
+  "status": "succeeded",
+  "submitted_at": "2026-11-14T15:25:26.034000+00:00",
+  "surface": "skill",
+  "targets": [
+    {
+      "amount": 0.001882,
+      "amount_micros": 1882,
+      "attempts": 1,
+      "billable_s": 26.053,
+      "excluded": null,
+      "excluded_s": 0.0,
+      "id": "dn_vhh_her2_hail_mary_0",
+      "intervals": [
+        [
+          "2026-11-14T15:26:06.153000+00:00",
+          "2026-11-14T15:26:32.205000+00:00"
+        ]
+      ],
+      "load_s": 6.653,
+      "runtime_s": 19.4
+    },
+    {
+      "amount": 0.002029,
+      "amount_micros": 2029,
+      "attempts": 1,
+      "billable_s": 28.096,
+      "excluded": null,
+      "excluded_s": 0.0,
+      "id": "dn_vhh_her2_hail_mary_1",
+      "intervals": [
+        [
+          "2026-11-14T15:26:02.255000+00:00",
+          "2026-11-14T15:26:30.351000+00:00"
+        ]
+      ],
+      "load_s": 3.096,
+      "runtime_s": 25.0
+    },
+    {
+      "amount": 0.001885,
+      "amount_micros": 1885,
+      "attempts": 1,
+      "billable_s": 26.094,
+      "excluded": null,
+      "excluded_s": 0.0,
+      "id": "dn_vhh_her2_hail_mary_11",
+      "intervals": [
+        [
+          "2026-11-14T15:26:04.343000+00:00",
+          "2026-11-14T15:26:30.437000+00:00"
+        ]
+      ],
+      "load_s": 4.894,
+      "runtime_s": 21.2
+    },
+    {
+      "amount": 0.001881,
+      "amount_micros": 1881,
+      "attempts": 1,
+      "billable_s": 26.051,
+      "excluded": null,
+      "excluded_s": 0.0,
+      "id": "dn_vhh_her2_hail_mary_5",
+      "intervals": [
+        [
+          "2026-11-14T15:26:04.410000+00:00",
+          "2026-11-14T15:26:30.461000+00:00"
+        ]
+      ],
+      "load_s": 5.451,
+      "runtime_s": 20.6
+    },
+    {
+      "amount": 0.001882,
+      "amount_micros": 1882,
+      "attempts": 1,
+      "billable_s": 26.054,
+      "excluded": null,
+      "excluded_s": 0.0,
+      "id": "dn_vhh_her2_hail_mary_7",
+      "intervals": [
+        [
+          "2026-11-14T15:26:06.507000+00:00",
+          "2026-11-14T15:26:32.561000+00:00"
+        ]
+      ],
+      "load_s": 6.754,
+      "runtime_s": 19.3
+    },
+    {
+      "amount": 0.002026,
+      "amount_micros": 2026,
+      "attempts": 1,
+      "billable_s": 28.057,
+      "excluded": null,
+      "excluded_s": 0.0,
+      "id": "dn_vhh_her2_hail_mary_8",
+      "intervals": [
+        [
+          "2026-11-14T15:26:04.589000+00:00",
+          "2026-11-14T15:26:32.645000+00:00"
+        ]
+      ],
+      "load_s": 7.557,
+      "runtime_s": 20.5
+    },
+    {
+      "amount": 0.002027,
+      "amount_micros": 2027,
+      "attempts": 1,
+      "billable_s": 28.061,
+      "excluded": null,
+      "excluded_s": 0.0,
+      "id": "dn_vhh_her2_hail_mary_9",
+      "intervals": [
+        [
+          "2026-11-14T15:26:03.692000+00:00",
+          "2026-11-14T15:26:31.753000+00:00"
+        ]
+      ],
+      "load_s": 4.661,
+      "runtime_s": 23.4
+    },
+    {
+      "amount": 0.002899,
+      "amount_micros": 2899,
+      "attempts": 1,
+      "billable_s": 40.142,
+      "excluded": null,
+      "excluded_s": 0.0,
+      "id": "ctl_wt",
+      "intervals": [
+        [
+          "2026-11-14T15:25:30.723000+00:00",
+          "2026-11-14T15:26:10.865000+00:00"
+        ]
+      ],
+      "load_s": 5.742,
+      "runtime_s": 34.4
+    },
+    {
+      "amount": 0.001881,
+      "amount_micros": 1881,
+      "attempts": 1,
+      "billable_s": 26.052,
+      "excluded": null,
+      "excluded_s": 0.0,
+      "id": "ctl_old_offsite",
+      "intervals": [
+        [
+          "2026-11-14T15:26:15.436000+00:00",
+          "2026-11-14T15:26:41.488000+00:00"
+        ]
+      ],
+      "load_s": 2.752,
+      "runtime_s": 23.3
+    }
+  ]
+}

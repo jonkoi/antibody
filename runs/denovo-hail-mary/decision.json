@@ -1,0 +1,33 @@
+{
+  "candidate": "dn_vhh_her2_hail_mary_1",
+  "format": "vhh",
+  "length": 128,
+  "abguard_pass": true,
+  "abguard_class": "de_novo",
+  "identity_to_trastuzumab": 0.6953125,
+  "nanomelt_tm_C": 69.68,
+  "fold_job_ids": [
+    "14c0fd3d006eb13479a0407a7a013340",
+    "f35e670f4de1e16c04091a6639b73aaa"
+  ],
+  "seeds": [
+    73,
+    1073
+  ],
+  "samples": 6,
+  "vhh_overlap_passes": 4,
+  "strict_fab_footprint_passes": 0,
+  "recall_range": [
+    0.5263157894736842,
+    0.7894736842105263
+  ],
+  "wt_control_passes": 6,
+  "additional_hosted_compute_usd": 0.023322999999999997,
+  "cautions": [
+    "No measured affinity, competitive binding or Tm",
+    "CDRH3 NRS glycosylation sequon at sequence positions 100-102; folds omit glycan",
+    "De novo identity is close to 70% cutoff",
+    "NanoMelt CC BY-NC-SA 4.0; no established Tm improvement relative to trastuzumab",
+    "No competition submission made"
+  ]
+}

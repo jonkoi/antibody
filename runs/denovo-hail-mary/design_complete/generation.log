@@ -1,0 +1,128 @@
+Environment variable CCD_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable PDB_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+/usr/local/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+[2026-11-14 15:21:34,425][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=1935: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-14 15:21:34,445][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=2162: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-14 15:21:34,446][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=1935: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-14 15:21:34,454][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=1935: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-14 15:21:34,463][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=1935: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-14 15:21:34,464][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=2757: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-14 15:21:34,466][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=2162: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-14 15:21:34,475][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=2162: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-14 15:21:34,483][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=2162: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-14 15:21:34,486][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=2757: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-14 15:21:34,494][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=2757: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-14 15:21:34,503][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=2757: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-14 15:21:35,861][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=1935: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-14 15:21:35,875][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=1935: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-14 15:21:35,876][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=1935: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-14 15:21:35,883][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=2162: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-14 15:21:35,894][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=2162: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-14 15:21:35,895][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=2162: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-14 15:21:35,901][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=1935: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-14 15:21:35,906][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=2757: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-14 15:21:35,913][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=2757: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-14 15:21:35,916][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=2757: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-14 15:21:35,921][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=2162: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-14 15:21:35,941][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=2757: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-14 15:21:36,220][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=1935: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-14 15:21:36,242][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=2162: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-14 15:21:36,261][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=2757: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-14 15:21:57,575][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=1935: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-14 15:21:57,594][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=2162: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-14 15:21:57,614][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=2757: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+Environment variable CCD_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable PDB_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+/usr/local/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+[2026-11-14 15:22:09,961][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=1935: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-14 15:22:09,980][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=2162: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-14 15:22:09,999][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=2757: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-14 15:22:21,397][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=1935: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-14 15:22:21,417][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=2162: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-14 15:22:21,436][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=2757: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+Environment variable CCD_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable PDB_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable CCD_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable PDB_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable CCD_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable PDB_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable CCD_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable PDB_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable CCD_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable PDB_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable CCD_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable PDB_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable CCD_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable PDB_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+/usr/local/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/usr/local/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/usr/local/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/usr/local/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/usr/local/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/usr/local/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/usr/local/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+crunching... 🔢 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12/12 0:02:28 • 0:00:00 0.09it/s
+[2026-11-14 15:24:17,235][rfproteina.generate][INFO] - [rank: 0] ✓ Generation complete! Results saved to /work/design_complete/generation

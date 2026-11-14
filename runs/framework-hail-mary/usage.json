@@ -1,0 +1,173 @@
+{
+  "amount": 0.021805,
+  "amount_micros": 21805,
+  "billable_s": 301.925,
+  "closed_at": "2026-11-14T14:55:23.707000+00:00",
+  "currency": "usd",
+  "excluded_s": 0.0,
+  "job": "92eb351f2567f7fccf0e61ebd7e5f27e",
+  "kind": "predict",
+  "links": {
+    "job": "/v1/jobs/92eb351f2567f7fccf0e61ebd7e5f27e"
+  },
+  "load_s": 26.425,
+  "meter": {
+    "bias": "under",
+    "bound_s": 6.0,
+    "method": "sampled-lease-integral+engine-clock-cap",
+    "sample_gap_s": 3.0,
+    "visible": true
+  },
+  "model": "boltz2",
+  "name": "team15-framework-hail-mary",
+  "object": "usage",
+  "reconcile": {
+    "agree": 1,
+    "capped": 0,
+    "checked": 1,
+    "over_engine": 0,
+    "rate": 1.0,
+    "worst_delta_s": -1.8
+  },
+  "status": "succeeded",
+  "submitted_at": "2026-11-14T14:53:56.372000+00:00",
+  "surface": "skill",
+  "targets": [
+    {
+      "amount": 0.002752,
+      "amount_micros": 2752,
+      "attempts": 1,
+      "billable_s": 38.1,
+      "excluded": null,
+      "excluded_s": 0.0,
+      "id": "base_WGHDGPYWMD",
+      "intervals": [
+        [
+          "2026-11-14T14:54:22.475000+00:00",
+          "2026-11-14T14:55:00.575000+00:00"
+        ]
+      ],
+      "load_s": 4.1,
+      "runtime_s": 34.0
+    },
+    {
+      "amount": 0.002462,
+      "amount_micros": 2462,
+      "attempts": 1,
+      "billable_s": 34.088,
+      "excluded": null,
+      "excluded_s": 0.0,
+      "id": "fw_WGHDGPYWMD",
+      "intervals": [
+        [
+          "2026-11-14T14:54:22.059000+00:00",
+          "2026-11-14T14:54:56.146000+00:00"
+        ]
+      ],
+      "load_s": 1.488,
+      "runtime_s": 32.6
+    },
+    {
+      "amount": 0.002681,
+      "amount_micros": 2681,
+      "attempts": 1,
+      "billable_s": 37.129,
+      "excluded": null,
+      "excluded_s": 0.0,
+      "id": "base_WGGKGPYWMD",
+      "intervals": [
+        [
+          "2026-11-14T14:54:34.012000+00:00",
+          "2026-11-14T14:55:11.141000+00:00"
+        ]
+      ],
+      "load_s": 2.829,
+      "runtime_s": 34.3
+    },
+    {
+      "amount": 0.002753,
+      "amount_micros": 2753,
+      "attempts": 1,
+      "billable_s": 38.124,
+      "excluded": null,
+      "excluded_s": 0.0,
+      "id": "fw_WGGKGPYWMD",
+      "intervals": [
+        [
+          "2026-11-14T14:54:37.218000+00:00",
+          "2026-11-14T14:55:15.342000+00:00"
+        ]
+      ],
+      "load_s": 3.824,
+      "runtime_s": 34.3
+    },
+    {
+      "amount": 0.002895,
+      "amount_micros": 2895,
+      "attempts": 1,
+      "billable_s": 40.091,
+      "excluded": null,
+      "excluded_s": 0.0,
+      "id": "base_WGGMGPYWMD",
+      "intervals": [
+        [
+          "2026-11-14T14:54:35.353000+00:00",
+          "2026-11-14T14:55:15.445000+00:00"
+        ]
+      ],
+      "load_s": 4.991,
+      "runtime_s": 35.1
+    },
+    {
+      "amount": 0.002906,
+      "amount_micros": 2906,
+      "attempts": 1,
+      "billable_s": 40.232,
+      "excluded": null,
+      "excluded_s": 0.0,
+      "id": "fw_WGGMGPYWMD",
+      "intervals": [
+        [
+          "2026-11-14T14:54:40.454000+00:00",
+          "2026-11-14T14:55:20.686000+00:00"
+        ]
+      ],
+      "load_s": 2.132,
+      "runtime_s": 38.1
+    },
+    {
+      "amount": 0.002461,
+      "amount_micros": 2461,
+      "attempts": 1,
+      "billable_s": 34.074,
+      "excluded": null,
+      "excluded_s": 0.0,
+      "id": "fw_WGGDGFYAMD",
+      "intervals": [
+        [
+          "2026-11-14T14:54:36.659000+00:00",
+          "2026-11-14T14:55:10.734000+00:00"
+        ]
+      ],
+      "load_s": 3.374,
+      "runtime_s": 30.7
+    },
+    {
+      "amount": 0.002895,
+      "amount_micros": 2895,
+      "attempts": 1,
+      "billable_s": 40.087,
+      "excluded": null,
+      "excluded_s": 0.0,
+      "id": "ctl_wt",
+      "intervals": [
+        [
+          "2026-11-14T14:54:24.786000+00:00",
+          "2026-11-14T14:55:04.872000+00:00"
+        ]
+      ],
+      "load_s": 3.687,
+      "runtime_s": 36.4
+    }
+  ]
+}

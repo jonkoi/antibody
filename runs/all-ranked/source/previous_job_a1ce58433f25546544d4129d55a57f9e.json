@@ -1,0 +1,439 @@
+{
+  "archive_url": "/v1/jobs/a1ce58433f25546544d4129d55a57f9e/archive",
+  "artifacts": [
+    {
+      "path": "final_20_designs/rank01_7_shard-1_design_1.cif",
+      "rank": "1",
+      "type": "structure",
+      "url": "/v1/jobs/a1ce58433f25546544d4129d55a57f9e/artifacts/final_20_designs/rank01_7_shard-1_design_1.cif"
+    },
+    {
+      "path": "final_20_designs/rank02_0_shard-0_design_1.cif",
+      "rank": "2",
+      "type": "structure",
+      "url": "/v1/jobs/a1ce58433f25546544d4129d55a57f9e/artifacts/final_20_designs/rank02_0_shard-0_design_1.cif"
+    },
+    {
+      "path": "final_20_designs/rank03_8_shard-1_design_1.cif",
+      "rank": "3",
+      "type": "structure",
+      "url": "/v1/jobs/a1ce58433f25546544d4129d55a57f9e/artifacts/final_20_designs/rank03_8_shard-1_design_1.cif"
+    },
+    {
+      "path": "final_20_designs/rank04_6_shard-1_design_1.cif",
+      "rank": "4",
+      "type": "structure",
+      "url": "/v1/jobs/a1ce58433f25546544d4129d55a57f9e/artifacts/final_20_designs/rank04_6_shard-1_design_1.cif"
+    },
+    {
+      "path": "final_20_designs/rank05_5_shard-1_design_1.cif",
+      "rank": "5",
+      "type": "structure",
+      "url": "/v1/jobs/a1ce58433f25546544d4129d55a57f9e/artifacts/final_20_designs/rank05_5_shard-1_design_1.cif"
+    },
+    {
+      "path": "final_20_designs/rank06_3_shard-1_design.cif",
+      "rank": "6",
+      "type": "structure",
+      "url": "/v1/jobs/a1ce58433f25546544d4129d55a57f9e/artifacts/final_20_designs/rank06_3_shard-1_design.cif"
+    },
+    {
+      "path": "final_20_designs/rank07_1_shard-1_design.cif",
+      "rank": "7",
+      "type": "structure",
+      "url": "/v1/jobs/a1ce58433f25546544d4129d55a57f9e/artifacts/final_20_designs/rank07_1_shard-1_design.cif"
+    },
+    {
+      "path": "final_20_designs/rank08_2_shard-1_design.cif",
+      "rank": "8",
+      "type": "structure",
+      "url": "/v1/jobs/a1ce58433f25546544d4129d55a57f9e/artifacts/final_20_designs/rank08_2_shard-1_design.cif"
+    },
+    {
+      "path": "final_20_designs/rank09_1_shard-1_design_1.cif",
+      "rank": "9",
+      "type": "structure",
+      "url": "/v1/jobs/a1ce58433f25546544d4129d55a57f9e/artifacts/final_20_designs/rank09_1_shard-1_design_1.cif"
+    },
+    {
+      "path": "final_20_designs/rank10_0_shard-1_design.cif",
+      "rank": "10",
+      "type": "structure",
+      "url": "/v1/jobs/a1ce58433f25546544d4129d55a57f9e/artifacts/final_20_designs/rank10_0_shard-1_design.cif"
+    },
+    {
+      "path": "final_20_designs/rank11_7_shard-1_design.cif",
+      "rank": "11",
+      "type": "structure",
+      "url": "/v1/jobs/a1ce58433f25546544d4129d55a57f9e/artifacts/final_20_designs/rank11_7_shard-1_design.cif"
+    },
+    {
+      "path": "final_20_designs/rank12_9_shard-1_design_1.cif",
+      "rank": "12",
+      "type": "structure",
+      "url": "/v1/jobs/a1ce58433f25546544d4129d55a57f9e/artifacts/final_20_designs/rank12_9_shard-1_design_1.cif"
+    },
+    {
+      "path": "final_20_designs/rank13_6_shard-1_design.cif",
+      "rank": "13",
+      "type": "structure",
+      "url": "/v1/jobs/a1ce58433f25546544d4129d55a57f9e/artifacts/final_20_designs/rank13_6_shard-1_design.cif"
+    },
+    {
+      "path": "final_20_designs/rank14_5_shard-0_design.cif",
+      "rank": "14",
+      "type": "structure",
+      "url": "/v1/jobs/a1ce58433f25546544d4129d55a57f9e/artifacts/final_20_designs/rank14_5_shard-0_design.cif"
+    },
+    {
+      "path": "final_20_designs/rank15_5_shard-0_design_1.cif",
+      "rank": "15",
+      "type": "structure",
+      "url": "/v1/jobs/a1ce58433f25546544d4129d55a57f9e/artifacts/final_20_designs/rank15_5_shard-0_design_1.cif"
+    },
+    {
+      "path": "final_20_designs/rank16_0_shard-0_design.cif",
+      "rank": "16",
+      "type": "structure",
+      "url": "/v1/jobs/a1ce58433f25546544d4129d55a57f9e/artifacts/final_20_designs/rank16_0_shard-0_design.cif"
+    },
+    {
+      "path": "final_20_designs/rank17_0_shard-1_design_1.cif",
+      "rank": "17",
+      "type": "structure",
+      "url": "/v1/jobs/a1ce58433f25546544d4129d55a57f9e/artifacts/final_20_designs/rank17_0_shard-1_design_1.cif"
+    },
+    {
+      "path": "final_20_designs/rank18_3_shard-1_design_1.cif",
+      "rank": "18",
+      "type": "structure",
+      "url": "/v1/jobs/a1ce58433f25546544d4129d55a57f9e/artifacts/final_20_designs/rank18_3_shard-1_design_1.cif"
+    },
+    {
+      "path": "final_20_designs/rank19_8_shard-1_design.cif",
+      "rank": "19",
+      "type": "structure",
+      "url": "/v1/jobs/a1ce58433f25546544d4129d55a57f9e/artifacts/final_20_designs/rank19_8_shard-1_design.cif"
+    },
+    {
+      "path": "final_20_designs/rank20_2_shard-1_design_1.cif",
+      "rank": "20",
+      "type": "structure",
+      "url": "/v1/jobs/a1ce58433f25546544d4129d55a57f9e/artifacts/final_20_designs/rank20_2_shard-1_design_1.cif"
+    }
+  ],
+  "designs": [
+    {
+      "delta_sasa_refolded": "687.8584",
+      "design_ptm": "0.73596",
+      "design_to_target_iptm": "0.16227",
+      "designed_sequence": "EVQLVESGGGLVQAGGSLRLSEAASGFTFSSYWMSWVRQAPGKGREWVASISRGGGNTYYADSVKGRFTISRDNAKNTLYLQMNSLKPEDTAVYYEARDYGGVFDYWGQGTLVTVS",
+      "file_name": "7_shard-1_design_1.cif",
+      "final_rank": "1",
+      "id": "7_shard-1_design_1",
+      "liability_num_violations": "22",
+      "min_design_to_target_pae": "15.25",
+      "num_design": "116",
+      "plip_hbonds_refolded": "4",
+      "quality_score": "1.0",
+      "structure": "final_20_designs/rank01_7_shard-1_design_1.cif"
+    },
+    {
+      "delta_sasa_refolded": "873.83301",
+      "design_ptm": "0.73734",
+      "design_to_target_iptm": "0.14497",
+      "designed_sequence": "EVQLVESGGGLVQAGGSLRLSEAASGFTFSSYAMSWVRQAPGKGREWVASISSDGSSTYYADSVKGRFTISRDNSKNTLYLQMNSLKPEDTAVYYIARLYNGYLDYWGQGTQVTVS",
+      "file_name": "0_shard-0_design_1.cif",
+      "final_rank": "2",
+      "id": "0_shard-0_design_1",
+      "liability_num_violations": "22",
+      "min_design_to_target_pae": "16.125",
+      "num_design": "116",
+      "plip_hbonds_refolded": "2",
+      "quality_score": "0.9523809523809523",
+      "structure": "final_20_designs/rank02_0_shard-0_design_1.cif"
+    },
+    {
+      "delta_sasa_refolded": "596.30615",
+      "design_ptm": "0.73964",
+      "design_to_target_iptm": "0.16904",
+      "designed_sequence": "EVQLVESGGGLVQAGGSLRLSEAASGFTFSSYYMHWVRQAPGKGREWVASISYDGSYSYYADSVKGRFTISRDNAKNTLYLQMNSLKPEDTAVYYIARRKPGSSYFDYWGQGTQVTVS",
+      "file_name": "8_shard-1_design_1.cif",
+      "final_rank": "3",
+      "id": "8_shard-1_design_1",
+      "liability_num_violations": "23",
+      "min_design_to_target_pae": "14.4375",
+      "num_design": "118",
+      "plip_hbonds_refolded": "1",
+      "quality_score": "0.9047619047619048",
+      "structure": "final_20_designs/rank03_8_shard-1_design_1.cif"
+    },
+    {
+      "delta_sasa_refolded": "511.14209",
+      "design_ptm": "0.74219",
+      "design_to_target_iptm": "0.16442",
+      "designed_sequence": "EVQLVESGGGLVQAGGSLRLSEAASGFTFSSYAMGWIRQAPGKGRELVAGISSSGSSTYYADSVKGRFTISRDNAKNTLYLQMNSLKPEDTAVYYAAARRGSYISGNESRYDYWGQGTQVTVS",
+      "file_name": "6_shard-1_design_1.cif",
+      "final_rank": "4",
+      "id": "6_shard-1_design_1",
+      "liability_num_violations": "21",
+      "min_design_to_target_pae": "13.125",
+      "num_design": "123",
+      "plip_hbonds_refolded": "2",
+      "quality_score": "0.8571428571428572",
+      "structure": "final_20_designs/rank04_6_shard-1_design_1.cif"
+    },
+    {
+      "delta_sasa_refolded": "898.35449",
+      "design_ptm": "0.72622",
+      "design_to_target_iptm": "0.25717",
+      "designed_sequence": "EVQLVESGGGLVQAGGSLRLSEAASGFTFSSYAMGWVRQAPGKGREWVAGISSSGGSTYYADSVKGRFTISRDNAKNTLYLQMNSLKPEDTAVYYAAVSSYGGSATYAEDPSYFGYWGQGTQVTVSS",
+      "file_name": "5_shard-1_design_1.cif",
+      "final_rank": "5",
+      "id": "5_shard-1_design_1",
+      "liability_num_violations": "20",
+      "min_design_to_target_pae": "12.875",
+      "num_design": "127",
+      "plip_hbonds_refolded": "3",
+      "quality_score": "0.8095238095238095",
+      "structure": "final_20_designs/rank05_5_shard-1_design_1.cif"
+    },
+    {
+      "delta_sasa_refolded": "1155.14502",
+      "design_ptm": "0.74737",
+      "design_to_target_iptm": "0.13367",
+      "designed_sequence": "EVQLVESGGGLVQAGGSLRLSEAASGFTFSSYYMHWVRQAPGKGLEWVASISSSGGSTYYADSVKGRFTISRDNAKNTLYLQMNSLKPEDTAVYYIARRRTGSTYLDYWGQGTLVTVSS",
+      "file_name": "3_shard-1_design.cif",
+      "final_rank": "6",
+      "id": "3_shard-1_design",
+      "liability_num_violations": "21",
+      "min_design_to_target_pae": "18.75",
+      "num_design": "119",
+      "plip_hbonds_refolded": "4",
+      "quality_score": "0.7619047619047619",
+      "structure": "final_20_designs/rank06_3_shard-1_design.cif"
+    },
+    {
+      "delta_sasa_refolded": "924.60156",
+      "design_ptm": "0.74093",
+      "design_to_target_iptm": "0.12463",
+      "designed_sequence": "EVQLVESGGGLVQAGGSLRLSEAASGFTFSSYYMGWYRQAPGKGLEFVAAISSSGSGTLYADSVKGRFTISRDNAKNTLYLQMNSLKPEDTAVYYEAARVGSTWYFGQGTQVTVS",
+      "file_name": "1_shard-1_design.cif",
+      "final_rank": "7",
+      "id": "1_shard-1_design",
+      "liability_num_violations": "19",
+      "min_design_to_target_pae": "18.875",
+      "num_design": "115",
+      "plip_hbonds_refolded": "2",
+      "quality_score": "0.7142857142857143",
+      "structure": "final_20_designs/rank07_1_shard-1_design.cif"
+    },
+    {
+      "delta_sasa_refolded": "915.91504",
+      "design_ptm": "0.71765",
+      "design_to_target_iptm": "0.13404",
+      "designed_sequence": "EVQLVESGGGLVQAGGSLRLSEAASGFTFSSYAMSWFRQAPGKGREWVAGISSSGGYTYYADSVKGRFTISRDNAKNTLYLQMNSLKPEDTAVYYEARSGSPSSSGYDGTGYYDYWGQGTQVTVSS",
+      "file_name": "2_shard-1_design.cif",
+      "final_rank": "8",
+      "id": "2_shard-1_design",
+      "liability_num_violations": "21",
+      "min_design_to_target_pae": "18.0",
+      "num_design": "126",
+      "plip_hbonds_refolded": "1",
+      "quality_score": "0.6666666666666667",
+      "structure": "final_20_designs/rank08_2_shard-1_design.cif"
+    },
+    {
+      "delta_sasa_refolded": "818.60547",
+      "design_ptm": "0.73148",
+      "design_to_target_iptm": "0.13266",
+      "designed_sequence": "EVQLVESGGGLVQAGGSLRLSEAASGFTFSSYNMYWVRQAPGKGREWVAWISSDGSNTNYADSVKGRFTISRDNAKNTLYLQMNSLKPEDTAVYYAARAPSTGTGYLDYWGQGTQVTVSS",
+      "file_name": "1_shard-1_design_1.cif",
+      "final_rank": "9",
+      "id": "1_shard-1_design_1",
+      "liability_num_violations": "23",
+      "min_design_to_target_pae": "19.25",
+      "num_design": "120",
+      "plip_hbonds_refolded": "0",
+      "quality_score": "0.6190476190476191",
+      "structure": "final_20_designs/rank09_1_shard-1_design_1.cif"
+    },
+    {
+      "delta_sasa_refolded": "1062.5625",
+      "design_ptm": "0.73917",
+      "design_to_target_iptm": "0.12152",
+      "designed_sequence": "EVQLVESGGGLVQAGGSLRLSEAASGFTFSSYYMHWVRQAPGKGLEFVSLISSSGGNTYYADSVKGRFTISRDNAKNTLYLQMNSLRAEDTAVYYEARAPASGSRLMDYWGQGTLVTVS",
+      "file_name": "0_shard-1_design.cif",
+      "final_rank": "10",
+      "id": "0_shard-1_design",
+      "liability_num_violations": "20",
+      "min_design_to_target_pae": "19.375",
+      "num_design": "119",
+      "plip_hbonds_refolded": "8",
+      "quality_score": "0.5714285714285714",
+      "structure": "final_20_designs/rank10_0_shard-1_design.cif"
+    },
+    {
+      "delta_sasa_refolded": "812.9165",
+      "design_ptm": "0.76112",
+      "design_to_target_iptm": "0.12093",
+      "designed_sequence": "EVQLVESGGGLVQAGGSLRLSEAASGFTFSSYGMGWFRQAPGKGLEWVAYISSSGGYTYYADSVKGRFTISRDNAKNTLYLQMNSLKPEDTAVYYAARVTSSGYFDYWGQGTQVTVSS",
+      "file_name": "7_shard-1_design.cif",
+      "final_rank": "11",
+      "id": "7_shard-1_design",
+      "liability_num_violations": "19",
+      "min_design_to_target_pae": "19.375",
+      "num_design": "118",
+      "plip_hbonds_refolded": "2",
+      "quality_score": "0.5238095238095238",
+      "structure": "final_20_designs/rank11_7_shard-1_design.cif"
+    },
+    {
+      "delta_sasa_refolded": "889.4834",
+      "design_ptm": "0.71324",
+      "design_to_target_iptm": "0.14589",
+      "designed_sequence": "QVQLVESGGGLVQAGGSLRLSIAASGFTFSSYAMHWVRQAPGKGREWVASISYSGGNTYYADSVKGRFTISRDNAKNTLYLQMNSLKPEDTAVYYEARGDSDGTYMYYWGQGTQVTVS",
+      "file_name": "9_shard-1_design_1.cif",
+      "final_rank": "12",
+      "id": "9_shard-1_design_1",
+      "liability_num_violations": "25",
+      "min_design_to_target_pae": "17.25",
+      "num_design": "118",
+      "plip_hbonds_refolded": "2",
+      "quality_score": "0.47619047619047616",
+      "structure": "final_20_designs/rank12_9_shard-1_design_1.cif"
+    },
+    {
+      "delta_sasa_refolded": "948.35059",
+      "design_ptm": "0.72547",
+      "design_to_target_iptm": "0.11978",
+      "designed_sequence": "EVQLVESGGGLVQAGGSLRLSEAASGFTFSSYGMGWFRQAPGKEREFVAAISSSGGSTYYADSVKGRFTISRDNAKNTLYLQMNSLKPEDTAVYYIAASSSGSTAVSAASRFDYWGQGTQVTVSS",
+      "file_name": "6_shard-1_design.cif",
+      "final_rank": "13",
+      "id": "6_shard-1_design",
+      "liability_num_violations": "19",
+      "min_design_to_target_pae": "19.625",
+      "num_design": "125",
+      "plip_hbonds_refolded": "1",
+      "quality_score": "0.4285714285714286",
+      "structure": "final_20_designs/rank13_6_shard-1_design.cif"
+    },
+    {
+      "delta_sasa_refolded": "584.44434",
+      "design_ptm": "0.72754",
+      "design_to_target_iptm": "0.11814",
+      "designed_sequence": "EVQLVESGGGLVQAGGSLRLSEAASGFTFSSYAMGWFRQAPGKGLEGVAGISSSGGTTYYADSVKGRFTISRDNAKNTLYLQMNSLRAEDTAVYYIARTSYGASDLAIAVATGTGAFDYWGQGTQVTVSS",
+      "file_name": "5_shard-0_design.cif",
+      "final_rank": "14",
+      "id": "5_shard-0_design",
+      "liability_num_violations": "18",
+      "min_design_to_target_pae": "19.625",
+      "num_design": "130",
+      "plip_hbonds_refolded": "2",
+      "quality_score": "0.38095238095238093",
+      "structure": "final_20_designs/rank14_5_shard-0_design.cif"
+    },
+    {
+      "delta_sasa_refolded": "678.07324",
+      "design_ptm": "0.71284",
+      "design_to_target_iptm": "0.14108",
+      "designed_sequence": "EVQLVESGGGLVQAGGSLRLSEAASGFTFSSYGMGWIRQAPGKGREFVAVISSSGGYTYYADSVKGRFTISRDNAKNTLYLQMNSLKPEDTAVYYIARSKYSGYADTSLSDYDYWGQGTQVTVSS",
+      "file_name": "5_shard-0_design_1.cif",
+      "final_rank": "15",
+      "id": "5_shard-0_design_1",
+      "liability_num_violations": "20",
+      "min_design_to_target_pae": "17.125",
+      "num_design": "125",
+      "plip_hbonds_refolded": "2",
+      "quality_score": "0.33333333333333337",
+      "structure": "final_20_designs/rank15_5_shard-0_design_1.cif"
+    },
+    {
+      "delta_sasa_refolded": "640.80664",
+      "design_ptm": "0.71747",
+      "design_to_target_iptm": "0.11434",
+      "designed_sequence": "EVQLVESGGGLVQAGGSLRLSEAASGFTFSSYVMGWVRQAPGKGREWVAAISSSGGTTYYADSVKGRFTISRDNAKNTLYLQMNSLKPEDTAVYYAARSSASSLSDLITGDAGFDYWGQGTLVTVSS",
+      "file_name": "0_shard-0_design.cif",
+      "final_rank": "16",
+      "id": "0_shard-0_design",
+      "liability_num_violations": "20",
+      "min_design_to_target_pae": "18.875",
+      "num_design": "127",
+      "plip_hbonds_refolded": "4",
+      "quality_score": "0.2857142857142857",
+      "structure": "final_20_designs/rank16_0_shard-0_design.cif"
+    },
+    {
+      "delta_sasa_refolded": "984.14648",
+      "design_ptm": "0.71042",
+      "design_to_target_iptm": "0.19179",
+      "designed_sequence": "EVQLVESGGGLVQAGGSLRLSEAASGFTFSSYGMSWVRQAPGKDLEWVAYISSDGSSTYYADSVKGRFTISRDNAKNTLYLQMNSLKPEDTAVYYIARRGPGGWKYWGQGTQVTVS",
+      "file_name": "0_shard-1_design_1.cif",
+      "final_rank": "17",
+      "id": "0_shard-1_design_1",
+      "liability_num_violations": "23",
+      "min_design_to_target_pae": "14.25",
+      "num_design": "116",
+      "plip_hbonds_refolded": "2",
+      "quality_score": "0.23809523809523814",
+      "structure": "final_20_designs/rank17_0_shard-1_design_1.cif"
+    },
+    {
+      "delta_sasa_refolded": "953.61328",
+      "design_ptm": "0.69637",
+      "design_to_target_iptm": "0.18761",
+      "designed_sequence": "EVQLVESGGGLVQAGGSLRLSEAASGFTFSSYAMSWVRQAPGKGLEWVAAISGDGSKTYYADSVKGRFTISRDNAKNTLYLQMNSLKPEDTAVYYAARASGLGSDFNAEQPGTHYLDYWGQGTLVTVSS",
+      "file_name": "3_shard-1_design_1.cif",
+      "final_rank": "18",
+      "id": "3_shard-1_design_1",
+      "liability_num_violations": "22",
+      "min_design_to_target_pae": "12.75",
+      "num_design": "129",
+      "plip_hbonds_refolded": "3",
+      "quality_score": "0.19047619047619047",
+      "structure": "final_20_designs/rank18_3_shard-1_design_1.cif"
+    },
+    {
+      "delta_sasa_refolded": "960.41211",
+      "design_ptm": "0.71494",
+      "design_to_target_iptm": "0.11129",
+      "designed_sequence": "EVQLVESGGGLVQAGGSLRLSEAASGFTFSSYAMSWVRQAPGKGLEFVAWISSSGGNTYYADSVKGRFTISRDNAKNTLYLQMNSLKPEDTAVYYEAAGSVGSGGAPSYFDYWGQGTQVTVSS",
+      "file_name": "8_shard-1_design.cif",
+      "final_rank": "19",
+      "id": "8_shard-1_design",
+      "liability_num_violations": "18",
+      "min_design_to_target_pae": "20.5",
+      "num_design": "123",
+      "plip_hbonds_refolded": "1",
+      "quality_score": "0.1428571428571429",
+      "structure": "final_20_designs/rank19_8_shard-1_design.cif"
+    },
+    {
+      "delta_sasa_refolded": "1011.57812",
+      "design_ptm": "0.68968",
+      "design_to_target_iptm": "0.20295",
+      "designed_sequence": "QVQLVESGGGLVQAGGSLRLSEAASGFTFSNYAMSWVRQAPGKGREWVAAITHDGSSTDYADSVKGRFTISRDNAKNTLYLQMNSLKPEDTAVYYEARSYASSGDTAADARRYGYWDYWGQGTQVTVS",
+      "file_name": "2_shard-1_design_1.cif",
+      "final_rank": "20",
+      "id": "2_shard-1_design_1",
+      "liability_num_violations": "25",
+      "min_design_to_target_pae": "13.6875",
+      "num_design": "128",
+      "plip_hbonds_refolded": "4",
+      "quality_score": "0.09523809523809523",
+      "structure": "final_20_designs/rank20_2_shard-1_design_1.cif"
+    }
+  ],
+  "engine": "boltzgen",
+  "job_id": "a1ce58433f25546544d4129d55a57f9e",
+  "kind": "design",
+  "object": "results",
+  "partial": {
+    "delivered": 20,
+    "requested": 20,
+    "shards": 10,
+    "shards_failed": 1,
+    "unit": "designs"
+  },
+  "ready": true
+}

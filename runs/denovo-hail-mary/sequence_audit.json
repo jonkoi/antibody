@@ -1,0 +1,170 @@
+[
+  {
+    "sequence_id": "dn_vhh_her2_hail_mary_0",
+    "structure": "design_complete/generation/inference_samples/vhh_her2_hail_mary_0/vhh_her2_hail_mary_0_generated.cif",
+    "chain": "H",
+    "length": 127,
+    "cysteines": 2,
+    "sequences": {
+      "C": "CHQLCARGHCWGPGPTQCVNCSQFLRGQECVEECRVLQGLPREYVNARHCLPCHPECQPQNGSVTCFGPEADQCVACAHYKDPPFCVARCPS",
+      "H": "EVQLVESGGGLVQAGGSLRLSCAASGFTFSSYAMSWVRQAPGKGRELVAGISGSGSSTYYADSVKGRFTISRDNAKNTLYLQMNSLKPEDTAVYYCAKVHSTSYSFSSGYFPPLDYWGQGTQVTVSS",
+      "D": "IWKFPDEEGACQPCPIN"
+    },
+    "disulfide_sg_distance_A": 2.342,
+    "max_peptide_CN_A": 1.446
+  },
+  {
+    "sequence_id": "dn_vhh_her2_hail_mary_1",
+    "structure": "design_complete/generation/inference_samples/vhh_her2_hail_mary_1/vhh_her2_hail_mary_1_generated.cif",
+    "chain": "H",
+    "length": 128,
+    "cysteines": 2,
+    "sequences": {
+      "C": "CHQLCARGHCWGPGPTQCVNCSQFLRGQECVEECRVLQGLPREYVNARHCLPCHPECQPQNGSVTCFGPEADQCVACAHYKDPPFCVARCPS",
+      "H": "EVQLVESGGGLVQAGGSLRLSCAASGFTFSSYGMSWVRQAPGKGRELVASISGSGGSTYYADSVKGRFTISRDNAKNTLYLQMNSLKPEDTAVYYCAKWNRSASGWSSSNFWEAMDYWGQGTQVTVSS",
+      "D": "IWKFPDEEGACQPCPIN"
+    },
+    "disulfide_sg_distance_A": 2.218,
+    "max_peptide_CN_A": 1.501
+  },
+  {
+    "sequence_id": "dn_vhh_her2_hail_mary_10",
+    "structure": "design_complete/generation/inference_samples/vhh_her2_hail_mary_10/vhh_her2_hail_mary_10_generated.cif",
+    "chain": "H",
+    "length": 118,
+    "cysteines": 2,
+    "sequences": {
+      "C": "CHQLCARGHCWGPGPTQCVNCSQFLRGQECVEECRVLQGLPREYVNARHCLPCHPECQPQNGSVTCFGPEADQCVACAHYKDPPFCVARCPS",
+      "H": "EVQLVESGGGLVQAGGSLRLSCAASGFTFSSYDMSWVRQAPGKGRELVAWISSGGSTYYADSVKGRFTISRDNAKNTLYLQMNSLKPEDTAVYYCARRLPSTYAMDYWGQGTQVTVSS",
+      "D": "IWKFPDEEGACQPCPIN"
+    },
+    "disulfide_sg_distance_A": 2.287,
+    "max_peptide_CN_A": 1.421
+  },
+  {
+    "sequence_id": "dn_vhh_her2_hail_mary_11",
+    "structure": "design_complete/generation/inference_samples/vhh_her2_hail_mary_11/vhh_her2_hail_mary_11_generated.cif",
+    "chain": "H",
+    "length": 125,
+    "cysteines": 2,
+    "sequences": {
+      "C": "CHQLCARGHCWGPGPTQCVNCSQFLRGQECVEECRVLQGLPREYVNARHCLPCHPECQPQNGSVTCFGPEADQCVACAHYKDPPFCVARCPS",
+      "H": "EVQLVESGGGLVQAGGSLRLSCAASGFTFSSYGMAWVRQAPGKGRELVASISSGGSTYYADSVKGRFTISRDNAKNTLYLQMNSLKPEDTAVYYCAKYRDSSTRTSGVFDNFDYWGQGTQVTVSS",
+      "D": "IWKFPDEEGACQPCPIN"
+    },
+    "disulfide_sg_distance_A": 2.324,
+    "max_peptide_CN_A": 1.446
+  },
+  {
+    "sequence_id": "dn_vhh_her2_hail_mary_2",
+    "structure": "design_complete/generation/inference_samples/vhh_her2_hail_mary_2/vhh_her2_hail_mary_2_generated.cif",
+    "chain": "H",
+    "length": 120,
+    "cysteines": 2,
+    "sequences": {
+      "C": "CHQLCARGHCWGPGPTQCVNCSQFLRGQECVEECRVLQGLPREYVNARHCLPCHPECQPQNGSVTCFGPEADQCVACAHYKDPPFCVARCPS",
+      "H": "EVQLVESGGGLVQAGGSLRLSCAASGFTFSSYAMAWVRQAPGKGRELVAAISSGGGSTYYADSVKGRFTISRDNAKNTLYLQMNSLKPEDTAVYYCAKMSGSSIYSFDYWGQGTQVTVSS",
+      "D": "IWKFPDEEGACQPCPIN"
+    },
+    "disulfide_sg_distance_A": 2.22,
+    "max_peptide_CN_A": 1.443
+  },
+  {
+    "sequence_id": "dn_vhh_her2_hail_mary_3",
+    "structure": "design_complete/generation/inference_samples/vhh_her2_hail_mary_3/vhh_her2_hail_mary_3_generated.cif",
+    "chain": "H",
+    "length": 119,
+    "cysteines": 2,
+    "sequences": {
+      "C": "CHQLCARGHCWGPGPTQCVNCSQFLRGQECVEECRVLQGLPREYVNARHCLPCHPECQPQNGSVTCFGPEADQCVACAHYKDPPFCVARCPS",
+      "H": "EVQLVESGGGLVQAGGSLRLSCAASGFTFSSYAMSWVRQAPGKGRELVASISSGGNTYYADSVKGRFTISRDNAKNTLYLQMNSLKPEDTAVYYCARQSGYRDRFFDYWGQGTQVTVSS",
+      "D": "IWKFPDEEGACQPCPIN"
+    },
+    "disulfide_sg_distance_A": 2.356,
+    "max_peptide_CN_A": 1.426
+  },
+  {
+    "sequence_id": "dn_vhh_her2_hail_mary_4",
+    "structure": "design_complete/generation/inference_samples/vhh_her2_hail_mary_4/vhh_her2_hail_mary_4_generated.cif",
+    "chain": "H",
+    "length": 120,
+    "cysteines": 2,
+    "sequences": {
+      "C": "CHQLCARGHCWGPGPTQCVNCSQFLRGQECVEECRVLQGLPREYVNARHCLPCHPECQPQNGSVTCFGPEADQCVACAHYKDPPFCVARCPS",
+      "H": "EVQLVESGGGLVQAGGSLRLSCAASGFTFSSYAMSWVRQAPGKGRELVATISSGGSYTWYADSVKGRFTISRDNAKNTLYLQMNSLKPEDTAVYYCRKARGLASTDFAYWGQGTQVTVSS",
+      "D": "IWKFPDEEGACQPCPIN"
+    },
+    "disulfide_sg_distance_A": 2.265,
+    "max_peptide_CN_A": 1.506
+  },
+  {
+    "sequence_id": "dn_vhh_her2_hail_mary_5",
+    "structure": "design_complete/generation/inference_samples/vhh_her2_hail_mary_5/vhh_her2_hail_mary_5_generated.cif",
+    "chain": "H",
+    "length": 126,
+    "cysteines": 2,
+    "sequences": {
+      "C": "CHQLCARGHCWGPGPTQCVNCSQFLRGQECVEECRVLQGLPREYVNARHCLPCHPECQPQNGSVTCFGPEADQCVACAHYKDPPFCVARCPS",
+      "H": "EVQLVESGGGLVQAGGSLRLSCAASGFTFSSYAMSWVRQAPGKGRELVAEISSDGSTYYADSVKGRFTISRDNAKNTLYLQMNSLKPEDTAVYYCAKRGFISSTPLLNKWEEFDYWGQGTQVTVSS",
+      "D": "IWKFPDEEGACQPCPIN"
+    },
+    "disulfide_sg_distance_A": 2.354,
+    "max_peptide_CN_A": 1.461
+  },
+  {
+    "sequence_id": "dn_vhh_her2_hail_mary_6",
+    "structure": "design_complete/generation/inference_samples/vhh_her2_hail_mary_6/vhh_her2_hail_mary_6_generated.cif",
+    "chain": "H",
+    "length": 120,
+    "cysteines": 2,
+    "sequences": {
+      "C": "CHQLCARGHCWGPGPTQCVNCSQFLRGQECVEECRVLQGLPREYVNARHCLPCHPECQPQNGSVTCFGPEADQCVACAHYKDPPFCVARCPS",
+      "H": "EVQLVESGGGLVQAGGSLRLSCAASGFTFSSYTMAWVRQAPGKGRELVAAIDSGGNTYYADSVKGRFTISRDNAKNTLYLQMNSLKPEDTAVYYCARSYGGLLIEDFDYWGQGTQVTVSS",
+      "D": "IWKFPDEEGACQPCPIN"
+    },
+    "disulfide_sg_distance_A": 2.214,
+    "max_peptide_CN_A": 1.457
+  },
+  {
+    "sequence_id": "dn_vhh_her2_hail_mary_7",
+    "structure": "design_complete/generation/inference_samples/vhh_her2_hail_mary_7/vhh_her2_hail_mary_7_generated.cif",
+    "chain": "H",
+    "length": 126,
+    "cysteines": 2,
+    "sequences": {
+      "C": "CHQLCARGHCWGPGPTQCVNCSQFLRGQECVEECRVLQGLPREYVNARHCLPCHPECQPQNGSVTCFGPEADQCVACAHYKDPPFCVARCPS",
+      "H": "EVQLVESGGGLVQAGGSLRLSCAASGFTFSTHTMGWVRQAPGKGRELVAAITSSGSTYYADSVKGRFTISRDNAKNTLYLQMNSLKPEDTAVYYCAATKRGSYDVNTLTVDDFDYWGQGTQVTVSS",
+      "D": "IWKFPDEEGACQPCPIN"
+    },
+    "disulfide_sg_distance_A": 2.323,
+    "max_peptide_CN_A": 1.444
+  },
+  {
+    "sequence_id": "dn_vhh_her2_hail_mary_8",
+    "structure": "design_complete/generation/inference_samples/vhh_her2_hail_mary_8/vhh_her2_hail_mary_8_generated.cif",
+    "chain": "H",
+    "length": 126,
+    "cysteines": 2,
+    "sequences": {
+      "C": "CHQLCARGHCWGPGPTQCVNCSQFLRGQECVEECRVLQGLPREYVNARHCLPCHPECQPQNGSVTCFGPEADQCVACAHYKDPPFCVARCPS",
+      "H": "EVQLVESGGGLVQAGGSLRLSCAASGFTFSSYAMSWVRQAPGKGRELVASITSGGNTYYADSVKGRFTISRDNAKNTLYLQMNSLKPEDTAVYYCKRDHHTSDYPLSWYQLNYNYWGQGTQVTVSS",
+      "D": "IWKFPDEEGACQPCPIN"
+    },
+    "disulfide_sg_distance_A": 2.271,
+    "max_peptide_CN_A": 1.461
+  },
+  {
+    "sequence_id": "dn_vhh_her2_hail_mary_9",
+    "structure": "design_complete/generation/inference_samples/vhh_her2_hail_mary_9/vhh_her2_hail_mary_9_generated.cif",
+    "chain": "H",
+    "length": 128,
+    "cysteines": 2,
+    "sequences": {
+      "C": "CHQLCARGHCWGPGPTQCVNCSQFLRGQECVEECRVLQGLPREYVNARHCLPCHPECQPQNGSVTCFGPEADQCVACAHYKDPPFCVARCPS",
+      "H": "EVQLVESGGGLVQAGGSLRLSCAASGFTFSSYAMGWVRQAPGKGRELVASIGSSGGSTYYADSVKGRFTISRDNAKNTLYLQMNSLKPEDTAVYYCTILGSTTSYDPFKSYTDYTTYWGQGTQVTVSS",
+      "D": "IWKFPDEEGACQPCPIN"
+    },
+    "disulfide_sg_distance_A": 2.377,
+    "max_peptide_CN_A": 1.421
+  }
+]

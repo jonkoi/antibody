@@ -1,0 +1,82 @@
+{
+  "created_at": "2026-11-14T15:25:25.871456+00:00",
+  "done": 9,
+  "download": "curl -fsSL -H \"Authorization: Bearer $JAPANFOLD_API_KEY\" -o 14c0fd3d006eb13479a0407a7a013340-results.zip https://api.japanfold.aiand.com/v1/jobs/14c0fd3d006eb13479a0407a7a013340/archive && unzip -oq 14c0fd3d006eb13479a0407a7a013340-results.zip",
+  "error": null,
+  "finished_at": "2026-11-14T15:26:44.814257+00:00",
+  "id": "14c0fd3d006eb13479a0407a7a013340",
+  "kind": "predict",
+  "links": {
+    "archive": "/v1/jobs/14c0fd3d006eb13479a0407a7a013340/archive",
+    "logs": "/v1/jobs/14c0fd3d006eb13479a0407a7a013340/logs",
+    "results": "/v1/jobs/14c0fd3d006eb13479a0407a7a013340/results",
+    "self": "/v1/jobs/14c0fd3d006eb13479a0407a7a013340",
+    "usage": "/v1/jobs/14c0fd3d006eb13479a0407a7a013340/usage"
+  },
+  "model": "boltz2",
+  "name": "team15-one-shot-denovo-check",
+  "object": "job",
+  "params": {
+    "diffusion_samples": 3,
+    "fast": false,
+    "output_format": "pdb",
+    "seed": 73,
+    "use_msa_server": true,
+    "write_pae": false
+  },
+  "progress": 1.0,
+  "protocol": null,
+  "residues": 336,
+  "results_ready": true,
+  "stage": "done",
+  "started_at": "2026-11-14T15:25:25.985216+00:00",
+  "status": "succeeded",
+  "targets": [
+    {
+      "id": "dn_vhh_her2_hail_mary_0",
+      "stage": null,
+      "state": "done"
+    },
+    {
+      "id": "dn_vhh_her2_hail_mary_1",
+      "stage": null,
+      "state": "done"
+    },
+    {
+      "id": "dn_vhh_her2_hail_mary_11",
+      "stage": null,
+      "state": "done"
+    },
+    {
+      "id": "dn_vhh_her2_hail_mary_5",
+      "stage": null,
+      "state": "done"
+    },
+    {
+      "id": "dn_vhh_her2_hail_mary_7",
+      "stage": null,
+      "state": "done"
+    },
+    {
+      "id": "dn_vhh_her2_hail_mary_8",
+      "stage": null,
+      "state": "done"
+    },
+    {
+      "id": "dn_vhh_her2_hail_mary_9",
+      "stage": null,
+      "state": "done"
+    },
+    {
+      "id": "ctl_wt",
+      "stage": null,
+      "state": "done"
+    },
+    {
+      "id": "ctl_old_offsite",
+      "stage": null,
+      "state": "done"
+    }
+  ],
+  "total": 9
+}

@@ -1,0 +1,42 @@
+/usr/local/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+cuEquivariance is available and will be used.
+Environment variable CCD_MIRROR_PATH not set. Will not be able to use function
+requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc
+file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable PDB_MIRROR_PATH not set. Will not be able to use function
+requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc
+file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+generated new fontManager
+[rank: 0] Prevalidating input example: vhh_her2_hail_mary
+Expandable segment sentinel insertion copied annotation values without explicit
+re-derivation for source atom_idx=1935: ['is_aromatic', 'is_backbone_atom',
+'label_alt_id', 'stereo', 'transformation_id']
+Expandable segment sentinel insertion copied annotation values without explicit
+re-derivation for source atom_idx=2162: ['is_aromatic', 'is_backbone_atom',
+'label_alt_id', 'stereo', 'transformation_id']
+Expandable segment sentinel insertion copied annotation values without explicit
+re-derivation for source atom_idx=2757: ['is_aromatic', 'is_backbone_atom',
+'label_alt_id', 'stereo', 'transformation_id']
+[rank: 0]
+--- condition_spec: vhh_her2_hail_mary ---
+Sequence: 193 residues
+
+Hotspot: 4 atoms
+
+Coordinate groups: 3 groups
+
+InternalCoordinate: 1716 atoms
+
+CAT (class / architecture / topology):
+  2.60.40: 87 residues
+
+REMINDER: Conditions not listed above (including coordinates and sequence) are
+NOT provided to the model and will be freely generated.
+[rank: 0] Dataset inference-dataset: 1 examples (vhh_her2_hail_mary_0)

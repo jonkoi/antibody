@@ -1,0 +1,77 @@
+{
+  "created_at": "2026-11-14T14:53:56.259815+00:00",
+  "done": 8,
+  "download": "curl -fsSL -H \"Authorization: Bearer $JAPANFOLD_API_KEY\" -o 92eb351f2567f7fccf0e61ebd7e5f27e-results.zip https://api.japanfold.aiand.com/v1/jobs/92eb351f2567f7fccf0e61ebd7e5f27e/archive && unzip -oq 92eb351f2567f7fccf0e61ebd7e5f27e-results.zip",
+  "error": null,
+  "finished_at": "2026-11-14T14:55:25.118625+00:00",
+  "id": "92eb351f2567f7fccf0e61ebd7e5f27e",
+  "kind": "predict",
+  "links": {
+    "archive": "/v1/jobs/92eb351f2567f7fccf0e61ebd7e5f27e/archive",
+    "logs": "/v1/jobs/92eb351f2567f7fccf0e61ebd7e5f27e/logs",
+    "results": "/v1/jobs/92eb351f2567f7fccf0e61ebd7e5f27e/results",
+    "self": "/v1/jobs/92eb351f2567f7fccf0e61ebd7e5f27e",
+    "usage": "/v1/jobs/92eb351f2567f7fccf0e61ebd7e5f27e/usage"
+  },
+  "model": "boltz2",
+  "name": "team15-framework-hail-mary",
+  "object": "job",
+  "params": {
+    "diffusion_samples": 3,
+    "fast": false,
+    "output_format": "pdb",
+    "seed": 42,
+    "use_msa_server": true,
+    "write_pae": false
+  },
+  "progress": 1.0,
+  "protocol": null,
+  "residues": 336,
+  "results_ready": true,
+  "stage": "done",
+  "started_at": "2026-11-14T14:53:56.328698+00:00",
+  "status": "succeeded",
+  "targets": [
+    {
+      "id": "base_WGHDGPYWMD",
+      "stage": null,
+      "state": "done"
+    },
+    {
+      "id": "fw_WGHDGPYWMD",
+      "stage": null,
+      "state": "done"
+    },
+    {
+      "id": "base_WGGKGPYWMD",
+      "stage": null,
+      "state": "done"
+    },
+    {
+      "id": "fw_WGGKGPYWMD",
+      "stage": null,
+      "state": "done"
+    },
+    {
+      "id": "base_WGGMGPYWMD",
+      "stage": null,
+      "state": "done"
+    },
+    {
+      "id": "fw_WGGMGPYWMD",
+      "stage": null,
+      "state": "done"
+    },
+    {
+      "id": "fw_WGGDGFYAMD",
+      "stage": null,
+      "state": "done"
+    },
+    {
+      "id": "ctl_wt",
+      "stage": null,
+      "state": "done"
+    }
+  ],
+  "total": 8
+}

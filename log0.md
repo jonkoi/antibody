@@ -841,3 +841,41 @@ up if there is still time after the submission itself is locked.
    recall, top-5 affinity), **`WGHDGPYWMD`** alongside for its affinity edge (epitope
    confirmed, liability cost disclosed), backups from the 14-row confirmed list.
 3. Everything else from Sessions B/C's next-actions lists still stands.
+
+---
+
+## Session E — framework-stabilisation hail Mary (Codex, 14 Nov 2026)
+
+User authorised proceeding with the proposed S-tier exploration and requested economical token use. Scoped this session to the published VH S85N+R87T framework pair on CDRH3s WGHDGPYWMD, WGGKGPYWMD and WGGMGPYWMD; no broad generator campaign.
+
+Full report and provenance: `runs/framework-hail-mary/README.md`. The named residues map to one-based sequence positions 85/87 (WT SLR → NLT), with all six WT identities across the paper's three double-mutant examples matching our sequence indexing. Source: Ng et al., mAbs 2025, DOI 10.1080/19420862.2025.2532117. Published increased Tm and retained cell binding/function apply to the paper's original background, not our combinations; glycosylation dependence and fragment/expression transfer remain unresolved.
+
+Live abguard with explicit HER2 reference DB accepts all 3 combinations and their 3 original-framework comparators. Framework-only WT-CDRH3 control correctly fails novelty. New FR3 NLT sequon is reported by LAP, not a hard rejection: the local expression heuristic must not be confused with organiser policy.
+
+One matched, unguided Boltz-2+MSA batch (8 targets, 3 diffusion samples each, seed 42), job `92eb351f2567f7fccf0e61ebd7e5f27e`, cost $0.021805. Contacts scored against 19 crystal residues + four core residues, union of light/heavy contacts within 5 Å. WT and framework-only controls pass 3/3. Results:
+
+- WGGKGPYWMD: original 3/3; framework pair 3/3, all epitope residues retained.
+- WGGMGPYWMD: original 3/3; framework pair 3/3, minimum recall 0.947.
+- WGHDGPYWMD: original 1/3; framework pair 1/3. This conflicts with the older untracked 6/6 summary and demonstrates sampling variability; no basis to attribute it specifically to framework edits. Samples are one seed with three diffusion outputs, not independent-seed validation.
+
+Prepared `recommended_exploratory_2.csv` with the Lys and Met CDRH3 framework combinations; Lys first. No claim of predicted Tm gain for these combinations, no reuse of old affinity probabilities as calibrated predictions on changed frameworks, and no competition submission. Before allocating slots, organiser framework eligibility and assay glycosylation/format need confirmation. No message sent externally. Main shortlist preserved.
+
+### User clarification after Session E
+
+Mutations anywhere are allowed provided abguard screening passes: framework eligibility resolved. Expression is cell-free. User believes N-linked glycosylation is supported, but phrased this tentatively; capability and occupancy of the introduced NLT sequon remain unverified. Retain the framework combinations as exploratory picks (Lys CDRH3 first), without claiming a demonstrated Tm gain or guaranteed glycosylation.
+
+## Session F — one-shot de novo attempt (Codex, user-authorised)
+
+One 12-design Foundry RFD4 **antibody-2026-10-30** batch, all 3 VHH CDRs redesigned, four true HER2 hotspot atoms, high/front_loaded, seed73, no hotspot resampling. This replaces the earlier BoltzGen generator/sequence-conditioning approach. Shipped expandable caplacizumab scaffold failed CLI valence validation, producing zero designs; corrected input uses the earlier complete canonical-disulfide VHH framework (not a known epitope binder) + crystal HER2. Full provenance in `runs/denovo-hail-mary/README.md`.
+
+12 unique outputs, exactly two cysteines each, continuous peptide geometry. Live abguard: 12/12 valid; 7 de_novo, 5 optimisation. Independent unguided Boltz-2+MSA on 7 de_novo candidates plus WT and old off-site comparator, 3 diffusion samples, seed73: six candidates fail (median epitope recall0); **dn_vhh_her2_hail_mary_1** contacts 10/19,15/19,14/19 epitope residues, core3/4,4/4,4/4. WT19/19 all3, old comparator median0. Follow-up different seed1073 on this candidate+WT only, no new designs: repeats 2/3 VHH-overlap gate, WT3/3. Total **4/6** overlap passes (>=0.5 recall + 4core); **0/6** stricter Fab-footprint passes (>=0.85 +4core). VHH criterion prespecified before results because its footprint may be smaller than Fab's. Both HER2 fragments jointly stay near crystal (candidate target CA-RMSD1.163–1.458 Å across6). All independently folded sequences verified unchanged.
+
+Single exploratory candidate:128aa, CDRH3 AKWNRSASGWSSSNFWEAMDY, abguard identity0.6953125, minimum CDRH3 distance14. **CDRH3 NRS sequon at100–102** is a high-severity glycosylation liability, potentially directly altering paratope in glycosylating expression. No glycan modelled. NanoMelt apparent Tm69.68°C, unmeasured and not a demonstrated gain over trastuzumab; CC BY-NC-SA4.0. Additional oxidation liabilities reported. Exact `exploratory_candidate_1.csv`/`.fa` and `decision.json` saved; worth review as one high-risk de_novo slot, not a proven S-tier design. No competition submission. Total hosted folds $0.023323, plus VM compute; no further generation launched.
+
+## Session G — consolidated ranked CSV, including de novo long shots
+
+User requested all actual generated/shortlisted designs, then queried the proposed 50k scope. Clarified and excluded the full enumeration pool: **639 unique actual generated/shortlisted HER2 candidates**, 335 paired +304 VHH, plus2 separate controls. Recovered seed7 generation outputs and collected results from22 previously submitted HER2 BoltzGen jobs (no new model/design jobs); excluded lysozyme controls, measured-binder calibration panels, mechanical abguard probes, broad 2306-AF2 reserve and full51k enumeration. Included actual ML top100 rescoring set and earlier55 shortlisted proposals.
+
+Fresh live abguard on exact639-row screen_input with explicit HER2 reference DB: **532 pass /107 rejected**; passing tracks **355 optimisation /177 de novo** (VHH format alone does not determine track). Saved accepted/novelty/liabilities JSON and logs. Exact format/H/L sequence equality and accepted-ID set checked against final532-row schema export.
+
+Outputs under `runs/all-ranked/`: `antibody_designs_ranked.csv` contains numbered ranks, track ranks, full sequences, reasons/background, risks, original aliases and evidence for all532 passing designs including long shots; `all_candidates_ranked.csv` retains all639 including rejections; `submission_all_valid_ranked.csv` has exactly5 abguard columns; per-track notes/submission tables also saved. `build_ranking.py` reproduces inventory/ranking; README explains heuristic order and exclusions. Ranked original K/M epitope-reproducible pairs first, corresponding framework variants next, exploratory de_novo candidate1 next; untested backups follow and known off-site candidates remain low ranked as explicitly requested. Rejections retained in audit only. No competition submission made.

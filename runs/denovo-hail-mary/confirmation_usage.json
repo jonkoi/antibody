@@ -1,0 +1,71 @@
+{
+  "amount": 0.004931,
+  "amount_micros": 4931,
+  "billable_s": 68.278,
+  "closed_at": "2026-11-14T15:29:14.893000+00:00",
+  "currency": "usd",
+  "excluded_s": 0.0,
+  "job": "f35e670f4de1e16c04091a6639b73aaa",
+  "kind": "predict",
+  "links": {
+    "job": "/v1/jobs/f35e670f4de1e16c04091a6639b73aaa"
+  },
+  "load_s": 11.378,
+  "meter": {
+    "bias": "under",
+    "bound_s": 6.0,
+    "method": "sampled-lease-integral+engine-clock-cap",
+    "sample_gap_s": 3.0,
+    "visible": true
+  },
+  "model": "boltz2",
+  "name": "team15-denovo-confirm",
+  "object": "usage",
+  "reconcile": {
+    "agree": 1,
+    "capped": 0,
+    "checked": 1,
+    "over_engine": 0,
+    "rate": 1.0,
+    "worst_delta_s": -1.996
+  },
+  "status": "succeeded",
+  "submitted_at": "2026-11-14T15:28:08.619000+00:00",
+  "surface": "skill",
+  "targets": [
+    {
+      "amount": 0.002174,
+      "amount_micros": 2174,
+      "attempts": 1,
+      "billable_s": 30.104,
+      "excluded": null,
+      "excluded_s": 0.0,
+      "id": "dn_vhh_her2_hail_mary_1",
+      "intervals": [
+        [
+          "2026-11-14T15:28:41.765000+00:00",
+          "2026-11-14T15:29:11.870000+00:00"
+        ]
+      ],
+      "load_s": 6.404,
+      "runtime_s": 23.7
+    },
+    {
+      "amount": 0.002757,
+      "amount_micros": 2757,
+      "attempts": 1,
+      "billable_s": 38.174,
+      "excluded": null,
+      "excluded_s": 0.0,
+      "id": "ctl_wt",
+      "intervals": [
+        [
+          "2026-11-14T15:28:13.764000+00:00",
+          "2026-11-14T15:28:51.938000+00:00"
+        ]
+      ],
+      "load_s": 4.974,
+      "runtime_s": 33.2
+    }
+  ]
+}

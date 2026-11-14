@@ -1,0 +1,16 @@
+{
+  "batch_size": 1,
+  "compile": false,
+  "data_path": "/weights",
+  "inverse_folding": false,
+  "metrics_tags": [
+    "design",
+    "hotspot_conditioning",
+    "interchain_interactions"
+  ],
+  "num_replicates": 12,
+  "recycle_strategy": "high/front_loaded",
+  "resample_hotspots": false,
+  "schema_version": "foundry.cli.v1",
+  "seed": 73
+}

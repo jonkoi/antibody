@@ -1,0 +1,9 @@
+target,n,good,min_recall,median_recall,min_core4
+base_WGGKGPYWMD,3,3,1.0,1.0,4
+base_WGGMGPYWMD,3,3,1.0,1.0,4
+base_WGHDGPYWMD,3,1,0.2632,0.8421,1
+ctl_wt,3,3,0.9474,1.0,4
+fw_WGGDGFYAMD,3,3,1.0,1.0,4
+fw_WGGKGPYWMD,3,3,1.0,1.0,4
+fw_WGGMGPYWMD,3,3,0.9474,0.9474,4
+fw_WGHDGPYWMD,3,1,0.3158,0.4211,2

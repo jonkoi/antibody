@@ -1,0 +1,85 @@
+{
+  "artifacts": [
+    {
+      "path": "ctl_wt.pdb",
+      "target": "ctl_wt",
+      "type": "structure",
+      "url": "/v1/jobs/f35e670f4de1e16c04091a6639b73aaa/artifacts/ctl_wt.pdb"
+    },
+    {
+      "path": "ctl_wt_model_1.pdb",
+      "target": "ctl_wt",
+      "type": "structure",
+      "url": "/v1/jobs/f35e670f4de1e16c04091a6639b73aaa/artifacts/ctl_wt_model_1.pdb"
+    },
+    {
+      "path": "ctl_wt_model_2.pdb",
+      "target": "ctl_wt",
+      "type": "structure",
+      "url": "/v1/jobs/f35e670f4de1e16c04091a6639b73aaa/artifacts/ctl_wt_model_2.pdb"
+    },
+    {
+      "path": "dn_vhh_her2_hail_mary_1.pdb",
+      "target": "dn_vhh_her2_hail_mary_1",
+      "type": "structure",
+      "url": "/v1/jobs/f35e670f4de1e16c04091a6639b73aaa/artifacts/dn_vhh_her2_hail_mary_1.pdb"
+    },
+    {
+      "path": "dn_vhh_her2_hail_mary_1_model_1.pdb",
+      "target": "dn_vhh_her2_hail_mary_1",
+      "type": "structure",
+      "url": "/v1/jobs/f35e670f4de1e16c04091a6639b73aaa/artifacts/dn_vhh_her2_hail_mary_1_model_1.pdb"
+    },
+    {
+      "path": "dn_vhh_her2_hail_mary_1_model_2.pdb",
+      "target": "dn_vhh_her2_hail_mary_1",
+      "type": "structure",
+      "url": "/v1/jobs/f35e670f4de1e16c04091a6639b73aaa/artifacts/dn_vhh_her2_hail_mary_1_model_2.pdb"
+    }
+  ],
+  "created_at": "2026-11-14T15:27:58.262108+00:00",
+  "done": 2,
+  "download": "curl -fsSL -H \"Authorization: Bearer $JAPANFOLD_API_KEY\" --create-dirs -o ctl_wt.pdb https://api.japanfold.aiand.com/v1/jobs/f35e670f4de1e16c04091a6639b73aaa/artifacts/ctl_wt.pdb -o ctl_wt_model_1.pdb https://api.japanfold.aiand.com/v1/jobs/f35e670f4de1e16c04091a6639b73aaa/artifacts/ctl_wt_model_1.pdb -o ctl_wt_model_2.pdb https://api.japanfold.aiand.com/v1/jobs/f35e670f4de1e16c04091a6639b73aaa/artifacts/ctl_wt_model_2.pdb -o dn_vhh_her2_hail_mary_1.pdb https://api.japanfold.aiand.com/v1/jobs/f35e670f4de1e16c04091a6639b73aaa/artifacts/dn_vhh_her2_hail_mary_1.pdb -o dn_vhh_her2_hail_mary_1_model_1.pdb https://api.japanfold.aiand.com/v1/jobs/f35e670f4de1e16c04091a6639b73aaa/artifacts/dn_vhh_her2_hail_mary_1_model_1.pdb -o dn_vhh_her2_hail_mary_1_model_2.pdb https://api.japanfold.aiand.com/v1/jobs/f35e670f4de1e16c04091a6639b73aaa/artifacts/dn_vhh_her2_hail_mary_1_model_2.pdb",
+  "error": null,
+  "finished_at": "2026-11-14T15:29:15.200243+00:00",
+  "id": "f35e670f4de1e16c04091a6639b73aaa",
+  "kind": "predict",
+  "links": {
+    "archive": "/v1/jobs/f35e670f4de1e16c04091a6639b73aaa/archive",
+    "logs": "/v1/jobs/f35e670f4de1e16c04091a6639b73aaa/logs",
+    "results": "/v1/jobs/f35e670f4de1e16c04091a6639b73aaa/results",
+    "self": "/v1/jobs/f35e670f4de1e16c04091a6639b73aaa",
+    "usage": "/v1/jobs/f35e670f4de1e16c04091a6639b73aaa/usage"
+  },
+  "model": "boltz2",
+  "name": "team15-denovo-confirm",
+  "object": "job",
+  "params": {
+    "diffusion_samples": 3,
+    "fast": false,
+    "output_format": "pdb",
+    "seed": 1073,
+    "use_msa_server": true,
+    "write_pae": false
+  },
+  "progress": 1.0,
+  "protocol": null,
+  "residues": 336,
+  "results_ready": true,
+  "stage": "done",
+  "started_at": "2026-11-14T15:28:08.570889+00:00",
+  "status": "succeeded",
+  "targets": [
+    {
+      "id": "dn_vhh_her2_hail_mary_1",
+      "stage": null,
+      "state": "done"
+    },
+    {
+      "id": "ctl_wt",
+      "stage": null,
+      "state": "done"
+    }
+  ],
+  "total": 2
+}

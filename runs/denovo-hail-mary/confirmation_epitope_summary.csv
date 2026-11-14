@@ -1,0 +1,3 @@
+target,n,strict,vhh_overlap,median_recall,min_recall,min_core4
+ctl_wt,3,3,3,1.0,1.0,4
+dn_vhh_her2_hail_mary_1,3,0,2,0.7368,0.5263,3

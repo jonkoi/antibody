@@ -1,0 +1,104 @@
+[
+  {
+    "sequence_id": "base_WGHDGPYWMD",
+    "changes": [
+      "G101H",
+      "F104P",
+      "A106W"
+    ],
+    "heavy_length": 120,
+    "light_length": 107,
+    "sequons": []
+  },
+  {
+    "sequence_id": "fw_WGHDGPYWMD",
+    "changes": [
+      "S85N",
+      "R87T",
+      "G101H",
+      "F104P",
+      "A106W"
+    ],
+    "heavy_length": 120,
+    "light_length": 107,
+    "sequons": [
+      {
+        "position": 85,
+        "motif": "NLT"
+      }
+    ]
+  },
+  {
+    "sequence_id": "base_WGGKGPYWMD",
+    "changes": [
+      "D102K",
+      "F104P",
+      "A106W"
+    ],
+    "heavy_length": 120,
+    "light_length": 107,
+    "sequons": []
+  },
+  {
+    "sequence_id": "fw_WGGKGPYWMD",
+    "changes": [
+      "S85N",
+      "R87T",
+      "D102K",
+      "F104P",
+      "A106W"
+    ],
+    "heavy_length": 120,
+    "light_length": 107,
+    "sequons": [
+      {
+        "position": 85,
+        "motif": "NLT"
+      }
+    ]
+  },
+  {
+    "sequence_id": "base_WGGMGPYWMD",
+    "changes": [
+      "D102M",
+      "F104P",
+      "A106W"
+    ],
+    "heavy_length": 120,
+    "light_length": 107,
+    "sequons": []
+  },
+  {
+    "sequence_id": "fw_WGGMGPYWMD",
+    "changes": [
+      "S85N",
+      "R87T",
+      "D102M",
+      "F104P",
+      "A106W"
+    ],
+    "heavy_length": 120,
+    "light_length": 107,
+    "sequons": [
+      {
+        "position": 85,
+        "motif": "NLT"
+      }
+    ]
+  },
+  {
+    "sequence_id": "fw_WGGDGFYAMD",
+    "changes": [
+      "S85N",
+      "R87T"
+    ],
+    "heavy_length": 120,
+    "light_length": 107,
+    "sequons": [
+      {
+        "position": 85,
+        "motif": "NLT"
+      }
+    ]
+  }
+]

@@ -1,0 +1,1567 @@
+{
+  "archive_url": "/v1/jobs/14c0fd3d006eb13479a0407a7a013340/archive",
+  "artifacts": [
+    {
+      "path": "ctl_wt.pdb",
+      "target": "ctl_wt",
+      "type": "structure",
+      "url": "/v1/jobs/14c0fd3d006eb13479a0407a7a013340/artifacts/ctl_wt.pdb"
+    },
+    {
+      "path": "ctl_wt_model_1.pdb",
+      "target": "ctl_wt",
+      "type": "structure",
+      "url": "/v1/jobs/14c0fd3d006eb13479a0407a7a013340/artifacts/ctl_wt_model_1.pdb"
+    },
+    {
+      "path": "ctl_wt_model_2.pdb",
+      "target": "ctl_wt",
+      "type": "structure",
+      "url": "/v1/jobs/14c0fd3d006eb13479a0407a7a013340/artifacts/ctl_wt_model_2.pdb"
+    },
+    {
+      "path": "ctl_old_offsite.pdb",
+      "target": "ctl_old_offsite",
+      "type": "structure",
+      "url": "/v1/jobs/14c0fd3d006eb13479a0407a7a013340/artifacts/ctl_old_offsite.pdb"
+    },
+    {
+      "path": "ctl_old_offsite_model_1.pdb",
+      "target": "ctl_old_offsite",
+      "type": "structure",
+      "url": "/v1/jobs/14c0fd3d006eb13479a0407a7a013340/artifacts/ctl_old_offsite_model_1.pdb"
+    },
+    {
+      "path": "ctl_old_offsite_model_2.pdb",
+      "target": "ctl_old_offsite",
+      "type": "structure",
+      "url": "/v1/jobs/14c0fd3d006eb13479a0407a7a013340/artifacts/ctl_old_offsite_model_2.pdb"
+    },
+    {
+      "path": "dn_vhh_her2_hail_mary_0.pdb",
+      "target": "dn_vhh_her2_hail_mary_0",
+      "type": "structure",
+      "url": "/v1/jobs/14c0fd3d006eb13479a0407a7a013340/artifacts/dn_vhh_her2_hail_mary_0.pdb"
+    },
+    {
+      "path": "dn_vhh_her2_hail_mary_0_model_1.pdb",
+      "target": "dn_vhh_her2_hail_mary_0",
+      "type": "structure",
+      "url": "/v1/jobs/14c0fd3d006eb13479a0407a7a013340/artifacts/dn_vhh_her2_hail_mary_0_model_1.pdb"
+    },
+    {
+      "path": "dn_vhh_her2_hail_mary_0_model_2.pdb",
+      "target": "dn_vhh_her2_hail_mary_0",
+      "type": "structure",
+      "url": "/v1/jobs/14c0fd3d006eb13479a0407a7a013340/artifacts/dn_vhh_her2_hail_mary_0_model_2.pdb"
+    },
+    {
+      "path": "dn_vhh_her2_hail_mary_1.pdb",
+      "target": "dn_vhh_her2_hail_mary_1",
+      "type": "structure",
+      "url": "/v1/jobs/14c0fd3d006eb13479a0407a7a013340/artifacts/dn_vhh_her2_hail_mary_1.pdb"
+    },
+    {
+      "path": "dn_vhh_her2_hail_mary_1_model_1.pdb",
+      "target": "dn_vhh_her2_hail_mary_1",
+      "type": "structure",
+      "url": "/v1/jobs/14c0fd3d006eb13479a0407a7a013340/artifacts/dn_vhh_her2_hail_mary_1_model_1.pdb"
+    },
+    {
+      "path": "dn_vhh_her2_hail_mary_1_model_2.pdb",
+      "target": "dn_vhh_her2_hail_mary_1",
+      "type": "structure",
+      "url": "/v1/jobs/14c0fd3d006eb13479a0407a7a013340/artifacts/dn_vhh_her2_hail_mary_1_model_2.pdb"
+    },
+    {
+      "path": "dn_vhh_her2_hail_mary_5.pdb",
+      "target": "dn_vhh_her2_hail_mary_5",
+      "type": "structure",
+      "url": "/v1/jobs/14c0fd3d006eb13479a0407a7a013340/artifacts/dn_vhh_her2_hail_mary_5.pdb"
+    },
+    {
+      "path": "dn_vhh_her2_hail_mary_5_model_1.pdb",
+      "target": "dn_vhh_her2_hail_mary_5",
+      "type": "structure",
+      "url": "/v1/jobs/14c0fd3d006eb13479a0407a7a013340/artifacts/dn_vhh_her2_hail_mary_5_model_1.pdb"
+    },
+    {
+      "path": "dn_vhh_her2_hail_mary_5_model_2.pdb",
+      "target": "dn_vhh_her2_hail_mary_5",
+      "type": "structure",
+      "url": "/v1/jobs/14c0fd3d006eb13479a0407a7a013340/artifacts/dn_vhh_her2_hail_mary_5_model_2.pdb"
+    },
+    {
+      "path": "dn_vhh_her2_hail_mary_7.pdb",
+      "target": "dn_vhh_her2_hail_mary_7",
+      "type": "structure",
+      "url": "/v1/jobs/14c0fd3d006eb13479a0407a7a013340/artifacts/dn_vhh_her2_hail_mary_7.pdb"
+    },
+    {
+      "path": "dn_vhh_her2_hail_mary_7_model_1.pdb",
+      "target": "dn_vhh_her2_hail_mary_7",
+      "type": "structure",
+      "url": "/v1/jobs/14c0fd3d006eb13479a0407a7a013340/artifacts/dn_vhh_her2_hail_mary_7_model_1.pdb"
+    },
+    {
+      "path": "dn_vhh_her2_hail_mary_7_model_2.pdb",
+      "target": "dn_vhh_her2_hail_mary_7",
+      "type": "structure",
+      "url": "/v1/jobs/14c0fd3d006eb13479a0407a7a013340/artifacts/dn_vhh_her2_hail_mary_7_model_2.pdb"
+    },
+    {
+      "path": "dn_vhh_her2_hail_mary_8.pdb",
+      "target": "dn_vhh_her2_hail_mary_8",
+      "type": "structure",
+      "url": "/v1/jobs/14c0fd3d006eb13479a0407a7a013340/artifacts/dn_vhh_her2_hail_mary_8.pdb"
+    },
+    {
+      "path": "dn_vhh_her2_hail_mary_8_model_1.pdb",
+      "target": "dn_vhh_her2_hail_mary_8",
+      "type": "structure",
+      "url": "/v1/jobs/14c0fd3d006eb13479a0407a7a013340/artifacts/dn_vhh_her2_hail_mary_8_model_1.pdb"
+    },
+    {
+      "path": "dn_vhh_her2_hail_mary_8_model_2.pdb",
+      "target": "dn_vhh_her2_hail_mary_8",
+      "type": "structure",
+      "url": "/v1/jobs/14c0fd3d006eb13479a0407a7a013340/artifacts/dn_vhh_her2_hail_mary_8_model_2.pdb"
+    },
+    {
+      "path": "dn_vhh_her2_hail_mary_9.pdb",
+      "target": "dn_vhh_her2_hail_mary_9",
+      "type": "structure",
+      "url": "/v1/jobs/14c0fd3d006eb13479a0407a7a013340/artifacts/dn_vhh_her2_hail_mary_9.pdb"
+    },
+    {
+      "path": "dn_vhh_her2_hail_mary_9_model_1.pdb",
+      "target": "dn_vhh_her2_hail_mary_9",
+      "type": "structure",
+      "url": "/v1/jobs/14c0fd3d006eb13479a0407a7a013340/artifacts/dn_vhh_her2_hail_mary_9_model_1.pdb"
+    },
+    {
+      "path": "dn_vhh_her2_hail_mary_9_model_2.pdb",
+      "target": "dn_vhh_her2_hail_mary_9",
+      "type": "structure",
+      "url": "/v1/jobs/14c0fd3d006eb13479a0407a7a013340/artifacts/dn_vhh_her2_hail_mary_9_model_2.pdb"
+    },
+    {
+      "path": "dn_vhh_her2_hail_mary_11.pdb",
+      "target": "dn_vhh_her2_hail_mary_11",
+      "type": "structure",
+      "url": "/v1/jobs/14c0fd3d006eb13479a0407a7a013340/artifacts/dn_vhh_her2_hail_mary_11.pdb"
+    },
+    {
+      "path": "dn_vhh_her2_hail_mary_11_model_1.pdb",
+      "target": "dn_vhh_her2_hail_mary_11",
+      "type": "structure",
+      "url": "/v1/jobs/14c0fd3d006eb13479a0407a7a013340/artifacts/dn_vhh_her2_hail_mary_11_model_1.pdb"
+    },
+    {
+      "path": "dn_vhh_her2_hail_mary_11_model_2.pdb",
+      "target": "dn_vhh_her2_hail_mary_11",
+      "type": "structure",
+      "url": "/v1/jobs/14c0fd3d006eb13479a0407a7a013340/artifacts/dn_vhh_her2_hail_mary_11_model_2.pdb"
+    }
+  ],
+  "job_id": "14c0fd3d006eb13479a0407a7a013340",
+  "kind": "predict",
+  "object": "results",
+  "pae": [],
+  "ready": true,
+  "rows": [
+    {
+      "all_runs": [
+        {
+          "chains_ptm": {
+            "0": 0.98419,
+            "1": 0.97342,
+            "2": 0.971277
+          },
+          "complex_ipde": 1.224912,
+          "complex_iplddt": 0.873042,
+          "complex_pde": 0.325401,
+          "complex_plddt": 0.909164,
+          "confidence_score": 0.904208,
+          "iptm": 0.884386,
+          "ligand_iptm": 0.0,
+          "pair_chains_iptm": {
+            "0": {
+              "0": 0.98419,
+              "1": 0.878414,
+              "2": 0.807363
+            },
+            "1": {
+              "0": 0.85912,
+              "1": 0.97342,
+              "2": 0.880647
+            },
+            "2": {
+              "0": 0.835937,
+              "1": 0.954273,
+              "2": 0.971277
+            }
+          },
+          "plddt": 0.909164,
+          "protein_iptm": 0.884386,
+          "ptm": 0.921892,
+          "rank": 0
+        },
+        {
+          "chains_ptm": {
+            "0": 0.977147,
+            "1": 0.960088,
+            "2": 0.953584
+          },
+          "complex_ipde": 5.767715,
+          "complex_iplddt": 0.859533,
+          "complex_pde": 0.651604,
+          "complex_plddt": 0.893133,
+          "confidence_score": 0.820892,
+          "iptm": 0.531928,
+          "ligand_iptm": 0.0,
+          "pair_chains_iptm": {
+            "0": {
+              "0": 0.977147,
+              "1": 0.391548,
+              "2": 0.323665
+            },
+            "1": {
+              "0": 0.413999,
+              "1": 0.960088,
+              "2": 0.819421
+            },
+            "2": {
+              "0": 0.318934,
+              "1": 0.910845,
+              "2": 0.953584
+            }
+          },
+          "plddt": 0.893133,
+          "protein_iptm": 0.531928,
+          "ptm": 0.709133,
+          "rank": 1
+        },
+        {
+          "chains_ptm": {
+            "0": 0.972533,
+            "1": 0.954781,
+            "2": 0.940487
+          },
+          "complex_ipde": 6.778095,
+          "complex_iplddt": 0.858269,
+          "complex_pde": 0.741166,
+          "complex_plddt": 0.895482,
+          "confidence_score": 0.806525,
+          "iptm": 0.450699,
+          "ligand_iptm": 0.0,
+          "pair_chains_iptm": {
+            "0": {
+              "0": 0.972533,
+              "1": 0.234675,
+              "2": 0.203094
+            },
+            "1": {
+              "0": 0.280932,
+              "1": 0.954781,
+              "2": 0.792502
+            },
+            "2": {
+              "0": 0.20841,
+              "1": 0.892693,
+              "2": 0.940487
+            }
+          },
+          "plddt": 0.895482,
+          "protein_iptm": 0.450699,
+          "ptm": 0.647506,
+          "rank": 2
+        }
+      ],
+      "chains_ptm": {
+        "0": 0.98419,
+        "1": 0.97342,
+        "2": 0.971277
+      },
+      "complex_ipde": 1.224912,
+      "complex_iplddt": 0.873042,
+      "complex_pde": 0.325401,
+      "complex_plddt": 0.909164,
+      "confidence_score": 0.904208,
+      "id": "dn_vhh_her2_hail_mary_0",
+      "iptm": 0.884386,
+      "ligand_iptm": 0.0,
+      "load_s": 8.7,
+      "pair_chains_iptm": {
+        "0": {
+          "0": 0.98419,
+          "1": 0.878414,
+          "2": 0.807363
+        },
+        "1": {
+          "0": 0.85912,
+          "1": 0.97342,
+          "2": 0.880647
+        },
+        "2": {
+          "0": 0.835937,
+          "1": 0.954273,
+          "2": 0.971277
+        }
+      },
+      "plddt": 0.909164,
+      "protein_iptm": 0.884386,
+      "ptm": 0.921892,
+      "runtime_s": 19.4,
+      "status": "ok"
+    },
+    {
+      "all_runs": [
+        {
+          "chains_ptm": {
+            "0": 0.982513,
+            "1": 0.965778,
+            "2": 0.96852
+          },
+          "complex_ipde": 0.949528,
+          "complex_iplddt": 0.849487,
+          "complex_pde": 0.32249,
+          "complex_plddt": 0.903468,
+          "confidence_score": 0.899886,
+          "iptm": 0.88556,
+          "ligand_iptm": 0.0,
+          "pair_chains_iptm": {
+            "0": {
+              "0": 0.982513,
+              "1": 0.881317,
+              "2": 0.824493
+            },
+            "1": {
+              "0": 0.861371,
+              "1": 0.965778,
+              "2": 0.868376
+            },
+            "2": {
+              "0": 0.86397,
+              "1": 0.954273,
+              "2": 0.96852
+            }
+          },
+          "plddt": 0.903468,
+          "protein_iptm": 0.88556,
+          "ptm": 0.926984,
+          "rank": 0
+        },
+        {
+          "chains_ptm": {
+            "0": 0.967193,
+            "1": 0.950705,
+            "2": 0.943014
+          },
+          "complex_ipde": 3.723688,
+          "complex_iplddt": 0.84198,
+          "complex_pde": 0.587964,
+          "complex_plddt": 0.899813,
+          "confidence_score": 0.86194,
+          "iptm": 0.710449,
+          "ligand_iptm": 0.0,
+          "pair_chains_iptm": {
+            "0": {
+              "0": 0.967193,
+              "1": 0.684662,
+              "2": 0.639114
+            },
+            "1": {
+              "0": 0.641283,
+              "1": 0.950705,
+              "2": 0.809698
+            },
+            "2": {
+              "0": 0.702205,
+              "1": 0.900735,
+              "2": 0.943014
+            }
+          },
+          "plddt": 0.899813,
+          "protein_iptm": 0.710449,
+          "ptm": 0.819002,
+          "rank": 1
+        },
+        {
+          "chains_ptm": {
+            "0": 0.972809,
+            "1": 0.952191,
+            "2": 0.950137
+          },
+          "complex_ipde": 3.941233,
+          "complex_iplddt": 0.830136,
+          "complex_pde": 0.591757,
+          "complex_plddt": 0.890668,
+          "confidence_score": 0.856235,
+          "iptm": 0.718501,
+          "ligand_iptm": 0.0,
+          "pair_chains_iptm": {
+            "0": {
+              "0": 0.972809,
+              "1": 0.678497,
+              "2": 0.645691
+            },
+            "1": {
+              "0": 0.635275,
+              "1": 0.952191,
+              "2": 0.819803
+            },
+            "2": {
+              "0": 0.704044,
+              "1": 0.909466,
+              "2": 0.950137
+            }
+          },
+          "plddt": 0.890668,
+          "protein_iptm": 0.718501,
+          "ptm": 0.818631,
+          "rank": 2
+        }
+      ],
+      "chains_ptm": {
+        "0": 0.982513,
+        "1": 0.965778,
+        "2": 0.96852
+      },
+      "complex_ipde": 0.949528,
+      "complex_iplddt": 0.849487,
+      "complex_pde": 0.32249,
+      "complex_plddt": 0.903468,
+      "confidence_score": 0.899886,
+      "id": "dn_vhh_her2_hail_mary_1",
+      "iptm": 0.88556,
+      "ligand_iptm": 0.0,
+      "load_s": 6.5,
+      "pair_chains_iptm": {
+        "0": {
+          "0": 0.982513,
+          "1": 0.881317,
+          "2": 0.824493
+        },
+        "1": {
+          "0": 0.861371,
+          "1": 0.965778,
+          "2": 0.868376
+        },
+        "2": {
+          "0": 0.86397,
+          "1": 0.954273,
+          "2": 0.96852
+        }
+      },
+      "plddt": 0.903468,
+      "protein_iptm": 0.88556,
+      "ptm": 0.926984,
+      "runtime_s": 25.0,
+      "status": "ok"
+    },
+    {
+      "all_runs": [
+        {
+          "chains_ptm": {
+            "0": 0.97675,
+            "1": 0.962806,
+            "2": 0.95818
+          },
+          "complex_ipde": 1.273084,
+          "complex_iplddt": 0.768361,
+          "complex_pde": 0.360913,
+          "complex_plddt": 0.843973,
+          "confidence_score": 0.844269,
+          "iptm": 0.845455,
+          "ligand_iptm": 0.0,
+          "pair_chains_iptm": {
+            "0": {
+              "0": 0.97675,
+              "1": 0.841062,
+              "2": 0.695187
+            },
+            "1": {
+              "0": 0.822733,
+              "1": 0.962806,
+              "2": 0.851732
+            },
+            "2": {
+              "0": 0.734145,
+              "1": 0.940487,
+              "2": 0.95818
+            }
+          },
+          "plddt": 0.843973,
+          "protein_iptm": 0.845455,
+          "ptm": 0.895984,
+          "rank": 0
+        },
+        {
+          "chains_ptm": {
+            "0": 0.973875,
+            "1": 0.959664,
+            "2": 0.951056
+          },
+          "complex_ipde": 2.814535,
+          "complex_iplddt": 0.78565,
+          "complex_pde": 0.492377,
+          "complex_plddt": 0.858037,
+          "confidence_score": 0.826449,
+          "iptm": 0.700099,
+          "ligand_iptm": 0.0,
+          "pair_chains_iptm": {
+            "0": {
+              "0": 0.973875,
+              "1": 0.679656,
+              "2": 0.575156
+            },
+            "1": {
+              "0": 0.702955,
+              "1": 0.959664,
+              "2": 0.833008
+            },
+            "2": {
+              "0": 0.605009,
+              "1": 0.919117,
+              "2": 0.951056
+            }
+          },
+          "plddt": 0.858037,
+          "protein_iptm": 0.700099,
+          "ptm": 0.840019,
+          "rank": 1
+        },
+        {
+          "chains_ptm": {
+            "0": 0.963125,
+            "1": 0.953465,
+            "2": 0.946001
+          },
+          "complex_ipde": 5.689836,
+          "complex_iplddt": 0.769817,
+          "complex_pde": 0.741645,
+          "complex_plddt": 0.840545,
+          "confidence_score": 0.774781,
+          "iptm": 0.511723,
+          "ligand_iptm": 0.0,
+          "pair_chains_iptm": {
+            "0": {
+              "0": 0.963125,
+              "1": 0.353406,
+              "2": 0.307977
+            },
+            "1": {
+              "0": 0.407014,
+              "1": 0.953465,
+              "2": 0.803796
+            },
+            "2": {
+              "0": 0.312615,
+              "1": 0.909926,
+              "2": 0.946001
+            }
+          },
+          "plddt": 0.840545,
+          "protein_iptm": 0.511723,
+          "ptm": 0.695938,
+          "rank": 2
+        }
+      ],
+      "chains_ptm": {
+        "0": 0.97675,
+        "1": 0.962806,
+        "2": 0.95818
+      },
+      "complex_ipde": 1.273084,
+      "complex_iplddt": 0.768361,
+      "complex_pde": 0.360913,
+      "complex_plddt": 0.843973,
+      "confidence_score": 0.844269,
+      "id": "dn_vhh_her2_hail_mary_11",
+      "iptm": 0.845455,
+      "ligand_iptm": 0.0,
+      "load_s": 6.7,
+      "pair_chains_iptm": {
+        "0": {
+          "0": 0.97675,
+          "1": 0.841062,
+          "2": 0.695187
+        },
+        "1": {
+          "0": 0.822733,
+          "1": 0.962806,
+          "2": 0.851732
+        },
+        "2": {
+          "0": 0.734145,
+          "1": 0.940487,
+          "2": 0.95818
+        }
+      },
+      "plddt": 0.843973,
+      "protein_iptm": 0.845455,
+      "ptm": 0.895984,
+      "runtime_s": 21.2,
+      "status": "ok"
+    },
+    {
+      "all_runs": [
+        {
+          "chains_ptm": {
+            "0": 0.981616,
+            "1": 0.965226,
+            "2": 0.957031
+          },
+          "complex_ipde": 1.527912,
+          "complex_iplddt": 0.877602,
+          "complex_pde": 0.355999,
+          "complex_plddt": 0.910999,
+          "confidence_score": 0.890386,
+          "iptm": 0.807938,
+          "ligand_iptm": 0.0,
+          "pair_chains_iptm": {
+            "0": {
+              "0": 0.981616,
+              "1": 0.804129,
+              "2": 0.659784
+            },
+            "1": {
+              "0": 0.82545,
+              "1": 0.965226,
+              "2": 0.839716
+            },
+            "2": {
+              "0": 0.6767,
+              "1": 0.930147,
+              "2": 0.957031
+            }
+          },
+          "plddt": 0.910999,
+          "protein_iptm": 0.807938,
+          "ptm": 0.896817,
+          "rank": 0
+        },
+        {
+          "chains_ptm": {
+            "0": 0.977772,
+            "1": 0.958347,
+            "2": 0.94715
+          },
+          "complex_ipde": 1.837467,
+          "complex_iplddt": 0.854288,
+          "complex_pde": 0.38963,
+          "complex_plddt": 0.896509,
+          "confidence_score": 0.870513,
+          "iptm": 0.766526,
+          "ligand_iptm": 0.0,
+          "pair_chains_iptm": {
+            "0": {
+              "0": 0.977772,
+              "1": 0.762556,
+              "2": 0.588774
+            },
+            "1": {
+              "0": 0.791185,
+              "1": 0.958347,
+              "2": 0.807447
+            },
+            "2": {
+              "0": 0.617532,
+              "1": 0.906939,
+              "2": 0.94715
+            }
+          },
+          "plddt": 0.896509,
+          "protein_iptm": 0.766526,
+          "ptm": 0.876795,
+          "rank": 1
+        },
+        {
+          "chains_ptm": {
+            "0": 0.975787,
+            "1": 0.960173,
+            "2": 0.954503
+          },
+          "complex_ipde": 2.132927,
+          "complex_iplddt": 0.848751,
+          "complex_pde": 0.410105,
+          "complex_plddt": 0.892796,
+          "confidence_score": 0.860849,
+          "iptm": 0.733064,
+          "ligand_iptm": 0.0,
+          "pair_chains_iptm": {
+            "0": {
+              "0": 0.975787,
+              "1": 0.723152,
+              "2": 0.567212
+            },
+            "1": {
+              "0": 0.745202,
+              "1": 0.960173,
+              "2": 0.828719
+            },
+            "2": {
+              "0": 0.576286,
+              "1": 0.918658,
+              "2": 0.954503
+            }
+          },
+          "plddt": 0.892796,
+          "protein_iptm": 0.733064,
+          "ptm": 0.85566,
+          "rank": 2
+        }
+      ],
+      "chains_ptm": {
+        "0": 0.981616,
+        "1": 0.965226,
+        "2": 0.957031
+      },
+      "complex_ipde": 1.527912,
+      "complex_iplddt": 0.877602,
+      "complex_pde": 0.355999,
+      "complex_plddt": 0.910999,
+      "confidence_score": 0.890386,
+      "id": "dn_vhh_her2_hail_mary_5",
+      "iptm": 0.807938,
+      "ligand_iptm": 0.0,
+      "load_s": 7.4,
+      "pair_chains_iptm": {
+        "0": {
+          "0": 0.981616,
+          "1": 0.804129,
+          "2": 0.659784
+        },
+        "1": {
+          "0": 0.82545,
+          "1": 0.965226,
+          "2": 0.839716
+        },
+        "2": {
+          "0": 0.6767,
+          "1": 0.930147,
+          "2": 0.957031
+        }
+      },
+      "plddt": 0.910999,
+      "protein_iptm": 0.807938,
+      "ptm": 0.896817,
+      "runtime_s": 20.6,
+      "status": "ok"
+    },
+    {
+      "all_runs": [
+        {
+          "chains_ptm": {
+            "0": 0.983848,
+            "1": 0.972741,
+            "2": 0.96806
+          },
+          "complex_ipde": 0.673842,
+          "complex_iplddt": 0.887603,
+          "complex_pde": 0.284753,
+          "complex_plddt": 0.920998,
+          "confidence_score": 0.915346,
+          "iptm": 0.892739,
+          "ligand_iptm": 0.0,
+          "pair_chains_iptm": {
+            "0": {
+              "0": 0.983848,
+              "1": 0.886192,
+              "2": 0.739831
+            },
+            "1": {
+              "0": 0.913765,
+              "1": 0.972741,
+              "2": 0.876316
+            },
+            "2": {
+              "0": 0.778952,
+              "1": 0.954273,
+              "2": 0.96806
+            }
+          },
+          "plddt": 0.920998,
+          "protein_iptm": 0.892739,
+          "ptm": 0.933294,
+          "rank": 0
+        },
+        {
+          "chains_ptm": {
+            "0": 0.985119,
+            "1": 0.969472,
+            "2": 0.969669
+          },
+          "complex_ipde": 0.697699,
+          "complex_iplddt": 0.900064,
+          "complex_pde": 0.284549,
+          "complex_plddt": 0.921367,
+          "confidence_score": 0.913738,
+          "iptm": 0.883222,
+          "ligand_iptm": 0.0,
+          "pair_chains_iptm": {
+            "0": {
+              "0": 0.985119,
+              "1": 0.894283,
+              "2": 0.668589
+            },
+            "1": {
+              "0": 0.882388,
+              "1": 0.969472,
+              "2": 0.865532
+            },
+            "2": {
+              "0": 0.688189,
+              "1": 0.953584,
+              "2": 0.969669
+            }
+          },
+          "plddt": 0.921367,
+          "protein_iptm": 0.883222,
+          "ptm": 0.922556,
+          "rank": 1
+        },
+        {
+          "chains_ptm": {
+            "0": 0.984158,
+            "1": 0.970151,
+            "2": 0.964843
+          },
+          "complex_ipde": 1.480031,
+          "complex_iplddt": 0.904259,
+          "complex_pde": 0.334021,
+          "complex_plddt": 0.930882,
+          "confidence_score": 0.90697,
+          "iptm": 0.811325,
+          "ligand_iptm": 0.0,
+          "pair_chains_iptm": {
+            "0": {
+              "0": 0.984158,
+              "1": 0.805214,
+              "2": 0.667101
+            },
+            "1": {
+              "0": 0.828974,
+              "1": 0.970151,
+              "2": 0.864343
+            },
+            "2": {
+              "0": 0.678079,
+              "1": 0.94692,
+              "2": 0.964843
+            }
+          },
+          "plddt": 0.930882,
+          "protein_iptm": 0.811325,
+          "ptm": 0.897656,
+          "rank": 2
+        }
+      ],
+      "chains_ptm": {
+        "0": 0.983848,
+        "1": 0.972741,
+        "2": 0.96806
+      },
+      "complex_ipde": 0.673842,
+      "complex_iplddt": 0.887603,
+      "complex_pde": 0.284753,
+      "complex_plddt": 0.920998,
+      "confidence_score": 0.915346,
+      "id": "dn_vhh_her2_hail_mary_7",
+      "iptm": 0.892739,
+      "ligand_iptm": 0.0,
+      "load_s": 9.0,
+      "pair_chains_iptm": {
+        "0": {
+          "0": 0.983848,
+          "1": 0.886192,
+          "2": 0.739831
+        },
+        "1": {
+          "0": 0.913765,
+          "1": 0.972741,
+          "2": 0.876316
+        },
+        "2": {
+          "0": 0.778952,
+          "1": 0.954273,
+          "2": 0.96806
+        }
+      },
+      "plddt": 0.920998,
+      "protein_iptm": 0.892739,
+      "ptm": 0.933294,
+      "runtime_s": 19.3,
+      "status": "ok"
+    },
+    {
+      "all_runs": [
+        {
+          "chains_ptm": {
+            "0": 0.977989,
+            "1": 0.962211,
+            "2": 0.960248
+          },
+          "complex_ipde": 1.149301,
+          "complex_iplddt": 0.865829,
+          "complex_pde": 0.345394,
+          "complex_plddt": 0.900187,
+          "confidence_score": 0.896111,
+          "iptm": 0.879808,
+          "ligand_iptm": 0.0,
+          "pair_chains_iptm": {
+            "0": {
+              "0": 0.977989,
+              "1": 0.878379,
+              "2": 0.766896
+            },
+            "1": {
+              "0": 0.85411,
+              "1": 0.962211,
+              "2": 0.826936
+            },
+            "2": {
+              "0": 0.826746,
+              "1": 0.932674,
+              "2": 0.960248
+            }
+          },
+          "plddt": 0.900187,
+          "protein_iptm": 0.879808,
+          "ptm": 0.91855,
+          "rank": 0
+        },
+        {
+          "chains_ptm": {
+            "0": 0.98453,
+            "1": 0.972232,
+            "2": 0.966452
+          },
+          "complex_ipde": 0.896274,
+          "complex_iplddt": 0.835693,
+          "complex_pde": 0.306403,
+          "complex_plddt": 0.874625,
+          "confidence_score": 0.878218,
+          "iptm": 0.892592,
+          "ligand_iptm": 0.0,
+          "pair_chains_iptm": {
+            "0": {
+              "0": 0.98453,
+              "1": 0.890129,
+              "2": 0.780847
+            },
+            "1": {
+              "0": 0.889096,
+              "1": 0.972232,
+              "2": 0.876231
+            },
+            "2": {
+              "0": 0.81158,
+              "1": 0.954044,
+              "2": 0.966452
+            }
+          },
+          "plddt": 0.874625,
+          "protein_iptm": 0.892592,
+          "ptm": 0.932646,
+          "rank": 1
+        },
+        {
+          "chains_ptm": {
+            "0": 0.969153,
+            "1": 0.962211,
+            "2": 0.955652
+          },
+          "complex_ipde": 2.912991,
+          "complex_iplddt": 0.825398,
+          "complex_pde": 0.490601,
+          "complex_plddt": 0.864338,
+          "confidence_score": 0.823502,
+          "iptm": 0.660156,
+          "ligand_iptm": 0.0,
+          "pair_chains_iptm": {
+            "0": {
+              "0": 0.969153,
+              "1": 0.632874,
+              "2": 0.527034
+            },
+            "1": {
+              "0": 0.651282,
+              "1": 0.962211,
+              "2": 0.833942
+            },
+            "2": {
+              "0": 0.529297,
+              "1": 0.925781,
+              "2": 0.955652
+            }
+          },
+          "plddt": 0.864338,
+          "protein_iptm": 0.660156,
+          "ptm": 0.812442,
+          "rank": 2
+        }
+      ],
+      "chains_ptm": {
+        "0": 0.977989,
+        "1": 0.962211,
+        "2": 0.960248
+      },
+      "complex_ipde": 1.149301,
+      "complex_iplddt": 0.865829,
+      "complex_pde": 0.345394,
+      "complex_plddt": 0.900187,
+      "confidence_score": 0.896111,
+      "id": "dn_vhh_her2_hail_mary_8",
+      "iptm": 0.879808,
+      "ligand_iptm": 0.0,
+      "load_s": 8.1,
+      "pair_chains_iptm": {
+        "0": {
+          "0": 0.977989,
+          "1": 0.878379,
+          "2": 0.766896
+        },
+        "1": {
+          "0": 0.85411,
+          "1": 0.962211,
+          "2": 0.826936
+        },
+        "2": {
+          "0": 0.826746,
+          "1": 0.932674,
+          "2": 0.960248
+        }
+      },
+      "plddt": 0.900187,
+      "protein_iptm": 0.879808,
+      "ptm": 0.91855,
+      "runtime_s": 20.5,
+      "status": "ok"
+    },
+    {
+      "all_runs": [
+        {
+          "chains_ptm": {
+            "0": 0.977447,
+            "1": 0.972189,
+            "2": 0.961856
+          },
+          "complex_ipde": 0.892877,
+          "complex_iplddt": 0.78709,
+          "complex_pde": 0.32197,
+          "complex_plddt": 0.859526,
+          "confidence_score": 0.866899,
+          "iptm": 0.89639,
+          "ligand_iptm": 0.0,
+          "pair_chains_iptm": {
+            "0": {
+              "0": 0.977447,
+              "1": 0.900604,
+              "2": 0.764648
+            },
+            "1": {
+              "0": 0.903915,
+              "1": 0.972189,
+              "2": 0.867952
+            },
+            "2": {
+              "0": 0.803079,
+              "1": 0.946231,
+              "2": 0.961856
+            }
+          },
+          "plddt": 0.859526,
+          "protein_iptm": 0.89639,
+          "ptm": 0.935885,
+          "rank": 0
+        },
+        {
+          "chains_ptm": {
+            "0": 0.963257,
+            "1": 0.955418,
+            "2": 0.955422
+          },
+          "complex_ipde": 2.86994,
+          "complex_iplddt": 0.843162,
+          "complex_pde": 0.520512,
+          "complex_plddt": 0.892167,
+          "confidence_score": 0.86466,
+          "iptm": 0.754634,
+          "ligand_iptm": 0.0,
+          "pair_chains_iptm": {
+            "0": {
+              "0": 0.963257,
+              "1": 0.736267,
+              "2": 0.638916
+            },
+            "1": {
+              "0": 0.75552,
+              "1": 0.955418,
+              "2": 0.835683
+            },
+            "2": {
+              "0": 0.675321,
+              "1": 0.930606,
+              "2": 0.955422
+            }
+          },
+          "plddt": 0.892167,
+          "protein_iptm": 0.754634,
+          "ptm": 0.86188,
+          "rank": 1
+        },
+        {
+          "chains_ptm": {
+            "0": 0.948822,
+            "1": 0.951979,
+            "2": 0.942784
+          },
+          "complex_ipde": 4.758227,
+          "complex_iplddt": 0.823355,
+          "complex_pde": 0.705011,
+          "complex_plddt": 0.874574,
+          "confidence_score": 0.821444,
+          "iptm": 0.608922,
+          "ligand_iptm": 0.0,
+          "pair_chains_iptm": {
+            "0": {
+              "0": 0.948822,
+              "1": 0.559402,
+              "2": 0.471847
+            },
+            "1": {
+              "0": 0.593304,
+              "1": 0.951979,
+              "2": 0.801885
+            },
+            "2": {
+              "0": 0.504251,
+              "1": 0.900275,
+              "2": 0.942784
+            }
+          },
+          "plddt": 0.874574,
+          "protein_iptm": 0.608922,
+          "ptm": 0.778283,
+          "rank": 2
+        }
+      ],
+      "chains_ptm": {
+        "0": 0.977447,
+        "1": 0.972189,
+        "2": 0.961856
+      },
+      "complex_ipde": 0.892877,
+      "complex_iplddt": 0.78709,
+      "complex_pde": 0.32197,
+      "complex_plddt": 0.859526,
+      "confidence_score": 0.866899,
+      "id": "dn_vhh_her2_hail_mary_9",
+      "iptm": 0.89639,
+      "ligand_iptm": 0.0,
+      "load_s": 6.2,
+      "pair_chains_iptm": {
+        "0": {
+          "0": 0.977447,
+          "1": 0.900604,
+          "2": 0.764648
+        },
+        "1": {
+          "0": 0.903915,
+          "1": 0.972189,
+          "2": 0.867952
+        },
+        "2": {
+          "0": 0.803079,
+          "1": 0.946231,
+          "2": 0.961856
+        }
+      },
+      "plddt": 0.859526,
+      "protein_iptm": 0.89639,
+      "ptm": 0.935885,
+      "runtime_s": 23.4,
+      "status": "ok"
+    },
+    {
+      "all_runs": [
+        {
+          "chains_ptm": {
+            "0": 0.990545,
+            "1": 0.99056,
+            "2": 0.983823,
+            "3": 0.987591
+          },
+          "complex_ipde": 0.290373,
+          "complex_iplddt": 0.967275,
+          "complex_pde": 0.249836,
+          "complex_plddt": 0.967726,
+          "confidence_score": 0.96906,
+          "iptm": 0.974396,
+          "ligand_iptm": 0.0,
+          "pair_chains_iptm": {
+            "0": {
+              "0": 0.990545,
+              "1": 0.986711,
+              "2": 0.972145,
+              "3": 0.968786
+            },
+            "1": {
+              "0": 0.986263,
+              "1": 0.99056,
+              "2": 0.970443,
+              "3": 0.954655
+            },
+            "2": {
+              "0": 0.959706,
+              "1": 0.962169,
+              "2": 0.983823,
+              "3": 0.952573
+            },
+            "3": {
+              "0": 0.984834,
+              "1": 0.980928,
+              "2": 0.987132,
+              "3": 0.987591
+            }
+          },
+          "plddt": 0.967726,
+          "protein_iptm": 0.974396,
+          "ptm": 0.980143,
+          "rank": 0
+        },
+        {
+          "chains_ptm": {
+            "0": 0.990654,
+            "1": 0.99069,
+            "2": 0.98412,
+            "3": 0.988281
+          },
+          "complex_ipde": 0.283264,
+          "complex_iplddt": 0.962669,
+          "complex_pde": 0.248581,
+          "complex_plddt": 0.96541,
+          "confidence_score": 0.967402,
+          "iptm": 0.975369,
+          "ligand_iptm": 0.0,
+          "pair_chains_iptm": {
+            "0": {
+              "0": 0.990654,
+              "1": 0.98777,
+              "2": 0.971963,
+              "3": 0.968896
+            },
+            "1": {
+              "0": 0.986068,
+              "1": 0.99069,
+              "2": 0.9722,
+              "3": 0.955338
+            },
+            "2": {
+              "0": 0.96132,
+              "1": 0.964929,
+              "2": 0.98412,
+              "3": 0.951087
+            },
+            "3": {
+              "0": 0.988281,
+              "1": 0.982306,
+              "2": 0.988051,
+              "3": 0.988281
+            }
+          },
+          "plddt": 0.96541,
+          "protein_iptm": 0.975369,
+          "ptm": 0.980527,
+          "rank": 1
+        },
+        {
+          "chains_ptm": {
+            "0": 0.990727,
+            "1": 0.990267,
+            "2": 0.983398,
+            "3": 0.988281
+          },
+          "complex_ipde": 0.289114,
+          "complex_iplddt": 0.963076,
+          "complex_pde": 0.249497,
+          "complex_plddt": 0.964782,
+          "confidence_score": 0.966718,
+          "iptm": 0.974465,
+          "ligand_iptm": 0.0,
+          "pair_chains_iptm": {
+            "0": {
+              "0": 0.990727,
+              "1": 0.987076,
+              "2": 0.971853,
+              "3": 0.96791
+            },
+            "1": {
+              "0": 0.986361,
+              "1": 0.990267,
+              "2": 0.970703,
+              "3": 0.953613
+            },
+            "2": {
+              "0": 0.959197,
+              "1": 0.963018,
+              "2": 0.983398,
+              "3": 0.950535
+            },
+            "3": {
+              "0": 0.985753,
+              "1": 0.980698,
+              "2": 0.987821,
+              "3": 0.988281
+            }
+          },
+          "plddt": 0.964782,
+          "protein_iptm": 0.974465,
+          "ptm": 0.979957,
+          "rank": 2
+        }
+      ],
+      "chains_ptm": {
+        "0": 0.990545,
+        "1": 0.99056,
+        "2": 0.983823,
+        "3": 0.987591
+      },
+      "complex_ipde": 0.290373,
+      "complex_iplddt": 0.967275,
+      "complex_pde": 0.249836,
+      "complex_plddt": 0.967726,
+      "confidence_score": 0.96906,
+      "id": "ctl_wt",
+      "iptm": 0.974396,
+      "ligand_iptm": 0.0,
+      "load_s": 7.4,
+      "pair_chains_iptm": {
+        "0": {
+          "0": 0.990545,
+          "1": 0.986711,
+          "2": 0.972145,
+          "3": 0.968786
+        },
+        "1": {
+          "0": 0.986263,
+          "1": 0.99056,
+          "2": 0.970443,
+          "3": 0.954655
+        },
+        "2": {
+          "0": 0.959706,
+          "1": 0.962169,
+          "2": 0.983823,
+          "3": 0.952573
+        },
+        "3": {
+          "0": 0.984834,
+          "1": 0.980928,
+          "2": 0.987132,
+          "3": 0.987591
+        }
+      },
+      "plddt": 0.967726,
+      "protein_iptm": 0.974396,
+      "ptm": 0.980143,
+      "runtime_s": 34.4,
+      "status": "ok"
+    },
+    {
+      "all_runs": [
+        {
+          "chains_ptm": {
+            "0": 0.981,
+            "1": 0.962296,
+            "2": 0.950827
+          },
+          "complex_ipde": 2.225641,
+          "complex_iplddt": 0.821426,
+          "complex_pde": 0.412242,
+          "complex_plddt": 0.87581,
+          "confidence_score": 0.850182,
+          "iptm": 0.747671,
+          "ligand_iptm": 0.0,
+          "pair_chains_iptm": {
+            "0": {
+              "0": 0.981,
+              "1": 0.727156,
+              "2": 0.572859
+            },
+            "1": {
+              "0": 0.770168,
+              "1": 0.962296,
+              "2": 0.818189
+            },
+            "2": {
+              "0": 0.627987,
+              "1": 0.920496,
+              "2": 0.950827
+            }
+          },
+          "plddt": 0.87581,
+          "protein_iptm": 0.747671,
+          "ptm": 0.872312,
+          "rank": 0
+        },
+        {
+          "chains_ptm": {
+            "0": 0.979812,
+            "1": 0.958984,
+            "2": 0.960248
+          },
+          "complex_ipde": 4.650377,
+          "complex_iplddt": 0.833171,
+          "complex_pde": 0.576439,
+          "complex_plddt": 0.88367,
+          "confidence_score": 0.817521,
+          "iptm": 0.552923,
+          "ligand_iptm": 0.0,
+          "pair_chains_iptm": {
+            "0": {
+              "0": 0.979812,
+              "1": 0.544453,
+              "2": 0.343406
+            },
+            "1": {
+              "0": 0.560313,
+              "1": 0.958984,
+              "2": 0.837593
+            },
+            "2": {
+              "0": 0.373276,
+              "1": 0.92693,
+              "2": 0.960248
+            }
+          },
+          "plddt": 0.88367,
+          "protein_iptm": 0.552923,
+          "ptm": 0.770817,
+          "rank": 1
+        },
+        {
+          "chains_ptm": {
+            "0": 0.961812,
+            "1": 0.953932,
+            "2": 0.948529
+          },
+          "complex_ipde": 7.301153,
+          "complex_iplddt": 0.809104,
+          "complex_pde": 0.806813,
+          "complex_plddt": 0.870668,
+          "confidence_score": 0.786969,
+          "iptm": 0.452171,
+          "ligand_iptm": 0.0,
+          "pair_chains_iptm": {
+            "0": {
+              "0": 0.961812,
+              "1": 0.288992,
+              "2": 0.186031
+            },
+            "1": {
+              "0": 0.280093,
+              "1": 0.953932,
+              "2": 0.813774
+            },
+            "2": {
+              "0": 0.166245,
+              "1": 0.914981,
+              "2": 0.948529
+            }
+          },
+          "plddt": 0.870668,
+          "protein_iptm": 0.452171,
+          "ptm": 0.635114,
+          "rank": 2
+        }
+      ],
+      "chains_ptm": {
+        "0": 0.981,
+        "1": 0.962296,
+        "2": 0.950827
+      },
+      "complex_ipde": 2.225641,
+      "complex_iplddt": 0.821426,
+      "complex_pde": 0.412242,
+      "complex_plddt": 0.87581,
+      "confidence_score": 0.850182,
+      "id": "ctl_old_offsite",
+      "iptm": 0.747671,
+      "ligand_iptm": 0.0,
+      "load_s": 5.7,
+      "pair_chains_iptm": {
+        "0": {
+          "0": 0.981,
+          "1": 0.727156,
+          "2": 0.572859
+        },
+        "1": {
+          "0": 0.770168,
+          "1": 0.962296,
+          "2": 0.818189
+        },
+        "2": {
+          "0": 0.627987,
+          "1": 0.920496,
+          "2": 0.950827
+        }
+      },
+      "plddt": 0.87581,
+      "protein_iptm": 0.747671,
+      "ptm": 0.872312,
+      "runtime_s": 23.3,
+      "status": "ok"
+    }
+  ],
+  "structures": {
+    "ctl_old_offsite": [
+      "ctl_old_offsite.pdb",
+      "ctl_old_offsite_model_1.pdb",
+      "ctl_old_offsite_model_2.pdb"
+    ],
+    "ctl_wt": [
+      "ctl_wt.pdb",
+      "ctl_wt_model_1.pdb",
+      "ctl_wt_model_2.pdb"
+    ],
+    "dn_vhh_her2_hail_mary_0": [
+      "dn_vhh_her2_hail_mary_0.pdb",
+      "dn_vhh_her2_hail_mary_0_model_1.pdb",
+      "dn_vhh_her2_hail_mary_0_model_2.pdb"
+    ],
+    "dn_vhh_her2_hail_mary_1": [
+      "dn_vhh_her2_hail_mary_1.pdb",
+      "dn_vhh_her2_hail_mary_1_model_1.pdb",
+      "dn_vhh_her2_hail_mary_1_model_2.pdb"
+    ],
+    "dn_vhh_her2_hail_mary_11": [
+      "dn_vhh_her2_hail_mary_11.pdb",
+      "dn_vhh_her2_hail_mary_11_model_1.pdb",
+      "dn_vhh_her2_hail_mary_11_model_2.pdb"
+    ],
+    "dn_vhh_her2_hail_mary_5": [
+      "dn_vhh_her2_hail_mary_5.pdb",
+      "dn_vhh_her2_hail_mary_5_model_1.pdb",
+      "dn_vhh_her2_hail_mary_5_model_2.pdb"
+    ],
+    "dn_vhh_her2_hail_mary_7": [
+      "dn_vhh_her2_hail_mary_7.pdb",
+      "dn_vhh_her2_hail_mary_7_model_1.pdb",
+      "dn_vhh_her2_hail_mary_7_model_2.pdb"
+    ],
+    "dn_vhh_her2_hail_mary_8": [
+      "dn_vhh_her2_hail_mary_8.pdb",
+      "dn_vhh_her2_hail_mary_8_model_1.pdb",
+      "dn_vhh_her2_hail_mary_8_model_2.pdb"
+    ],
+    "dn_vhh_her2_hail_mary_9": [
+      "dn_vhh_her2_hail_mary_9.pdb",
+      "dn_vhh_her2_hail_mary_9_model_1.pdb",
+      "dn_vhh_her2_hail_mary_9_model_2.pdb"
+    ]
+  },
+  "tables": []
+}

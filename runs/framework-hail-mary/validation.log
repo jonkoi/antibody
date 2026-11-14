@@ -1,0 +1,4 @@
+WARNING  /home/hackathon/codex-framework-hail-mary/validation_panel.csv: dropped rows for [novelty] fw_WGGDGFYAMD: CDRH3 SRWGGDGFYAMDY is 0 mutation(s) from SRWGGDGFYAMDY in trastuzumab; a novel design needs at least 3
+INFO     validation_panel: 6/7 design(s) valid
+WARNING    [novelty] fw_WGGDGFYAMD: CDRH3 SRWGGDGFYAMDY is 0 mutation(s) from SRWGGDGFYAMDY in trastuzumab; a novel design needs at least 3
+INFO     wrote 6 rows to /home/hackathon/codex-framework-hail-mary/accepted.json

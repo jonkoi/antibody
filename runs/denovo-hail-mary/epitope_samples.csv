@@ -1,0 +1,28 @@
+target,structure,recall,core4,strict,vhh_overlap,hits
+ctl_old_offsite,ctl_old_offsite.pdb,0.0,0,0,0,
+ctl_old_offsite,ctl_old_offsite_model_1.pdb,0.0,0,0,0,
+ctl_old_offsite,ctl_old_offsite_model_2.pdb,0.0,0,0,0,
+ctl_wt,ctl_wt.pdb,1.0,4,1,1,557 558 560 561 569 570 571 572 573 579 591 593 596 598 600 602 603 604 605
+ctl_wt,ctl_wt_model_1.pdb,1.0,4,1,1,557 558 560 561 569 570 571 572 573 579 591 593 596 598 600 602 603 604 605
+ctl_wt,ctl_wt_model_2.pdb,1.0,4,1,1,557 558 560 561 569 570 571 572 573 579 591 593 596 598 600 602 603 604 605
+dn_vhh_her2_hail_mary_0,dn_vhh_her2_hail_mary_0.pdb,0.3684,2,0,0,557 558 560 561 571 572 573
+dn_vhh_her2_hail_mary_0,dn_vhh_her2_hail_mary_0_model_1.pdb,0.0,0,0,0,
+dn_vhh_her2_hail_mary_0,dn_vhh_her2_hail_mary_0_model_2.pdb,0.0,0,0,0,
+dn_vhh_her2_hail_mary_1,dn_vhh_her2_hail_mary_1.pdb,0.5263,3,0,0,557 558 560 561 570 571 572 573 579 591
+dn_vhh_her2_hail_mary_11,dn_vhh_her2_hail_mary_11.pdb,0.0,0,0,0,
+dn_vhh_her2_hail_mary_11,dn_vhh_her2_hail_mary_11_model_1.pdb,0.0,0,0,0,
+dn_vhh_her2_hail_mary_11,dn_vhh_her2_hail_mary_11_model_2.pdb,0.0526,0,0,0,569
+dn_vhh_her2_hail_mary_1,dn_vhh_her2_hail_mary_1_model_1.pdb,0.7895,4,0,1,558 560 561 569 570 571 572 573 579 591 593 596 600 602 603
+dn_vhh_her2_hail_mary_1,dn_vhh_her2_hail_mary_1_model_2.pdb,0.7368,4,0,1,558 560 561 569 570 571 572 573 579 591 593 600 602 603
+dn_vhh_her2_hail_mary_5,dn_vhh_her2_hail_mary_5.pdb,0.0,0,0,0,
+dn_vhh_her2_hail_mary_5,dn_vhh_her2_hail_mary_5_model_1.pdb,0.0,0,0,0,
+dn_vhh_her2_hail_mary_5,dn_vhh_her2_hail_mary_5_model_2.pdb,0.0,0,0,0,
+dn_vhh_her2_hail_mary_7,dn_vhh_her2_hail_mary_7.pdb,0.0,0,0,0,
+dn_vhh_her2_hail_mary_7,dn_vhh_her2_hail_mary_7_model_1.pdb,0.0,0,0,0,
+dn_vhh_her2_hail_mary_7,dn_vhh_her2_hail_mary_7_model_2.pdb,0.0,0,0,0,
+dn_vhh_her2_hail_mary_8,dn_vhh_her2_hail_mary_8.pdb,0.4737,3,0,0,557 558 560 561 570 571 572 573 593
+dn_vhh_her2_hail_mary_8,dn_vhh_her2_hail_mary_8_model_1.pdb,0.0,0,0,0,
+dn_vhh_her2_hail_mary_8,dn_vhh_her2_hail_mary_8_model_2.pdb,0.0,0,0,0,
+dn_vhh_her2_hail_mary_9,dn_vhh_her2_hail_mary_9.pdb,0.0,0,0,0,
+dn_vhh_her2_hail_mary_9,dn_vhh_her2_hail_mary_9_model_1.pdb,0.1053,0,0,0,560 561
+dn_vhh_her2_hail_mary_9,dn_vhh_her2_hail_mary_9_model_2.pdb,0.0,0,0,0,

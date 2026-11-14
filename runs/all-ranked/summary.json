@@ -1,0 +1,29 @@
+{
+  "unique_candidates": 639,
+  "controls": 2,
+  "formats": {
+    "paired": 335,
+    "vhh": 304
+  },
+  "screen_pass": 532,
+  "screen_reject": 107,
+  "valid_tracks": {
+    "optimisation": 355,
+    "de_novo": 177
+  },
+  "source_counts": {
+    "ml-top100": 100,
+    "framework": 6,
+    "final18": 18,
+    "winner-prior55": 55,
+    "rfd4-vhh": 12,
+    "boltzgen-disulfide": 85,
+    "rfd4-seed1": 96,
+    "pilot4": 4,
+    "rfd4-seed7": 89,
+    "boltzgen-original": 88,
+    "boltzgen-jobs": 207
+  },
+  "enumeration_pool_included": false,
+  "ranking_is_heuristic": true
+}

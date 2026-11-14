@@ -1,0 +1,10 @@
+target,n,strict,vhh_overlap,median_recall,min_recall,min_core4
+ctl_old_offsite,3,0,0,0.0,0.0,0
+ctl_wt,3,3,3,1.0,1.0,4
+dn_vhh_her2_hail_mary_0,3,0,0,0.0,0.0,0
+dn_vhh_her2_hail_mary_1,3,0,2,0.7368,0.5263,3
+dn_vhh_her2_hail_mary_11,3,0,0,0.0,0.0,0
+dn_vhh_her2_hail_mary_5,3,0,0,0.0,0.0,0
+dn_vhh_her2_hail_mary_7,3,0,0,0.0,0.0,0
+dn_vhh_her2_hail_mary_8,3,0,0,0.0,0.0,0
+dn_vhh_her2_hail_mary_9,3,0,0,0.0,0.0,0

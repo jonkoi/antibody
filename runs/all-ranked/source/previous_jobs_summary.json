@@ -1,0 +1,156 @@
+[
+  {
+    "name": "w2-cont-full-s11",
+    "id": "d3116851dea08d95f373840d00ca7511",
+    "designs": 20,
+    "ready": true,
+    "path": "runs/all-ranked/source/previous_job_d3116851dea08d95f373840d00ca7511.json"
+  },
+  {
+    "name": "w2-cont-full-s12",
+    "id": "9252e06c0909c13897b457ee52f60889",
+    "designs": 20,
+    "ready": true,
+    "path": "runs/all-ranked/source/previous_job_9252e06c0909c13897b457ee52f60889.json"
+  },
+  {
+    "name": "w2-cont-full-s13",
+    "id": "a1ce58433f25546544d4129d55a57f9e",
+    "designs": 20,
+    "ready": true,
+    "path": "runs/all-ranked/source/previous_job_a1ce58433f25546544d4129d55a57f9e.json"
+  },
+  {
+    "name": "w2-cont-full-s14",
+    "id": "8065788b26bb924393acb5956625a1e6",
+    "designs": 20,
+    "ready": true,
+    "path": "runs/all-ranked/source/previous_job_8065788b26bb924393acb5956625a1e6.json"
+  },
+  {
+    "name": "w2-cont-core-s15",
+    "id": "80fc889f890ddad50ca0df868a2850cf",
+    "designs": 20,
+    "ready": true,
+    "path": "runs/all-ranked/source/previous_job_80fc889f890ddad50ca0df868a2850cf.json"
+  },
+  {
+    "name": "w2-cont-core-s16",
+    "id": "282986e34d220e4224fe83a8fb72ba3e",
+    "designs": 20,
+    "ready": true,
+    "path": "runs/all-ranked/source/previous_job_282986e34d220e4224fe83a8fb72ba3e.json"
+  },
+  {
+    "name": "w2-cont-nb-s17",
+    "id": "8bec05c6d92af3a2236d8fcdb33abef4",
+    "designs": 20,
+    "ready": true,
+    "path": "runs/all-ranked/source/previous_job_8bec05c6d92af3a2236d8fcdb33abef4.json"
+  },
+  {
+    "name": "w2-cont-nb-s18",
+    "id": "71ffa57ca9ff0dc4570ebdc7a366cb5e",
+    "designs": 20,
+    "ready": true,
+    "path": "runs/all-ranked/source/previous_job_71ffa57ca9ff0dc4570ebdc7a366cb5e.json"
+  },
+  {
+    "name": "d34-full-s31",
+    "id": "b44db5d592c284fe52d57b0996d40a80",
+    "designs": 18,
+    "ready": true,
+    "path": "runs/all-ranked/source/previous_job_b44db5d592c284fe52d57b0996d40a80.json"
+  },
+  {
+    "name": "d34-full-s32",
+    "id": "bb1e2fe44ff329be7d14e3318f6b162b",
+    "designs": 20,
+    "ready": true,
+    "path": "runs/all-ranked/source/previous_job_bb1e2fe44ff329be7d14e3318f6b162b.json"
+  },
+  {
+    "name": "d34-full-s33",
+    "id": "12da062bcdd967cac8a3725b17fd4feb",
+    "designs": 20,
+    "ready": true,
+    "path": "runs/all-ranked/source/previous_job_12da062bcdd967cac8a3725b17fd4feb.json"
+  },
+  {
+    "name": "split-core-s41",
+    "id": "1580b378e41966fd7b33a98ba18fd9cc",
+    "designs": 20,
+    "ready": true,
+    "path": "runs/all-ranked/source/previous_job_1580b378e41966fd7b33a98ba18fd9cc.json"
+  },
+  {
+    "name": "split-core-s42",
+    "id": "8fe3082170b624b523ca2f874d84c0b6",
+    "designs": 20,
+    "ready": true,
+    "path": "runs/all-ranked/source/previous_job_8fe3082170b624b523ca2f874d84c0b6.json"
+  },
+  {
+    "name": "split-core-s43",
+    "id": "3eb93d3351014844b225808b28c968d2",
+    "designs": 20,
+    "ready": true,
+    "path": "runs/all-ranked/source/previous_job_3eb93d3351014844b225808b28c968d2.json"
+  },
+  {
+    "name": "cont-full-s1",
+    "id": "88ed4ea214b8989d9befe373e81a6520",
+    "designs": 20,
+    "ready": true,
+    "path": "runs/all-ranked/source/previous_job_88ed4ea214b8989d9befe373e81a6520.json"
+  },
+  {
+    "name": "cont-full-s2",
+    "id": "b5a0e14875b82187d83ee33980afc4b0",
+    "designs": 20,
+    "ready": true,
+    "path": "runs/all-ranked/source/previous_job_b5a0e14875b82187d83ee33980afc4b0.json"
+  },
+  {
+    "name": "cont-full-s3",
+    "id": "03823a02eef2ecb529489c973ec1f5d5",
+    "designs": 20,
+    "ready": true,
+    "path": "runs/all-ranked/source/previous_job_03823a02eef2ecb529489c973ec1f5d5.json"
+  },
+  {
+    "name": "cont-core-s4",
+    "id": "d2c0c6dbc67e44bc5ea9c6ef7274a075",
+    "designs": 20,
+    "ready": true,
+    "path": "runs/all-ranked/source/previous_job_d2c0c6dbc67e44bc5ea9c6ef7274a075.json"
+  },
+  {
+    "name": "cont-core-s5",
+    "id": "a7ed64693c717d6cefe6270f45861012",
+    "designs": 20,
+    "ready": true,
+    "path": "runs/all-ranked/source/previous_job_a7ed64693c717d6cefe6270f45861012.json"
+  },
+  {
+    "name": "split-full-s6",
+    "id": "2ea172a632ddf434be3f7ca968931d91",
+    "designs": 20,
+    "ready": true,
+    "path": "runs/all-ranked/source/previous_job_2ea172a632ddf434be3f7ca968931d91.json"
+  },
+  {
+    "name": "split-full-s7",
+    "id": "99778ba63ecf6114f87d763765f3a165",
+    "designs": 20,
+    "ready": true,
+    "path": "runs/all-ranked/source/previous_job_99778ba63ecf6114f87d763765f3a165.json"
+  },
+  {
+    "name": "split-core-s8",
+    "id": "0f7ff0964599db39c7ab270ff439ba68",
+    "designs": 20,
+    "ready": true,
+    "path": "runs/all-ranked/source/previous_job_0f7ff0964599db39c7ab270ff439ba68.json"
+  }
+]

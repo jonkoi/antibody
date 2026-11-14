@@ -1,0 +1,53 @@
+{
+  "provenance": {
+    "cli_contract_version": "foundry.cli.v1",
+    "ended_at": "2026-11-14T15:24:20.697671Z",
+    "inputs": [
+      {
+        "path": "/work/design.yaml",
+        "tier": "none"
+      }
+    ],
+    "module": {
+      "name": "apheris-rfd4-proteina",
+      "version": "0.3.0"
+    },
+    "resolved_config": {
+      "batch_size": 1,
+      "compile": false,
+      "data_path": "/weights",
+      "inverse_folding": false,
+      "metrics_tags": [
+        "design",
+        "hotspot_conditioning",
+        "interchain_interactions"
+      ],
+      "num_replicates": 12,
+      "recycle_strategy": "high/front_loaded",
+      "resample_hotspots": false,
+      "seed": 73
+    },
+    "started_at": "2026-11-14T15:20:54.860841Z"
+  },
+  "result": {
+    "artifacts": "generation",
+    "designs": [
+      "generation/inference_samples/vhh_her2_hail_mary_0/vhh_her2_hail_mary_0_generated.cif",
+      "generation/inference_samples/vhh_her2_hail_mary_1/vhh_her2_hail_mary_1_generated.cif",
+      "generation/inference_samples/vhh_her2_hail_mary_10/vhh_her2_hail_mary_10_generated.cif",
+      "generation/inference_samples/vhh_her2_hail_mary_11/vhh_her2_hail_mary_11_generated.cif",
+      "generation/inference_samples/vhh_her2_hail_mary_2/vhh_her2_hail_mary_2_generated.cif",
+      "generation/inference_samples/vhh_her2_hail_mary_3/vhh_her2_hail_mary_3_generated.cif",
+      "generation/inference_samples/vhh_her2_hail_mary_4/vhh_her2_hail_mary_4_generated.cif",
+      "generation/inference_samples/vhh_her2_hail_mary_5/vhh_her2_hail_mary_5_generated.cif",
+      "generation/inference_samples/vhh_her2_hail_mary_6/vhh_her2_hail_mary_6_generated.cif",
+      "generation/inference_samples/vhh_her2_hail_mary_7/vhh_her2_hail_mary_7_generated.cif",
+      "generation/inference_samples/vhh_her2_hail_mary_8/vhh_her2_hail_mary_8_generated.cif",
+      "generation/inference_samples/vhh_her2_hail_mary_9/vhh_her2_hail_mary_9_generated.cif"
+    ],
+    "log": "generation.log",
+    "metrics": "generation/inference_metrics/per_example_metrics.csv"
+  },
+  "schema_version": "foundry.cli.v1",
+  "task": "design"
+}
