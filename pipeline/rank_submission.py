@@ -79,14 +79,34 @@ def splice(window: str, framework: str | None = None) -> str:
 
 
 def parse_facs(path: Path) -> dict[str, dict]:
-    """Pull per-design rows out of predict_binding.py's report."""
+    """Pull per-design rows out of predict_binding.py's report.
+
+    Long sequence_ids run into the CDRH3 column in that report, so the id is
+    matched non-greedily and the 10-mer is anchored on the alphabet.
+    """
     out: dict[str, dict] = {}
+    pat = re.compile(r"\s+(\S+?)\s*([ACDEFGHIKLMNPQRSTVWY]{10})\s+([\d.]+)\s+(\d+)")
     for line in path.read_text().splitlines():
-        m = re.match(r"\s*([\d.]+)\s+(\S+)\s+([ACDEFGHIKLMNPQRSTVWY]{10})\s+(\d+)", line)
+        m = pat.match(line)
         if m:
-            p, name, cdrh3, dist = m.groups()
+            name, cdrh3, p, dist = m.groups()
             out[cdrh3] = dict(p=float(p), name=name, nearest_train=int(dist))
     return out
+
+
+def rejects_hard(window: str) -> str | None:
+    """Reasons abguard rejects a row outright, checked before ranking.
+
+    A cysteine anywhere in the designed window makes the heavy chain's cysteine
+    count odd (wild-type VH has 2), which is an instant rejection. 215 of the
+    1,562 novelty-legal all-four-contact candidates fail on this alone -- the
+    legal set is filtered for novelty, not for expression.
+    """
+    if "C" in window:
+        return "cysteine in CDRH3 -> odd cysteine count"
+    if len(window) != len(WT):
+        return f"window is {len(window)} residues, expected {len(WT)}"
+    return None
 
 
 def main() -> int:
@@ -132,12 +152,36 @@ def main() -> int:
             continue
         if cdrh3 not in legal and cdrh3 not in curated:
             continue
+        if rejects_hard(cdrh3):
+            continue
         kept = sum(1 for i, _ in CONTACT.items() if cdrh3[i] == WT[i])
         cands.append((f["p"], kept, cdrh3, f))
-    # best model score first, breaking ties toward more preserved contacts
+    # Best model score first, breaking ties toward more preserved contacts.
     cands.sort(key=lambda x: (-x[0], -x[1]))
 
-    for p, kept, cdrh3, f in cands[:args.tier2]:
+    # The model SATURATES: 24 candidates score exactly 1.000 and 156 score >=0.99,
+    # so the top of this list is not ordered by anything real. Worse, the highest
+    # scorers cluster into one motif family -- 12 of the first 16 were WYGDGFY**
+    # variants. Handing the lab sixteen near-identical sequences wastes its slots.
+    # So when the score cannot discriminate, select for DIVERSITY instead: greedily
+    # take the best-scoring candidate that differs from everything already chosen
+    # by at least MIN_DIV positions in the window.
+    MIN_DIV = 3
+    picked: list[tuple] = []
+    for cand in cands:
+        w = cand[2]
+        if all(sum(a != b for a, b in zip(w, q[2])) >= MIN_DIV for q in picked):
+            picked.append(cand)
+        if len(picked) >= args.tier2:
+            break
+    if len(picked) < args.tier2:  # relax rather than return a short list
+        for cand in cands:
+            if cand not in picked:
+                picked.append(cand)
+            if len(picked) >= args.tier2:
+                break
+
+    for p, kept, cdrh3, f in picked:
         rank += 1
         subs = sum(1 for a, b in zip(cdrh3, WT) if a != b)
         memo = ""
@@ -151,7 +195,9 @@ def main() -> int:
                 f"CDRH3 {WT}->{cdrh3} ({subs} subs, {kept}/4 HER2 contacts kept). "
                 f"P(high binder) {p:.3f} from logistic regression on 524,346 measured FACS variants "
                 f"(test AUC 0.984, macro-AUC 0.931 within clonotype clusters). Novelty-legal; "
-                f"source: {src}.{memo}")))
+                f"source: {src}. Selected for diversity: the model saturates at the top "
+                f"(24 candidates score 1.000), so among tied scores we take mutually "
+                f"distinct sequences rather than near-duplicates.{memo}")))
 
     with args.out.open("w", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=["sequence_id", "kind", "heavy_sequence",

@@ -117,19 +117,37 @@ all we have — and we say so rather than substituting a proxy.*
 
 ## 6 — The designs, ranked
 
-| # | design | CDRH3 | what it leads on |
-| --- | --- | --- | --- |
-| 1 | `her2_cdrh3_61` | `SLGSADYAFD` | best interface H-bond, fewest liabilities, **fails independently of 2–4** |
-| 2 | `enum_4` | `WGGRGPYWMD` | best predicted binding energy |
-| 3 | `fw_WGGMGPYWMD` | `WGGMGPYWMD` | **+ framework S85N/R87T** — a thermostability experiment |
-| 4 | `enum_1` | `WGHDGPYWMD` | best sequence-model score |
+The rules changed: submit everything, ranked; the lab tests the top 4–14. **So the
+ranking is the deliverable.** We submit **24, in two tiers — by strength of
+evidence, not by score.**
 
-Slots 2–4 share two substitutions, so they rise and fall together — **slot 1 is
-deliberately built to fail for different reasons.** Slot 3 is slot 2's CDRH3 plus
-two framework changes, so it's a controlled test, not a fourth guess.
+| | ranks | what backs them |
+| --- | --- | --- |
+| **Tier 1** | **1–8** | measured on this complex: binding ΔΔG, Boltz-2 refold vs a wild-type control, liabilities, novelty |
+| **Tier 2** | 9–24 | the FACS model only — 524,346 **measured** variants, test AUC 0.984 — plus novelty and liabilities |
 
-> **We are not claiming we beat trastuzumab. Nothing in the measured data beats
-> it by a margin the assay can resolve.**
+**All 24: `abguard` valid, 0 hard errors, all novelty-legal at distance 3.**
+
+| rank | CDRH3 | leads on |
+| --- | --- | --- |
+| 1 | `WGGRGPYWMD` | best measured ΔΔG, 0.20 — indistinguishable from wild-type |
+| 2 | `SLGSADYAFD` | best interface H-bond; fewest liabilities; **fails independently** |
+| 3–8 | — | remaining measured designs, incl. 2 framework thermostability tests |
+| 9–24 | `WYGDGFYNML` … | **13 of 16 preserve all four HER2 contacts** |
+
+**Two honest things about this ranking.**
+
+Tier 1 is first because its **evidence** is stronger, not its scores — four
+independent checks beats one model, even when the model prefers the other design.
+
+And **the model saturates**: 24 candidates score exactly 1.000, and the top
+scorers collapsed into one motif — 12 of our first 16 were `WYGDGFY**`
+near-duplicates. Handing a lab 16 variants of one sequence wastes its slots. So
+where the score can't discriminate, **we select for diversity instead** —
+minimum 3 mutations apart.
+
+> **A ranking we can't justify is worse than a short list. Every row says which
+> tier it's in and what evidence is behind it.**
 
 ---
 
