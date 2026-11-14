@@ -9,6 +9,9 @@ The competition scores a design on three axes against the measured trastuzumab
 baseline — **affinity** (SPR), **epitope preservation** (competitive binding) and
 **thermostability**. S-tier means improving on all three.
 
+**Picking this up mid-stream?** Start with [HANDOFF.md](HANDOFF.md) — current state,
+open questions, next actions and gotchas.
+
 ---
 
 ## Pipeline
