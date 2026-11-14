@@ -21,3 +21,38 @@ __pycache__/
 # --- third-party material, kept locally but not redistributed ---
 ai-antibodies-hackathon-apheris.pdf
 amass-biomedical-evidence-scout.skill
+
+# --- hackathon data (5GB, organisers material, not ours to redistribute) ---
+hackathon-data/
+rfd4-docs/
+
+# --- organisers' tooling from participant-12.zip (re-obtainable, not ours) ---
+vendor/
+2026-11_Oslo_hackathon_Apheris_challenge.pdf
+
+# --- bulk run artefacts -------------------------------------------------------
+# We commit the RESULTS (every CSV/JSON: sequences, metrics, novelty verdicts)
+# and the STRUCTURES WE USE (runs/*/shortlist-structures/, 28 files, 16MB).
+#
+# Excluded below: ~111MB of structures for designs we are not submitting, and
+# the per-sample PAE archives. Note these CANNOT be regenerated after tonight,
+# because the Foundry Docker images live only on the VM and die with it --
+# but submission_all.csv preserves all 100 CDRH3 windows plus full heavy and
+# light chains, so every sequence-level finding stays reproducible.
+# They remain on local disk; push them to the Nebius private bucket if we want
+# them to outlive this machine.
+runs/*/design/
+runs/*/boltz2/
+runs/*/subset/boltz2/
+runs/*/refold_boltz2/
+*_detailed_scores.cbor.gz
+
+# but always keep the result tables and the structures we shortlisted
+!runs/*/shortlist-structures/
+!runs/*/**/*.csv
+!runs/*/**/*.json
+
+# --- analysis output ---
+# chai1_replica_features.csv IS committed (2.5MB, 14,721 rows): regenerating it
+# means a 25-minute parse of a 487MB archive, so it is cheap insurance.
+nebius-runs/
