@@ -1,8 +1,8 @@
-# Team 15 — ranked HER2 antibody designs
+# Team 05 — ranked HER2 antibody designs
 
 Four-minute version · 7 slides · Oslo Antibodies × AI Hackathon · 14 Nov 2026
 
-Sources: [team process overview](findings/team-process-overview.md) · [24-priority crosswalk](runs/reconciliation/priority24_crosswalk.csv) · [full ranked evidence](runs/reconciliation/ranked_with_evidence.csv) · [submission list](team15_01.csv)
+Sources: [team process overview](findings/team-process-overview.md) · [24-priority crosswalk](runs/reconciliation/priority24_crosswalk.csv) · [full ranked evidence](runs/reconciliation/ranked_with_evidence.csv) · [submission list](team15_01.csv) · [final SUBMISSION.csv](SUBMISSION.csv)
 
 ## 1 — The task and the real constraint (30 sec)
 
@@ -38,9 +38,11 @@ The leading hypotheses include `WGGRGPYWMD` (low predicted binding penalty, with
 
 The 177 de novo-track candidates remain in the ranked list, with their track rank and evidence. A one-shot VHH design had partial HER2 overlap in 4/6 model samples across two seeds, but 0/6 met the stricter Fab-footprint criterion. Its predicted NanoMelt value is 69.68°C, not a measured Tm gain; its CDRH3 also contains an NRS glycosylation sequon. This is an exploratory candidate, not an S-tier claim.
 
+We also appended two newer BoltzGen nanobody designs, `denovo_hotspot_01` and `denovo_hotspot_03`, generated with HER2 Pro572, Phe573, Ile591 and Lys593 set as binding residues. In the predicted structures all four hotspots have a binder atom within 3.3 Å and 4.6 Å respectively, but design→target ipTM is only 0.21–0.22 from one model and one seed, with no refold check, no thermostability score and 21–23 liability flags. Their sequences have no cysteines (the conserved Cys positions read as Glu), and they were not run through abguard. They are unvalidated long shots, not recommendations. An earlier unconstrained batch, with the epitope not enforced, was dropped in favour of these.
+
 ## 7 — What we learned and what happens next (30 sec)
 
-We now have 546 screen-passing designs in the shared ranked CSV, including the colleague’s top 24 plus a broad reserve. We used literature to select tests and identify risks, while checking source data and keeping predictions separate from measurements. The most useful result is the traceable reasoning: why each sequence is present, what evidence supports it, and what could still be wrong.
+We now have 546 screen-passing designs in the shared ranked CSV, including the colleague’s top 24 plus a broad reserve. `SUBMISSION.csv` holds 548 rows: those 546 plus the two unscreened hotspot-guided de novo VHHs at the end. We used literature to select tests and identify risks, while checking source data and keeping predictions separate from measurements. The most useful result is the traceable reasoning: why each sequence is present, what evidence supports it, and what could still be wrong.
 
 **Next:** choose experimental slots from the first-ranked candidates and preserve representation across distinct hypotheses; then test binding, affinity and thermal stability directly.
 
@@ -50,4 +52,5 @@ We now have 546 screen-passing designs in the shared ranked CSV, including the c
 - [Original-priority IDs and new rank crosswalk](runs/reconciliation/priority24_crosswalk.csv)
 - [All 546 candidates with evidence](runs/reconciliation/ranked_with_evidence.csv)
 - [Full ranked inventory and limitations](runs/all-ranked/README.md)
+- [De novo hotspot run outputs](runs/denovo/F_epitope.json) (hotspot distances for the 20 BoltzGen designs)
 - [Original remote 24-row snapshot](runs/reconciliation/team15_01.remote.csv)
