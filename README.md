@@ -60,7 +60,7 @@ chemical liabilities and biophysical character.
 
 ---
 
-## The two findings that drive selection
+## The findings that drive selection
 
 ### 1. Binding collapses with mutation count, and the novelty floor sits on the knee
 
@@ -103,6 +103,65 @@ high-binder regime) and liability-reduced. That combination is the selection tar
 melting temperature. Only the Gly→Pro rigidification bears directly on the measured
 thermostability axis. And a rigidified loop can equally lock a non-binding
 conformation — that needs structural review, not a score.
+
+### 3. Only 6.2% of the minimal-change space is legal
+
+`pipeline/enumerate_candidates.py` enumerates the complete distance-3 set exactly
+and filters it against every provided CDRH3. Pure standard library, 5.6 seconds.
+
+| | count |
+| --- | --- |
+| candidates at distance 3 | 823,080 |
+| **clear the novelty gate** | **51,417 (6.2%)** |
+| ...also remove the DG hotspot | 29,124 |
+| ...also place Pro at a wild-type Gly | 3,842 |
+| ...both | 2,652 |
+| ...both, retaining the conserved Trp | **1,927** |
+
+**93.8% of minimal-change designs are illegal** — the 525,042 provided sequences
+densely blanket trastuzumab's neighbourhood. A generative model sampling this space
+blind wastes most of its output, because nothing tells it where the forbidden
+regions are. Enumerating first and folding only legal candidates is strictly better
+use of GPU time.
+
+The position profile of the 1,927 shortlist converges on the same levers the
+developability analysis identified independently: position 5 is substituted in all
+of them, and the proline lands at position 5 (1,412) or position 3 (565) — two of
+the three wild-type glycines.
+
+Brute force would be 823,080 x 525,042 comparisons. Three observations collapse it:
+the distance to a reference splits into a part independent of the candidate plus a
+part confined to the three mutated positions; that first part depends on the
+reference only through a 10-bit mask, so it is computed 1,024 times per position set
+rather than 525,042; and each surviving reference generates its forbidden
+combinations directly instead of being compared against all 6,859 candidates.
+
+### 4. Do not rank on Boltz-2 interface confidence
+
+`pipeline/calibrate_iptm.py` scores the provided 91x91 ipTM matrices, where the
+diagonal holds real nanobody-antigen pairs and everything off it is a shuffled
+non-binder (base rate 1.1%).
+
+| model | ROC AUC | passes at ipTM > 0.7 | top-10 ranked |
+| --- | --- | --- | --- |
+| AlphaFold3 | **0.754** | 236 non-binders; rejects 48 of 91 real | **51.8% real (47x)** |
+| Boltz-2 | 0.645 | **7,723 non-binders — 94.3% of them** | **0% real** |
+| Chai-1 | 0.568 | 17 | finds only 7 of 89 real |
+
+**Boltz-2's top 10 contained no real binders at all**, and its median confidence for
+pairs that demonstrably do not bind is 0.884. Our validation run used Boltz-2, and
+its 0.946 / 0.965 scores are matched by 7.5% of known non-binders — a likelihood
+ratio of 3.4. AF3's maximum across the whole benchmark is 0.93, so those numbers are
+not even on its scale.
+
+AF3 is a poor classifier but a useful *ranker*: 31-fold enrichment in its top 100.
+Apheris ships **OpenFold3-OpenBind**, an AF3 reproduction, and Protenix v2. Refold
+with those rather than Boltz-2, use confidence for relative ordering within one
+target, and never as a pass/fail gate.
+
+**Caveat:** that benchmark is nanobody-antigen pairs folded without templates, while
+we fold a CDRH3-redesigned Fv against HER2 *with* a template, and OpenFold3-OpenBind
+reproduces AF3 rather than being it. The transfer is plausible, not demonstrated.
 
 ### Why there is no learned stability model here
 

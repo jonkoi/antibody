@@ -21,3 +21,8 @@ __pycache__/
 # --- third-party material, kept locally but not redistributed ---
 ai-antibodies-hackathon-apheris.pdf
 amass-biomedical-evidence-scout.skill
+
+# --- third-party raw datasets (Chinery et al., via hackathon bucket) ---
+data/her2-trastuzumab/
+data/README.upstream.md
+__pycache__/
