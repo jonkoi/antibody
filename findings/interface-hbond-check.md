@@ -1,6 +1,6 @@
 # The contact that decides it — and two of our claims it overturns
 
-Prompted by a reviewer's objection that our phi(104) result "says little about
+Prompted by a parallel review line's objection that our phi(104) result "says little about
 binding", with the specific suggestion to check **Gly103 O → Lys593 NZ, 2.42 Å in
 the crystal**: the tightest contact in the whole trastuzumab–HER2 interface.
 
@@ -17,13 +17,13 @@ folded identically** so the model's own error is visible.
 | --- | --- | ---: | ---: | --- | --- |
 | **her2_cdrh3_61** | ALA | **2.51 Å** | 3.22 Å | Ser | **best — tighter than the control** |
 | *WT control* | GLY | *2.63 Å* | *3.39 Å* | *Trp* | *reference (crystal: 2.42 Å)* |
-| cw_5 | GLY | 3.20 Å | 3.03 Å | Trp | holds |
-| cw_4 | GLY | 3.48 Å | 3.30 Å | Trp | holds |
-| cw_1 | GLY | 4.07 Å | 2.72 Å | Trp | marginal |
+| enum_5 | GLY | 3.20 Å | 3.03 Å | Trp | holds |
+| enum_4 | GLY | 3.48 Å | 3.30 Å | Trp | holds |
+| enum_1 | GLY | 4.07 Å | 2.72 Å | Trp | marginal |
 | her2_cdrh3_60 | TYR | 6.48 Å | 3.01 Å | Trp | **lost** |
-| **cw_2** | GLY | **6.74 Å** | **11.11 Å** | Trp | **lost — paratope off the epitope** |
+| **enum_2** | GLY | **6.74 Å** | **11.11 Å** | Trp | **lost — paratope off the epitope** |
 | her2_cdrh3_71 | TYR | 6.80 Å | 8.84 Å | Ser | **lost** |
-| **cw_3** | GLY | **7.38 Å** | 7.83 Å | Trp | **lost** |
+| **enum_3** | GLY | **7.38 Å** | 7.83 Å | Trp | **lost** |
 | her2_cdrh3_88 | GLY | 9.08 Å | 6.59 Å | Ser | **lost** |
 
 The control folds to 2.63 Å against the crystal's 2.42 Å, so the model carries
@@ -40,11 +40,11 @@ five enumerated designs and concluded there was no drift. That metric was
 residues** — far too permissive. A loop that has rearranged completely can still
 put *something* near the epitope.
 
-On the specific contact, **cw_2 and cw_3 have lost it entirely** (6.74 Å and
-7.38 Å), and cw_2's Tyr105–Phe573 distance of **11.11 Å** says the paratope has
+On the specific contact, **enum_2 and enum_3 have lost it entirely** (6.74 Å and
+7.38 Å), and enum_2's Tyr105–Phe573 distance of **11.11 Å** says the paratope has
 moved off the surface patch altogether. Those were our top two picks on ΔΔG.
 
-A reviewer flagged that they had taken our 2.2–3.0 Å figures on trust without
+A parallel review line flagged that they had taken our 2.2–3.0 Å figures on trust without
 recomputing them. That trust was misplaced, and the fault is ours.
 
 ## Correction 2 — the phi(104) result proved much less than we said
@@ -71,7 +71,7 @@ So the same property that made our alanine scan blind to G103's importance
 (alanine retains the backbone carbonyl) is the property that lets a design mutate
 G103 and keep the bond. **Side-chain identity at 103 is not what matters; loop
 geometry is.** Designs that "preserve G103" by sequence can still lose the bond
-(cw_2, cw_3, both with Gly at 103 and no contact), and designs that mutate it can
+(enum_2, enum_3, both with Gly at 103 and no contact), and designs that mutate it can
 keep it (`_61`).
 
 **Sequence-level contact preservation is therefore the wrong filter.** We had been
@@ -87,21 +87,21 @@ epitope cannot bind whatever its ΔΔG says — then ordered within the survivor
 | # | design | CDRH3 | H-bond | ΔΔG (fold) | liabilities |
 | --- | --- | --- | ---: | ---: | ---: |
 | 1 | **her2_cdrh3_61** | `SLGSADYAFD` | **2.51 Å** | 0.42 (2.0×) | **5** |
-| 2 | **cw_4** | `WGGRGPYWMD` | 3.48 Å | **0.20 (1.4×)** | 8 |
-| 3 | **cw_1** | `WGHDGPYWMD` | 4.07 Å | 0.50 (2.3×) | 9 |
-| 4 | **cw_5** | `WGPDGPYWMD` | 3.20 Å | 0.74 (3.5×) | 9 |
+| 2 | **enum_4** | `WGGRGPYWMD` | 3.48 Å | **0.20 (1.4×)** | 8 |
+| 3 | **enum_1** | `WGHDGPYWMD` | 4.07 Å | 0.50 (2.3×) | 9 |
+| 4 | **enum_5** | `WGPDGPYWMD` | 3.20 Å | 0.74 (3.5×) | 9 |
 
 `abguard team-validate --reference-db` → **4/4 valid**. All four sit inside the
 ~7× assay noise floor on ΔΔG, so contact retention was the binding constraint,
 not energetics.
 
-**Dropped:** cw_2 and cw_3 (contact lost), her2_cdrh3_71 (6.80 Å — it keeps Phe104
+**Dropped:** enum_2 and enum_3 (contact lost), her2_cdrh3_71 (6.80 Å — it keeps Phe104
 but loses the bond, so the F104 hedge we wanted it for is worthless), and
 her2_cdrh3_88 and her2_cdrh3_60.
 
-`cw_5` is included despite having been called the weakest of the enumerated set by
-both us and the reviewer, on ΔΔG and on a now-withdrawn G101P objection. It holds
-the contact at 3.20 Å. `cw_1` carries 9 liabilities and keeps wild-type's `DG`
+`enum_5` is included despite having been called the weakest of the enumerated set by
+both us and that review line, on ΔΔG and on a now-withdrawn G101P objection. It holds
+the contact at 3.20 Å. `enum_1` carries 9 liabilities and keeps wild-type's `DG`
 isomerisation motif, which is the cost of its position here.
 
 ---
@@ -116,7 +116,7 @@ isomerisation motif, which is the cost of its position here.
 - **A refold is not a measurement.** None of these designs has been near an
   instrument. The honest claim is that four designs retain the interface
   hydrogen bond *in silico* under a template-guided co-fold.
-- **The reviewer's two surviving objections are untouched by any of this:** F104
+- **That review line's two surviving objections are untouched by any of this:** F104
   packs against the light chain (Tyr49/Leu46/Tyr55), and `A106W` gives every
   enumerated design a second CDR3 tryptophan, a documented oxidation and
   aggregation liability (PMID 30608647, 31678251). Three of our four carry both.
@@ -124,25 +124,25 @@ isomerisation motif, which is the cost of its position here.
 
 ---
 
-## Addendum — fold confidence, requested by the reviewer, and it fails again
+## Addendum — fold confidence, requested by that review line, and it fails again
 
-The reviewer asked for per-design ipTM/iPAE against the wild-type control. Here
+That review line asked for per-design ipTM/iPAE against the wild-type control. Here
 it is, from the same seed-42 folds:
 
 | design | ipTM | pTM | pLDDT | gPDE | Δ ipTM vs control | **H-bond** |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
 | *WT control* | *0.923* | *0.946* | *97.06* | *0.30* | — | *2.63 Å* |
-| cw_5 | **0.933** | 0.953 | 95.57 | 0.30 | **+0.010** | 3.20 Å |
-| cw_1 | 0.914 | 0.939 | 96.37 | 0.31 | −0.009 | 4.07 Å |
-| cw_3 | 0.911 | 0.937 | 95.98 | 0.32 | −0.012 | **7.38 Å** |
-| cw_2 | 0.905 | 0.934 | 96.42 | 0.32 | −0.018 | **6.74 Å** |
-| cw_4 | **0.860** | 0.902 | 94.27 | 0.37 | **−0.063** | 3.48 Å |
+| enum_5 | **0.933** | 0.953 | 95.57 | 0.30 | **+0.010** | 3.20 Å |
+| enum_1 | 0.914 | 0.939 | 96.37 | 0.31 | −0.009 | 4.07 Å |
+| enum_3 | 0.911 | 0.937 | 95.98 | 0.32 | −0.012 | **7.38 Å** |
+| enum_2 | 0.905 | 0.934 | 96.42 | 0.32 | −0.018 | **6.74 Å** |
+| enum_4 | **0.860** | 0.902 | 94.27 | 0.37 | **−0.063** | 3.48 Å |
 
 **ipTM does not separate these designs, and where it does it points the wrong
 way.** Every design sits within 0.063 of the wild-type control. The design with
-the *best retained interface geometry* among the enumerated set, cw_4 at 3.48 Å,
-has the **lowest ipTM of all five**. cw_5 scores **above the wild-type control**.
-And cw_2/cw_3, which do not reproduce the crystal hydrogen bond at all, score
+the *best retained interface geometry* among the enumerated set, enum_4 at 3.48 Å,
+has the **lowest ipTM of all five**. enum_5 scores **above the wild-type control**.
+And enum_2/enum_3, which do not reproduce the crystal hydrogen bond at all, score
 0.905 and 0.911 — comfortably in the middle.
 
 So on our own submission candidates, with a matched control, **ipTM inverts the
@@ -150,7 +150,7 @@ structural ranking.** This is the same conclusion as the shuffled-pair
 calibration (Boltz-2 ROC AUC 0.645), now demonstrated on the four sequences we
 are actually submitting.
 
-A coworker's independent run found the matching failure mode from the other
+An independent run on our enumeration track found the matching failure mode from the other
 direction: `WGGMGFYWWD` scores **0.94 ipTM while missing hotspots**, by anchoring
 confidently on one HER2 fragment while sliding off the other, so the global score
 stays high. **Only atom-level contact checks caught either case.**
@@ -162,9 +162,9 @@ Three criteria, three different orderings, none of them authoritative alone:
 | criterion | best | worst |
 | --- | --- | --- |
 | epitope recall (4.5 Å, all 4 hotspots) | **all 4/4 — no discrimination** | — |
-| specific Lys593 H-bond | her2_cdrh3_61 (2.51 Å) | cw_3 (7.38 Å) |
-| StaB-ddG binding penalty | cw_3 (0.17) | cw_5 (0.74) |
-| fold confidence (ipTM) | cw_5 (0.933) | cw_4 (0.860) |
+| specific Lys593 H-bond | her2_cdrh3_61 (2.51 Å) | enum_3 (7.38 Å) |
+| StaB-ddG binding penalty | enum_3 (0.17) | enum_5 (0.74) |
+| fold confidence (ipTM) | enum_5 (0.933) | enum_4 (0.860) |
 
 **The H-bond and ΔΔG orderings are near-opposite, and ipTM agrees with neither.**
 We submit one design that leads on each rather than pretending one criterion wins.

@@ -108,7 +108,7 @@ aggregation of ipTM lands at **AUC 0.510–0.543**.
 **And it failed again on our own four candidates.** Folded with a wild-type
 control, every design lands within **0.063 ipTM** of it — while the design with
 the *best* retained interface geometry has the **lowest ipTM of the set**, and one
-design scores *above* the wild-type control. A coworker's independent run found
+design scores *above* the wild-type control. An independent run on our enumeration track found
 the mirror case: a design at **0.94 ipTM that misses the hotspots entirely**,
 anchoring confidently on one HER2 fragment while sliding off the other so the
 global score stays high. **Only atom-level contact checks caught either one.**
@@ -142,14 +142,14 @@ novelty gate.** Validated with StaB-ddG, which neither approach trained:
 
 | design | ΔΔG kcal/mol | fold worse than WT |
 | --- | ---: | ---: |
-| **cw_3** | **0.17 ± 0.17** | **1.3×** |
-| **cw_4** | **0.20 ± 0.16** | **1.4×** |
-| cw_2 | 0.42 ± 0.17 | 2.0× |
-| cw_1 | 0.50 ± 0.18 | 2.3× |
-| cw_5 | 0.74 ± 0.18 | 3.5× |
+| **enum_3** | **0.17 ± 0.17** | **1.3×** |
+| **enum_4** | **0.20 ± 0.16** | **1.4×** |
+| enum_2 | 0.42 ± 0.17 | 2.0× |
+| enum_1 | 0.50 ± 0.18 | 2.3× |
+| enum_5 | 0.74 ± 0.18 | 3.5× |
 
 Median ΔΔG **0.42** against our **1.38**. All five inside the ~7× noise floor,
-where only 3 of our 14 were — and **cw_3 and cw_4 are statistically
+where only 3 of our 14 were — and **enum_3 and enum_4 are statistically
 indistinguishable from wild-type**, which nothing of ours achieved.
 
 **So the lesson is about method, not about the design space:** the conservative
@@ -194,15 +194,15 @@ identically (**control: 2.63 Å**).
 | # | design | CDRH3 | subs | **H-bond** | ΔΔG (fold) | liab |
 | --- | --- | --- | ---: | ---: | ---: | ---: |
 | 1 | **her2_cdrh3_61** | `SLGSADYAFD` | 6 | **2.51 Å** | 0.42 (2.0×) | **5** |
-| 2 | cw_4 | `WGGRGPYWMD` | 3 | 3.48 Å | **0.20 (1.4×)** | 8 |
-| 3 | cw_1 | `WGHDGPYWMD` | 3 | 4.07 Å | 0.50 (2.3×) | 9 |
-| 4 | cw_5 | `WGPDGPYWMD` | 3 | 3.20 Å | 0.74 (3.5×) | 9 |
+| 2 | enum_4 | `WGGRGPYWMD` | 3 | 3.48 Å | **0.20 (1.4×)** | 8 |
+| 3 | enum_1 | `WGHDGPYWMD` | 3 | 4.07 Å | 0.50 (2.3×) | 9 |
+| 4 | enum_5 | `WGPDGPYWMD` | 3 | 3.20 Å | 0.74 (3.5×) | 9 |
 
 `abguard team-validate --reference-db` → **4/4 valid** against 525,063 references.
 
 **This ranking is the reverse of the one we had an hour earlier**, and that is the
-slide. We had cw_3 and cw_2 first on binding energetics. On the actual hydrogen
-bond they are **7.38 Å and 6.74 Å** — the interface is gone, and cw_2's Tyr105 is
+slide. We had enum_3 and enum_2 first on binding energetics. On the actual hydrogen
+bond they are **7.38 Å and 6.74 Å** — the interface is gone, and enum_2's Tyr105 is
 **11.11 Å** from Phe573, meaning the paratope has moved off the surface patch. We
 had been reassured by a metric that measured *any* CDRH3 atom to *any* hotspot
 atom, which gave 2.2–3.0 Å for everything and was far too permissive.

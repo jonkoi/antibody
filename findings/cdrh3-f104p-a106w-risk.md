@@ -1,21 +1,21 @@
-# Correlated-risk review: F104P + A106W in the five coworker designs (cw_1 to cw_5)
+# Correlated-risk review: F104P + A106W in the five enumeration track designs (enum_1 to enum_5)
 
 Compiled 2026-11-14 from Amass BiomedCore plus geometry computed on
 `inputs/12-her2/her2_fv_1n8z.cif` (chain B = heavy; CDRH3 = W99 G100 G101 D102 G103 F104
 Y105 A106 M107 D108; sequential numbering, which matches the PDB auth numbering in this file).
 
-## UPDATE 2026-11-14 (after the Boltz-2 refold of cw_1 to cw_5; supersedes the backbone argument in section 2)
+## UPDATE 2026-11-14 (after the Boltz-2 refold of enum_1 to enum_5; supersedes the backbone argument in section 2)
 
-Verified on `runs/coworker/boltz2/*/seed_42/*_model.cif` (same dihedral code):
+Verified on `runs/enumeration track/boltz2/*/seed_42/*_model.cif` (same dihedral code):
 
 | model | phi(101) | phi(104) |
 | --- | --- | --- |
 | 1N8Z crystal (wild-type) | +106.7 | -141.3 |
 | Boltz-2 wild-type control | +77.6 | -99.4 |
-| cw_1 / cw_2 / cw_3 / cw_4 / cw_5 | -68 / -93 / -106 / -54 / -71 | -64.7 / -64.1 / -78.4 / -59.4 / -59.1 |
+| enum_1 / enum_2 / enum_3 / enum_4 / enum_5 | -68 / -93 / -106 / -54 / -71 | -64.7 / -64.1 / -78.4 / -59.4 / -59.1 |
 
 - phi(104) is -59 to -78 in all five: proline-compatible. **The "forbidden by the crystal backbone"
-  argument (section 2 and the cw_5 / G101P point in section 5) does not survive the refold and is
+  argument (section 2 and the enum_5 / G101P point in section 5) does not survive the refold and is
   withdrawn.** It rested on the wild-type conformation and was caveated as such.
 - The model did **not** keep the crystal loop. phi(101) flips from positive to negative in every
   design, so the predicted CDRH3 is a rearranged loop, not wild-type with two edits.
@@ -27,15 +27,15 @@ Verified on `runs/coworker/boltz2/*/seed_42/*_model.cif` (same dihedral code):
 - Still standing: both positions pack against VL (section 2), A106W adds a second CDR3 Trp
   (section 4), and no experimental data exist for the pair (section 1).
 
-## The five designs (runs/coworker/submission.csv)
+## The five designs (runs/enumeration track/submission.csv)
 
 | id | CDRH3 | substitutions vs trastuzumab | own predicted KD |
 | --- | --- | --- | --- |
-| cw_1 | WGHDGPYWMD | G101H, **F104P, A106W** | 0.50 nM |
-| cw_2 | WGGKGPYWMD | D102K, **F104P, A106W** | 0.77 nM |
-| cw_3 | WGGMGPYWMD | D102M, **F104P, A106W** | 0.89 nM |
-| cw_4 | WGGRGPYWMD | D102R, **F104P, A106W** | 0.95 nM |
-| cw_5 | WGPDGPYWMD | **G101P**, **F104P, A106W** | 1.52 nM |
+| enum_1 | WGHDGPYWMD | G101H, **F104P, A106W** | 0.50 nM |
+| enum_2 | WGGKGPYWMD | D102K, **F104P, A106W** | 0.77 nM |
+| enum_3 | WGGMGPYWMD | D102M, **F104P, A106W** | 0.89 nM |
+| enum_4 | WGGRGPYWMD | D102R, **F104P, A106W** | 0.95 nM |
+| enum_5 | WGPDGPYWMD | **G101P**, **F104P, A106W** | 1.52 nM |
 
 All five pass the novelty gate (`is_novel_enough: true`, distance 3 from 524,346 references).
 Each differs from the others by one residue, so this is **one design hypothesis tested five
@@ -84,7 +84,7 @@ No loop model exists in the repo for these five, so this is untested.
 
 | residue | phi | psi | consequence |
 | --- | --- | --- | --- |
-| Gly101 | **+106.7** | +152.0 | positive phi: Gly-only region. **G101P (cw_5) is incompatible with this backbone.** |
+| Gly101 | **+106.7** | +152.0 | positive phi: Gly-only region. **G101P (enum_5) is incompatible with this backbone.** |
 | Asp102 | -88.0 | -7.3 | alpha-like; D102K/M/R are backbone-tolerant |
 | Gly103 | -137.7 | +42.1 | carries the 2.42 A carbonyl H-bond to Lys593 |
 | **Phe104** | **-141.3** | +93.7 | **proline requires phi about -65; this is about 75 degrees away** |
@@ -141,19 +141,19 @@ Usable tool: ITsFlexible classifies CDR3 loops as rigid/flexible
 - Also: `AMBC_Sd5ej9sWSdBtbZfD4s4Pc1SVZDC` PMID 21390239; `AMBC_W0ka7h6RaNlpPCnFCcssmBJmXE8` PMID 27612038;
   `AMBC_QpARilhT4Alv1iMBbu9s5HsE5YR` PMID 21440514.
 
-**Your own liability report** (`runs/coworker/all_liabilities.json`): wild-type has 2 TrpOx flags
+**Your own liability report** (`runs/enumeration track/all_liabilities.json`): wild-type has 2 TrpOx flags
 (CDR3 W99, FR4 W103); each design has **3**, because A106W makes CDRH3 a two-Trp loop (medium
 severity). W106 also sits two residues from Asp108; the electrostatics paper suggests negative
-neighbours raise risk, which the authors' two-parameter model could test. cw_2 to cw_4 happen to
-remove the CDR3 DG isomerisation motif (D102K/M/R), a real plus; cw_1 and cw_5 keep it.
+neighbours raise risk, which the authors' two-parameter model could test. enum_2 to enum_4 happen to
+remove the CDR3 DG isomerisation motif (D102K/M/R), a real plus; enum_1 and enum_5 keep it.
 
 ## 5. What this means for the submission
 
 1. **Do not submit five copies of one hypothesis.** The pair is unvalidated in the literature and
    the 1N8Z backbone argues against F104P.
-2. **cw_5 is the weakest.** G101P (phi +107 for a Gly) plus F104P is two prolines in a 10-residue
+2. **enum_5 is the weakest.** G101P (phi +107 for a Gly) plus F104P is two prolines in a 10-residue
    loop at geometries the crystal structure forbids.
-3. **If you keep any, keep one**, ideally cw_1 (best own predicted KD) or one of cw_2 to cw_4
+3. **If you keep any, keep one**, ideally enum_1 (best own predicted KD) or one of enum_2 to enum_4
    (removes the DG motif), and fill the remaining slots with designs that retain Phe104.
 4. **Checks that fit in the time:** refold the five with Boltz-2 (the repo already has the
    pipeline) and read off phi at 104 and the interface iPAE; run ITsFlexible; look at Moon 2016

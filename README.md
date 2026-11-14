@@ -31,8 +31,9 @@ variants.
 
 ### 2. But we over-read that, and the correction is the real result
 
-Five designs produced by a coworker, **enumerated rather than generated**, sit at
-**3 substitutions and all five pass the same gate**. So 0% acceptance was a
+Our second track **enumerated rather than generated**: it fixed the four residues
+that contact HER2 and varied only the six that do not. Its five designs sit at
+**3 substitutions, and all five pass the same gate.** So 0% acceptance was a
 property of **our generator's output distribution**, not of the design space:
 RFD4-Proteina scatters mutations across the binding interface, which is exactly
 where the measured library samples densest.
@@ -87,12 +88,12 @@ identically (control: 2.63 Å).
 | # | design | CDRH3 | subs | **H-bond** | ΔΔG (fold vs WT) | liab |
 | --- | --- | --- | ---: | ---: | ---: | ---: |
 | 1 | her2_cdrh3_61 | `SLGSADYAFD` | 6 | **2.51 Å** | 0.42 (2.0×) | **5** |
-| 2 | cw_4 | `WGGRGPYWMD` | 3 | 3.48 Å | **0.20 (1.4×)** | 8 |
-| 3 | cw_1 | `WGHDGPYWMD` | 3 | 4.07 Å | 0.50 (2.3×) | 9 |
-| 4 | cw_5 | `WGPDGPYWMD` | 3 | 3.20 Å | 0.74 (3.5×) | 9 |
+| 2 | enum_4 | `WGGRGPYWMD` | 3 | 3.48 Å | **0.20 (1.4×)** | 8 |
+| 3 | enum_1 | `WGHDGPYWMD` | 3 | 4.07 Å | 0.50 (2.3×) | 9 |
+| 4 | enum_5 | `WGPDGPYWMD` | 3 | 3.20 Å | 0.74 (3.5×) | 9 |
 
-ΔΔG is StaB-ddG binding penalty — a model neither design approach trained. cw_2
-and cw_3 land inside the ~7× noise floor, and cw_3 is statistically
+ΔΔG is StaB-ddG binding penalty — a model neither design approach trained. enum_2
+and enum_3 land inside the ~7× noise floor, and enum_3 is statistically
 **indistinguishable from wild-type**. All four pass the hard expression filters
 (zero unpaired cysteines, zero N-glycosylation sequons); approved trastuzumab
 itself scores 8 liabilities.
@@ -101,7 +102,7 @@ itself scores 8 liabilities.
 Minimum distance from *any* CDRH3 atom to the hotspots gave 2.2–3.0 Å for every
 design and suggested no drift. That metric was far too permissive. On the specific
 hydrogen bond, **two designs we had ranked first and second have lost the
-interface entirely** — cw_3 at 7.38 Å, cw_2 at 6.74 Å with Tyr105 11.11 Å from
+interface entirely** — enum_3 at 7.38 Å, enum_2 at 6.74 Å with Tyr105 11.11 Å from
 Phe573, i.e. the paratope off the surface patch.
 [findings/interface-hbond-check.md](findings/interface-hbond-check.md) has the
 full table.
@@ -111,7 +112,7 @@ at position 103**, because the bond is made by the backbone carbonyl, which
 alanine retains. Sequence-level "contact preservation" is the wrong filter —
 designs with Gly at 103 lost the bond, and one that mutated it kept it.
 
-**Known risk, stated plainly.** cw_1, cw_4 and cw_5 all carry `F104P` and
+**Known risk, stated plainly.** enum_1, enum_4 and enum_5 all carry `F104P` and
 `A106W`, so they remain one correlated hypothesis. F104 is peripheral to HER2
 (nearest atom **4.27 Å**) but packs against the light chain (Tyr49/Leu46/Tyr55),
 and `A106W` gives each a second CDR3 tryptophan — a documented oxidation and
@@ -196,7 +197,7 @@ more than any single design:
   lost the interface by 4–5 Å
 - **the phi(104) result proved little** — a co-folding model yields
   proline-compatible angles for any proline-containing sequence. The
-  informative measurement was the hydrogen bond, which a reviewer pointed us at
+  informative measurement was the hydrogen bond, which a parallel review line pointed us at
 
 ---
 
